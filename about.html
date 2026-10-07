@@ -2968,15 +2968,17 @@
       }
 
 
-      .logo-text {
-        font-size: 1.25rem;
-      }
+      @media (max-width: 380px) {
+  .logo-text {
+    font-size: 18px;
+  }
 
-
-      .logo-text small {
-        display: none;
-      }
-
+  .logo-text small {
+    display: block !important;
+    font-size: 7px;
+    margin-top: 3px;
+  }
+}
 
       .logo-mark {
         width: 36px;
@@ -3147,7 +3149,7 @@
 
           <div class="dropdown-menu">
             <a href="index.html">Home 1</a>
-             <a href="home2.html" class="nav-link">home2</a>
+             <a href="home2.html" class="nav-link">Home2</a>
           </div>
 
         </div>
