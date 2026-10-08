@@ -68,6 +68,8 @@
 
       --container: 1240px;
       --transition: 0.3s ease;
+      --shadow-sm: 0 4px 16px rgba(18, 60, 49, 0.08);
+--shadow-md: 0 14px 40px rgba(18, 60, 49, 0.14);
     }
 
 
@@ -553,29 +555,149 @@
     }
 
 
-    .mobile-menu-btn {
-      display: none;
+    /* =====================================================
+   MOBILE / TABLET NAVIGATION
+===================================================== */
 
-      width: 40px;
-      height: 40px;
+@media (max-width: 900px) {
 
-      place-items: center;
-
-      background: var(--surface);
-
-      color: var(--primary);
-
-      border:
-        1px solid var(--primary);
-
-      border-radius: 10px;
+    .header-inner {
+        min-height: 72px;
     }
-    @media (max-width: 380px) {
 
-  .logo-text {
-    font-size: 18px;
-  }
+    /* Hamburger */
+    .mobile-menu-btn {
+        display: grid !important;
+    }
 
+    /* Mobile navigation */
+    .main-nav {
+        position: fixed;
+
+        top: 72px;
+        left: 20px;
+        right: 20px;
+
+        width: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 4px;
+
+        padding: 12px;
+
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 18px;
+
+        box-shadow: var(--shadow);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-12px);
+
+        transition: .25s ease;
+    }
+
+    /* OPEN */
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    /* Links */
+    .main-nav .nav-link,
+    .main-nav .dropdown-toggle {
+        width: 100%;
+        min-height: 46px;
+
+        padding: 12px 14px;
+
+        justify-content: space-between;
+
+        font-size: 13px;
+    }
+
+    /* Dropdown */
+    .main-nav .dropdown-menu {
+        position: static;
+
+        display: none;
+
+        width: 100%;
+
+        margin-top: 3px;
+
+        box-shadow: none;
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: none;
+    }
+
+    .main-nav .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    /* Hide login */
+    .login-btn {
+        display: none !important;
+    }
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 600px) {
+
+    .header-inner {
+        min-height: 68px;
+    }
+
+    .main-nav {
+        top: 68px;
+        left: 12px;
+        right: 12px;
+    }
+}
+
+
+/* VERY SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+    .header-inner {
+        min-height: 64px;
+    }
+
+    .main-nav {
+        top: 64px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+
+    .logo-text small {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
   .logo-text small {
     display: block !important;
     font-size: 7px;
@@ -583,7 +705,7 @@
     letter-spacing: 1px;
   }
 
-}
+
     
 /* =========================================
    REMOVE LOGIN / BOOK A VISIT ON MOBILE
@@ -7907,50 +8029,744 @@ html[dir="rtl"] .feature-list li::before {
 }
 
 
+
+
+
+
+/* MOBILE NAVIGATION FIX */
+@media (max-width: 900px) {
+
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99999;
+  }
+
+  .header-inner {
+    position: relative;
+    width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: grid !important;
+    position: relative;
+    z-index: 100001;
+  }
+
+  .main-nav {
+    position: fixed !important;
+    top: 72px;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto !important;
+    height: auto;
+    max-height: calc(100dvh - 85px);
+    overflow-y: auto;
+    flex: none;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    z-index: 100000;
+  }
+
+  .main-nav.mobile-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-nav {
+    top: 68px;
+  }
+}
+
+
+
+
+
+
+
+/* FINAL HAMBURGER VISIBILITY FIX */
+@media (max-width: 900px) {
+  #mainNav {
+    display: none !important;
+  }
+
+  #mainNav.mobile-open {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateY(0) !important;
+  }
+}
+
+
+
+
+
+
+/* ==========================================
+   MOBILE HORIZONTAL SCROLLING FIX
+========================================== */
+
+@media screen and (max-width: 900px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip !important;
+  }
+
+  .container {
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main,
+  section,
+  footer {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .school-hero {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .school-hero *,
+  .container > * {
+    min-width: 0;
+  }
+
+  .school-hero h1,
+  .school-hero p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .site-header {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-inner {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+
+  /* Keep hamburger navigation working */
+  #mainNav.mobile-open {
+    display: flex !important;
+  }
+}
+
+
+
+/* ========================================
+   FINAL MOBILE HEADER WIDTH FIX
+   No changes to desktop
+======================================== */
+
+@media (max-width: 900px) {
+
+  .site-header {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .site-header .header-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 12px !important;
+    gap: 6px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-sizing: border-box;
+  }
+
+  .site-header .logo {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    gap: 5px !important;
+  }
+
+  .site-header .logo-mark,
+  .site-header .logo-mark img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .site-header .logo-mark {
+    flex: 0 0 32px !important;
+  }
+
+  .site-header .logo-text,
+  .site-header .logo-text > span {
+    font-size: 17px !important;
+    white-space: nowrap;
+  }
+
+  .site-header .logo-text small {
+    display: block !important;
+    font-size: 7px !important;
+    letter-spacing: 0.5px !important;
+    white-space: nowrap;
+  }
+
+  .site-header .header-actions {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    margin: 0 !important;
+    gap: 4px !important;
+  }
+
+  .site-header .header-actions .icon-btn {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    flex: 0 0 32px !important;
+    font-size: 12px !important;
+  }
+
+  .site-header .login-btn {
+    display: none !important;
+  }
+
+  .site-header .mobile-menu-btn {
+    display: grid !important;
+  }
+
+  /* Keep the working hamburger menu */
+  #mainNav.mobile-open {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+
+
+
+
+/* MOBILE HERO AND HEADER FIT */
+@media (max-width: 900px) {
+  .school-hero {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .school-hero > .container {
+    width: calc(100% - 32px) !important;
+    max-width: 100% !important;
+    min-width: 0;
+    margin-inline: auto;
+    padding: 0 !important;
+  }
+
+  .school-hero .hero-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .school-hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(30px, 9vw, 42px);
+    overflow-wrap: anywhere;
+  }
+
+  .school-hero p {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .school-hero .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .school-hero .hero-actions .btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    justify-content: center;
+  }
+
+  .site-header .header-inner {
+    overflow: visible;
+  }
+}
+
+
+
+
+
+
+
+
+/* MOBILE WIDTH FIX */
+@media (max-width: 900px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .site-header,
+  .header-inner,
+  .school-hero,
+  .school-hero .container,
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .header-inner {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 12px !important;
+    gap: 6px;
+  }
+
+  .site-header .logo {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .site-header .header-actions {
+    display: flex !important;
+    flex: 0 0 auto;
+    gap: 4px;
+  }
+
+  .site-header .header-actions .icon-btn {
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+  }
+
+  .school-hero .container {
+    padding-inline: 16px !important;
+  }
+
+  .school-hero .hero-content {
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  .school-hero .hero-title {
+    max-width: 100%;
+    font-size: clamp(30px, 9vw, 42px) !important;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+  }
+
+  .school-hero .hero-description {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .school-hero .hero-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .school-hero .hero-actions .btn {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  #mainNav.mobile-open {
+    display: flex !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FIX: MOBILE HORIZONTAL SCROLL / FIT SCREEN
+========================================================= */
+@media (max-width: 900px) {
+
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  section, main, footer, .container, .container > * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  img, video, iframe, svg {
+    max-width: 100%;
+  }
+
+  /* ---------- Activities: stack into 1 column ---------- */
+  .activities-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .activity-right {
+    grid-template-rows: none !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .activity-large {
+    height: 380px;
+    min-height: 0 !important;
+  }
+
+  .activity-small {
+    height: 280px;
+    min-height: 0 !important;
+  }
+
+  .activity-overlay {
+    padding: 20px;
+  }
+
+  /* ---------- Timeline: single column, dot on the left ---------- */
+  .timeline {
+    max-width: 100%;
+  }
+
+  .timeline::before {
+    left: 24px;
+    transform: none;
+  }
+
+  .timeline .timeline-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    min-height: 0;
+    padding: 12px 0;
+    column-gap: 14px;
+  }
+
+  .timeline .timeline-item > div:empty {
+    display: none;
+  }
+
+  .timeline .timeline-item .timeline-dot {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    margin: 0;
+  }
+
+  .timeline .timeline-item .timeline-content {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    text-align: left !important;
+    padding: 0;
+  }
+
+  /* ---------- Other grids ---------- */
+  .program-grid,
+  .learning-grid,
+  .species-grid,
+  .intro-grid,
+  .enrollment-grid,
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .form-group.full {
+    grid-column: auto !important;
+  }
+
+  .intro-image {
+    height: 330px;
+  }
+
+  .species-card {
+    height: 320px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .stat-item:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .cta-box {
+    padding: 40px 20px;
+  }
+
+  .section-title {
+    overflow-wrap: break-word;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   FINAL FIX: STOP PAGE BEING WIDER THAN SCREEN
+========================================================= */
+@media (max-width: 900px) {
+
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden !important;
+    position: relative;
+  }
+
+  /* Decorative circles are the usual cause of sideways scroll */
+  .school-hero {
+    overflow: hidden !important;
+    position: relative;
+    contain: paint;
+  }
+
+  .school-hero::before,
+  .school-hero::after {
+    display: none !important;
+  }
+
+  /* Hero content must never be wider than the screen */
+  .school-hero .container,
+  .school-hero .hero-content,
+  .school-hero .hero-actions,
+  .school-hero .hero-actions .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .school-hero .container {
+    padding-inline: 16px !important;
+  }
+
+  .school-hero .hero-title {
+    font-size: clamp(30px, 9vw, 42px) !important;
+    overflow-wrap: anywhere;
+  }
+
+  .school-hero .hero-description {
+    overflow-wrap: break-word;
+  }
+
+  /* Header must fit inside the screen */
+  .site-header,
+  .site-header .header-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .site-header .header-inner {
+    padding-inline: 12px !important;
+  }
+
+  /* Anything that can push the page wider */
+  .reveal,
+  section,
+  .container,
+  .program-grid,
+  .learning-grid,
+  .species-grid,
+  .activities-grid,
+  .timeline,
+  .timeline-item,
+  .stats-grid,
+  .footer-grid {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .toast {
+    left: 12px;
+    right: 12px;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   LAST-RESORT CONTAINMENT (stops any child widening the page)
+========================================================= */
+html {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100%;
+  min-width: 0;          /* removes the old min-width: 320px */
+}
+
+body > * {
+  max-width: 100%;
+}
+
+main,
+section,
+footer,
+.site-header {
+  overflow-x: clip;      /* anything wider than the screen is cut inside its own section */
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .modal-backdrop,
+  .toast {
+    max-width: 100vw;
+  }
+
+  .school-hero,
+  .activities-section,
+  .timeline-section,
+  .species-section,
+  .enrollment-section {
+    overflow-x: clip;
+  }
+
+  .timeline-content,
+  .program-content,
+  .activity-content,
+  .species-content {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
     </style>
 </head>
 
 
 <body>
+
  <!-- =====================================================
+
        HEADER
+
   ===================================================== -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
-
       <!-- LOGO -->
 
       <a
+
         href="index.html"
+
         class="logo"
+
         aria-label="Aviora Falconry Bird Center"
+
       >
 
         <span class="logo-mark">
 
           <img
+
             src="./imagess/logo-02.png"
+
             alt="Aviora Falconry Bird Center"
+
           >
 
         </span>
-
 
         <span class="logo-text">
 
           Avi<span>ora</span>
 
           <small>
+
             Bird Sanctuary
+
           </small>
 
         </span>
 
       </a>
-
 
       <!-- NAVIGATION -->
 
@@ -7959,28 +8775,41 @@ html[dir="rtl"] .feature-list li::before {
         <div class="dropdown">
 
           <button
+
             class="dropdown-toggle"
+
             type="button"
+
             aria-expanded="false"
+
             aria-haspopup="true"
+
           >
+
             Home
+
             <i class="fa-solid fa-chevron-down"></i>
+
           </button>
 
           <div class="dropdown-menu">
+
             <a href="index.html">Home 1</a>
+
              <a href="home2.html" class="nav-link">home2</a>
+
           </div>
 
         </div>
 
         <a href="about.html" class="nav-link">About</a>
+
         <a href="services.html" class="nav-link">Services</a>
-       
-        
+
         <a href="schoolprogram.html" class="nav-link">School Program</a>
+
         <a href="blog.html" class="nav-link">Blog</a>
+
         <a href="contact.html" class="nav-link">Contact</a>
 
       </nav>
@@ -7988,60 +8817,91 @@ html[dir="rtl"] .feature-list li::before {
       <div class="header-actions">
 
         <!-- RTL BUTTON -->
+
         <button
+
           class="icon-btn"
+
           id="directionToggle"
+
           type="button"
+
           aria-label="Toggle text direction"
+
           title="Toggle text direction"
+
         >
+
          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
         </button>
 
         <!-- DARK / LIGHT BUTTON -->
+
         <button
+
           class="icon-btn"
+
           id="themeToggle"
+
           type="button"
+
           aria-label="Toggle theme"
+
           title="Toggle theme"
+
         >
+
           <i class="fa-solid fa-moon"></i>
+
         </button>
 
        <!-- LOGIN -->
+
         <a href="cta.html"
+
                class="login-btn">
- 
- 
+
                 <span>
+
                     Book a Visit
+
                 </span>
- 
+
             </a>
 
         <!-- MOBILE MENU -->
+
         <button
+
           class="icon-btn mobile-menu-btn"
+
           id="mobileMenuBtn"
+
           type="button"
+
           aria-label="Open navigation"
+
           aria-controls="mainNav"
+
           aria-expanded="false"
+
         >
+
           <i class="fa-solid fa-bars"></i>
+
         </button>
 
-        
-
       </div>
-    </div>
-  </header>
-  </header>
 
+    </div>
+
+  </header>
 
 <!-- =========================================================
+
      HERO
+
 ========================================================= -->
 
 <main id="home">
@@ -8053,13 +8913,17 @@ html[dir="rtl"] .feature-list li::before {
         <div class="hero-content reveal">
 
             <div class="">
+
                 Falconry Bird School
+
             </div>
 
             <h1 class="hero-title">
 
                 Learn the
+
                 <span>ancient art</span>
+
                 of falconry.
 
             </h1>
@@ -8067,15 +8931,17 @@ html[dir="rtl"] .feature-list li::before {
             <p class="hero-description">
 
                 Discover the remarkable world of birds of prey through
+
                 responsible handling, flight training, traditional
+
                 falconry skills and conservation-led education.
 
             </p>
 
-
             <div class="hero-actions">
 
                 <a href="#programs"
+
                    class="btn btn-primary">
 
                     Explore Programs
@@ -8084,8 +8950,8 @@ html[dir="rtl"] .feature-list li::before {
 
                 </a>
 
-
                 <a href="#enrollment"
+
                    class="btn btn-outline">
 
                     Enroll at the School
@@ -8100,13 +8966,14 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      INTRO
+
 ========================================================= -->
 
 <section class="school-intro"
+
          id="about">
 
     <div class="container">
@@ -8116,111 +8983,147 @@ html[dir="rtl"] .feature-list li::before {
             <div class="intro-image-wrap reveal">
 
                 <img
-                    class="intro-image"
-                    src="./imagess/school.jpg"
-                    alt="Bird of prey in a natural landscape"
-                    loading="lazy">
 
+                    class="intro-image"
+
+                    src="./imagess/school.jpg"
+
+                    alt="Bird of prey in a natural landscape"
+
+                    loading="lazy">
 
                 <div class="image-badge">
 
                     <strong>Hands-on</strong>
 
                     <span>
+
                         Learning built around bird welfare,
+
                         observation and practical experience.
+
                     </span>
 
                 </div>
 
             </div>
 
-
             <div class="intro-content reveal">
 
                 <div class="">
+
                     The Falconry School
+
                 </div>
 
                 <h2 class="section-title">
+
                     Where tradition meets responsible bird care.
+
                 </h2>
 
                 <p>
+
                     Falconry is more than learning to fly a bird.
+
                     It is a relationship built on observation,
+
                     patience, trust and respect.
+
                 </p>
 
                 <p>
-                    Our school introduces students to the principles
-                    behind responsible falconry while helping them
-                    understand the biology, behaviour and conservation
-                    of birds of prey.
-                </p>
 
+                    Our school introduces students to the principles
+
+                    behind responsible falconry while helping them
+
+                    understand the biology, behaviour and conservation
+
+                    of birds of prey.
+
+                </p>
 
                 <div class="intro-points">
 
                     <div class="intro-point">
 
                         <div class="intro-point-icon">
+
                             <i class="fa-solid fa-feather"></i>
+
                         </div>
 
                         <div>
 
                             <h4>
+
                                 Welfare First
+
                             </h4>
 
                             <p>
+
                                 Every practical lesson begins with
+
                                 safe and respectful bird care.
+
                             </p>
 
                         </div>
 
                     </div>
 
-
                     <div class="intro-point">
 
                         <div class="intro-point-icon">
+
                             <i class="fa-solid fa-hand"></i>
+
                         </div>
 
                         <div>
 
                             <h4>
+
                                 Practical Experience
+
                             </h4>
 
                             <p>
+
                                 Students learn through guided,
+
                                 supervised experiences.
+
                             </p>
 
                         </div>
 
                     </div>
 
-
                     <div class="intro-point">
 
                         <div class="intro-point-icon">
+
                             <i class="fa-solid fa-tree"></i>
+
                         </div>
 
                         <div>
 
                             <h4>
+
                                 Conservation Mindset
+
                             </h4>
 
                             <p>
+
                                 Understand why healthy habitats
+
                                 matter for raptors.
+
                             </p>
 
                         </div>
@@ -8237,13 +9140,14 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      PROGRAMS
+
 ========================================================= -->
 
 <section class="programs-section"
+
          id="programs">
 
     <div class="container">
@@ -8251,186 +9155,253 @@ html[dir="rtl"] .feature-list li::before {
         <div class="section-heading center reveal">
 
             <div class="">
+
                 School Programs
+
             </div>
 
             <h2 class="section-title">
+
                 A complete introduction to falconry.
+
             </h2>
 
             <p class="section-description">
+
                 Choose a learning path based on age, experience
+
                 and interest in birds of prey.
+
             </p>
 
         </div>
 
-
         <div class="program-grid">
 
-
             <article class="program-card reveal">
 
                 <img
+
                     class="program-image"
+
                     src="./imagess/junior.jpg"
+
                     alt="Outdoor learning"
+
                     loading="lazy">
 
                 <div class="program-content">
 
                     <div class="program-number">
+
                         Program 01
+
                     </div>
 
                     <h3>
+
                         Junior Falconers
+
                     </h3>
 
                     <p>
+
                         A beginner-friendly introduction to birds,
+
                         habitats, observation and the principles
+
                         of responsible falconry.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="program-card reveal">
 
                 <img
+
                     class="program-image"
+
                     src="./imagess/A lesson from Falconry - Graham John.jpg"
+
                     alt="Bird study"
+
                     loading="lazy">
 
                 <div class="program-content">
 
                     <div class="program-number">
+
                         Program 02
+
                     </div>
 
                     <h3>
+
                         Falconry Fundamentals
+
                     </h3>
 
                     <p>
+
                         Learn terminology, equipment, basic routines,
+
                         bird behaviour and the foundations of falconry.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="program-card reveal">
 
                 <img
+
                     class="program-image"
-                    src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1000&q=85"
+
+                    src="https\://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1000&q=85"
+
                     alt="Bird in flight"
+
                     loading="lazy">
 
                 <div class="program-content">
 
                     <div class="program-number">
+
                         Program 03
+
                     </div>
 
                     <h3>
+
                         Raptor Handling
+
                     </h3>
 
                     <p>
+
                         Explore safe handling principles, glove work,
+
                         positioning and calm interaction with birds.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="program-card reveal">
 
                 <img
+
                     class="program-image"
+
                     src="./imagess/Rockskipper.jpg"
+
                     alt="Forest habitat"
+
                     loading="lazy">
 
                 <div class="program-content">
 
                     <div class="program-number">
+
                         Program 04
+
                     </div>
 
                     <h3>
+
                         Flight & Recall
+
                     </h3>
 
                     <p>
+
                         Study the principles behind conditioning,
+
                         recall, controlled flight and positive routines.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="program-card reveal">
 
                 <img
+
                     class="program-image"
+
                     src="./imagess/conver.jpg"
+
                     alt="Forest conservation"
+
                     loading="lazy">
 
                 <div class="program-content">
 
                     <div class="program-number">
+
                         Program 05
+
                     </div>
 
                     <h3>
+
                         Conservation & Ethics
+
                     </h3>
 
                     <p>
+
                         Understand habitat protection, wildlife ethics,
+
                         conservation challenges and responsible practice.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="program-card reveal">
 
                 <img
+
                     class="program-image"
+
                     src="./imagess/Walk with Hawks _ Ohio School of Falconry.jpg"
+
                     alt="Natural habitat"
+
                     loading="lazy">
 
                 <div class="program-content">
 
                     <div class="program-number">
+
                         Program 06
+
                     </div>
 
                     <h3>
+
                         Falconry Field Skills
+
                     </h3>
 
                     <p>
+
                         Develop field observation skills and learn how
+
                         landscape, weather and habitat influence raptors.
+
                     </p>
 
                 </div>
@@ -8443,13 +9414,14 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      ACTIVITIES
+
 ========================================================= -->
 
 <section class="activities-section"
+
          id="activities">
 
     <div class="container">
@@ -8457,30 +9429,39 @@ html[dir="rtl"] .feature-list li::before {
         <div class="section-heading reveal">
 
             <div class="">
+
                 Hands-on Activities
+
             </div>
 
             <h2 class="section-title">
+
                 From glove work to open-air learning.
+
             </h2>
 
             <p class="section-description">
+
                 Our activity sessions combine observation,
+
                 practical demonstrations and outdoor education.
+
             </p>
 
         </div>
 
-
         <div class="activities-grid">
-
 
             <div class="activity-large reveal">
 
                 <img
+
                     class="activity-image"
+
                     src="./imagess/Striking Peregrine Falcon Perched on a Branch.jpg"
+
                     alt="Bird of prey activity"
+
                     loading="lazy">
 
                 <div class="activity-overlay">
@@ -8488,17 +9469,25 @@ html[dir="rtl"] .feature-list li::before {
                     <div class="activity-content">
 
                         <span>
+
                             Featured Activity
+
                         </span>
 
                         <h3>
+
                             Understanding Flight
+
                         </h3>
 
                         <p>
+
                             Observe wing movement, balance,
+
                             environmental conditions and the
+
                             natural abilities of birds of prey.
+
                         </p>
 
                     </div>
@@ -8507,16 +9496,18 @@ html[dir="rtl"] .feature-list li::before {
 
             </div>
 
-
             <div class="activity-right">
-
 
                 <div class="activity-small reveal">
 
                     <img
+
                         class="activity-image"
+
                         src="./imagess/Focus on me!.jpg"
+
                         alt="Outdoor bird observation"
+
                         loading="lazy">
 
                     <div class="activity-overlay">
@@ -8524,11 +9515,15 @@ html[dir="rtl"] .feature-list li::before {
                         <div class="activity-content">
 
                             <span>
+
                                 Activity
+
                             </span>
 
                             <h3>
+
                                 Bird Observation
+
                             </h3>
 
                         </div>
@@ -8537,13 +9532,16 @@ html[dir="rtl"] .feature-list li::before {
 
                 </div>
 
-
                 <div class="activity-small reveal">
 
                     <img
+
                         class="activity-image"
+
                         src="./imagess/Map Biodiversity and Help Protect Local Ecosystems.jpg"
+
                         alt="Nature and conservation"
+
                         loading="lazy">
 
                     <div class="activity-overlay">
@@ -8551,11 +9549,15 @@ html[dir="rtl"] .feature-list li::before {
                         <div class="activity-content">
 
                             <span>
+
                                 Activity
+
                             </span>
 
                             <h3>
+
                                 Habitat & Conservation
+
                             </h3>
 
                         </div>
@@ -8572,13 +9574,14 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      LEARNING
+
 ========================================================= -->
 
 <section class="learning-section"
+
          id="learning">
 
     <div class="container">
@@ -8586,91 +9589,121 @@ html[dir="rtl"] .feature-list li::before {
         <div class="section-heading center reveal">
 
             <div class="">
+
                 What Students Learn
+
             </div>
 
             <h2 class="section-title">
+
                 Skills that go beyond the glove.
+
             </h2>
 
             <p class="section-description">
+
                 Students build knowledge of birds, people,
+
                 equipment and the natural environment.
+
             </p>
 
         </div>
 
-
         <div class="learning-grid">
 
-
             <article class="learning-card reveal">
 
                 <div class="learning-icon">
+
                     <i class="fa-solid fa-eye"></i>
+
                 </div>
 
                 <h3>
+
                     Bird Behaviour
+
                 </h3>
 
                 <p>
+
                     Learn to notice posture, movement,
+
                     alertness and other behavioural signals.
+
                 </p>
 
             </article>
 
-
             <article class="learning-card reveal">
 
                 <div class="learning-icon">
+
                     <i class="fa-solid fa-hand"></i>
+
                 </div>
 
                 <h3>
+
                     Safe Handling
+
                 </h3>
 
                 <p>
+
                     Understand the principles of calm,
+
                     respectful and supervised bird handling.
+
                 </p>
 
             </article>
 
-
             <article class="learning-card reveal">
 
                 <div class="learning-icon">
+
                     <i class="fa-solid fa-wind"></i>
+
                 </div>
 
                 <h3>
+
                     Flight Principles
+
                 </h3>
 
                 <p>
+
                     Explore how weather, terrain and
+
                     bird behaviour affect flight.
+
                 </p>
 
             </article>
 
-
             <article class="learning-card reveal">
 
                 <div class="learning-icon">
+
                     <i class="fa-solid fa-leaf"></i>
+
                 </div>
 
                 <h3>
+
                     Conservation
+
                 </h3>
 
                 <p>
+
                     Discover how responsible people can
+
                     support raptor habitats and ecosystems.
+
                 </p>
 
             </article>
@@ -8681,13 +9714,14 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      TIMELINE
+
 ========================================================= -->
 
 <section class="timeline-section"
+
          id="timeline">
 
     <div class="container">
@@ -8695,189 +9729,231 @@ html[dir="rtl"] .feature-list li::before {
         <div class="section-heading center reveal">
 
             <div class="">
+
                 A Day At Falconry School
+
             </div>
 
             <h2 class="section-title">
+
                 Learn, observe, practise and reflect.
+
             </h2>
 
         </div>
 
-
         <div class="timeline">
 
-
             <div class="timeline-item reveal">
 
                 <div class="timeline-content">
 
                     <div class="timeline-time">
+
                         09:00 AM
+
                     </div>
 
                     <h3>
+
                         Welcome & Safety
+
                     </h3>
 
                     <p>
+
                         Introduction to the day, equipment
+
                         and bird welfare principles.
+
                     </p>
 
                 </div>
 
-
                 <div class="timeline-dot">
+
                     <i class="fa-solid fa-shield-heart"></i>
-                </div>
 
+                </div>
 
                 <div></div>
 
             </div>
-
 
             <div class="timeline-item reveal">
 
                 <div></div>
 
                 <div class="timeline-dot">
+
                     <i class="fa-solid fa-feather"></i>
-                </div>
 
+                </div>
 
                 <div class="timeline-content">
 
                     <div class="timeline-time">
+
                         10:00 AM
+
                     </div>
 
                     <h3>
+
                         Meet the Birds
+
                     </h3>
 
                     <p>
+
                         Observe natural behaviour and learn
+
                         how individual birds differ.
+
                     </p>
 
                 </div>
 
             </div>
 
-
             <div class="timeline-item reveal">
 
                 <div class="timeline-content">
 
                     <div class="timeline-time">
+
                         11:30 AM
+
                     </div>
 
                     <h3>
+
                         Equipment Workshop
+
                     </h3>
 
                     <p>
+
                         Explore gloves, equipment and
+
                         responsible preparation.
+
                     </p>
 
                 </div>
 
-
                 <div class="timeline-dot">
+
                     <i class="fa-solid fa-toolbox"></i>
-                </div>
 
+                </div>
 
                 <div></div>
 
             </div>
-
 
             <div class="timeline-item reveal">
 
                 <div></div>
 
                 <div class="timeline-dot">
+
                     <i class="fa-solid fa-person-running"></i>
-                </div>
 
+                </div>
 
                 <div class="timeline-content">
 
                     <div class="timeline-time">
+
                         01:30 PM
+
                     </div>
 
                     <h3>
+
                         Flight Session
+
                     </h3>
 
                     <p>
+
                         Observe controlled flight exercises
+
                         under trained supervision.
+
                     </p>
 
                 </div>
 
             </div>
 
-
             <div class="timeline-item reveal">
 
                 <div class="timeline-content">
 
                     <div class="timeline-time">
+
                         03:00 PM
+
                     </div>
 
                     <h3>
+
                         Conservation Walk
+
                     </h3>
 
                     <p>
+
                         Explore habitat and discuss the
+
                         role of raptors in ecosystems.
+
                     </p>
 
                 </div>
 
-
                 <div class="timeline-dot">
-                    <i class="fa-solid fa-tree"></i>
-                </div>
 
+                    <i class="fa-solid fa-tree"></i>
+
+                </div>
 
                 <div></div>
 
             </div>
-
 
             <div class="timeline-item reveal">
 
                 <div></div>
 
                 <div class="timeline-dot">
-                    <i class="fa-solid fa-book-open"></i>
-                </div>
 
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
 
                 <div class="timeline-content">
 
                     <div class="timeline-time">
+
                         04:00 PM
+
                     </div>
 
                     <h3>
+
                         Reflection & Questions
+
                     </h3>
 
                     <p>
+
                         Review the day and discuss what
+
                         students discovered.
+
                     </p>
 
                 </div>
@@ -8890,13 +9966,14 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      SPECIES
+
 ========================================================= -->
 
 <section class="species-section"
+
          id="birds">
 
     <div class="container">
@@ -8904,121 +9981,159 @@ html[dir="rtl"] .feature-list li::before {
         <div class="section-heading center reveal">
 
             <div class="">
+
                 Birds Of Prey
+
             </div>
 
             <h2 class="section-title">
+
                 Meet the world of Birds.
+
             </h2>
 
             <p class="section-description">
+
                 Example study species used to introduce students
+
                 to the diversity and adaptations of birds of prey.
+
             </p>
 
         </div>
 
-
         <div class="species-grid">
 
-
             <article class="species-card reveal">
 
                 <img
-                    src="https://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=1000&q=90"
+
+                    src="https\://images.unsplash.com/photo-1555169062-013468b47731?auto=format&fit=crop&w=1000&q=90"
+
                     alt="Falcon"
+
                     loading="lazy">
 
                 <div class="species-content">
 
                     <span>
+
                         Raptor Study
+
                     </span>
 
                     <h3>
+
                         Falcon
+
                     </h3>
 
                     <p>
+
                         Speed, precision and remarkable aerial control.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="species-card reveal">
 
                 <img
+
                     src="./imagess/woo.jpg"
+
                     alt="woodpeaker"
+
                     loading="lazy">
 
                 <div class="species-content">
 
                     <span>
+
                         Raptor Study
+
                     </span>
 
                     <h3>
+
                         Hawk
+
                     </h3>
 
                     <p>
+
                         Exceptional vision and adaptable hunting behaviour.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="species-card reveal">
 
                 <img
-                    src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1000&q=90"
+
+                    src="https\://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=1000&q=90"
+
                     alt="Owl"
+
                     loading="lazy">
 
                 <div class="species-content">
 
                     <span>
+
                         Nocturnal Study
+
                     </span>
 
                     <h3>
+
                         parrot
+
                     </h3>
 
                     <p>
+
                         Specialised hearing, silent flight and night vision.
+
                     </p>
 
                 </div>
 
             </article>
 
-
             <article class="species-card reveal">
 
                 <img
+
                     src="./imagess/eagles.jpg"
+
                     alt="Eagle and nature"
+
                     loading="lazy">
 
                 <div class="species-content">
 
                     <span>
+
                         Raptor Study
+
                     </span>
 
                     <h3>
+
                         Eagle
+
                     </h3>
 
                     <p>
+
                         Powerful flight and adaptations for open landscapes.
+
                     </p>
 
                 </div>
@@ -9031,10 +10146,10 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      STATS
+
 ========================================================= -->
 
 <section class="stats-section">
@@ -9043,54 +10158,66 @@ html[dir="rtl"] .feature-list li::before {
 
         <div class="stats-grid">
 
-
             <div class="stat-item">
 
                 <div class="stat-number">
+
                     06
+
                 </div>
 
                 <div class="stat-label">
+
                     Learning Modules
+
                 </div>
 
             </div>
 
-
             <div class="stat-item">
 
                 <div class="stat-number">
+
                     04
+
                 </div>
 
                 <div class="stat-label">
+
                     Core Skill Areas
+
                 </div>
 
             </div>
 
-
             <div class="stat-item">
 
                 <div class="stat-number">
+
                     100%
+
                 </div>
 
                 <div class="stat-label">
+
                     Welfare Focus
+
                 </div>
 
             </div>
 
-
             <div class="stat-item">
 
                 <div class="stat-number">
+
                     01
+
                 </div>
 
                 <div class="stat-label">
+
                     Falconry Journey
+
                 </div>
 
             </div>
@@ -9101,236 +10228,318 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      ENROLLMENT
+
 ========================================================= -->
 
 <section class="enrollment-section"
+
          id="enrollment">
 
     <div class="container">
 
         <div class="enrollment-grid">
 
-
             <div class="enrollment-info reveal">
 
                 <div class="section-eyebrow">
+
                     Join The School
+
                 </div>
 
                 <h2 class="section-title">
+
                     Begin your falconry learning journey.
+
                 </h2>
 
                 <p>
+
                     Tell us about the student, school group or
+
                     organisation interested in joining a Falconry
+
                     Bird School session.
+
                 </p>
 
                 <p>
-                    Our team can help recommend a suitable
-                    introductory program and learning level.
-                </p>
 
+                    Our team can help recommend a suitable
+
+                    introductory program and learning level.
+
+                </p>
 
                 <ul class="enrollment-list">
 
                     <li>
+
                         <i class="fa-solid fa-check"></i>
+
                         Beginner-friendly sessions
+
                     </li>
 
                     <li>
+
                         <i class="fa-solid fa-check"></i>
+
                         Supervised practical learning
+
                     </li>
 
                     <li>
+
                         <i class="fa-solid fa-check"></i>
+
                         Bird welfare and safety focus
+
                     </li>
 
                     <li>
+
                         <i class="fa-solid fa-check"></i>
+
                         School and group programs
+
                     </li>
 
                     <li>
+
                         <i class="fa-solid fa-check"></i>
+
                         Conservation education
+
                     </li>
 
                 </ul>
 
             </div>
 
-
             <form class="enrollment-form reveal"
+
                   id="enrollmentForm">
 
                 <div class="form-grid">
 
-
                     <div class="form-group">
 
                         <label for="studentName">
+
                             Student Name
+
                         </label>
 
                         <input
+
                             id="studentName"
+
                             class="form-control"
+
                             type="text"
+
                             placeholder="Enter student name"
+
                             required>
 
                     </div>
-
 
                     <div class="form-group">
 
                         <label for="schoolName">
+
                             School / Organisation
+
                         </label>
 
                         <input
+
                             id="schoolName"
+
                             class="form-control"
+
                             type="text"
+
                             placeholder="School or organisation">
 
                     </div>
 
-
                     <div class="form-group">
 
                         <label for="email">
+
                             Email
+
                         </label>
 
                         <input
+
                             id="email"
+
                             class="form-control"
+
                             type="email"
+
                             placeholder="you@example.com"
+
                             required>
 
                     </div>
-
 
                     <div class="form-group">
 
                         <label for="phone">
+
                             Phone
+
                         </label>
 
                         <input
+
                             id="phone"
+
                             class="form-control"
+
                             type="tel"
+
                             placeholder="+91">
 
                     </div>
 
-
                     <div class="form-group">
 
                         <label for="ageGroup">
+
                             Age Group
+
                         </label>
 
                         <select
+
                             id="ageGroup"
+
                             class="form-control"
+
                             required>
 
                             <option value="">
+
                                 Select age group
+
                             </option>
 
                             <option>
+
                                 Junior
+
                             </option>
 
                             <option>
+
                                 Teen
+
                             </option>
 
                             <option>
+
                                 Adult
+
                             </option>
 
                             <option>
+
                                 School Group
+
                             </option>
 
                         </select>
 
                     </div>
-
 
                     <div class="form-group">
 
                         <label for="program">
+
                             Program
+
                         </label>
 
                         <select
+
                             id="program"
+
                             class="form-control"
+
                             required>
 
                             <option value="">
+
                                 Select program
+
                             </option>
 
                             <option>
+
                                 Junior Falconers
+
                             </option>
 
                             <option>
+
                                 Falconry Fundamentals
+
                             </option>
 
                             <option>
+
                                 Raptor Handling
+
                             </option>
 
                             <option>
+
                                 Flight & Recall
+
                             </option>
 
                             <option>
+
                                 Conservation & Ethics
+
                             </option>
 
                         </select>
 
                     </div>
 
-
                     <div class="form-group full">
 
                         <label for="message">
+
                             Message
+
                         </label>
 
                         <textarea
+
                             id="message"
+
                             class="form-control"
+
                             placeholder="Tell us about your interests or group..."></textarea>
 
                     </div>
 
                 </div>
 
-
                 <button
+
                     type="submit"
+
                     class="btn btn-primary form-submit">
 
                     Request Enrollment
@@ -9347,10 +10556,10 @@ html[dir="rtl"] .feature-list li::before {
 
 </section>
 
-
-
 <!-- =========================================================
+
      CTA
+
 ========================================================= -->
 
 <section class="cta-section">
@@ -9360,16 +10569,23 @@ html[dir="rtl"] .feature-list li::before {
         <div class="cta-box reveal">
 
             <h2>
+
                 Discover the bond between bird and falconer.
+
             </h2>
 
             <p>
+
                 Explore responsible falconry, understand birds of prey
+
                 and begin a learning experience built around respect
+
                 for wildlife.
+
             </p>
 
             <a href="#enrollment"
+
                class="btn btn-primary">
 
                 Start Your Journey
@@ -9386,218 +10602,284 @@ html[dir="rtl"] .feature-list li::before {
 
 </main>
 
-
-
   <!-- =====================================================
+
        FOOTER
+
   ===================================================== -->
 
   <footer class="site-footer">
 
     <div class="container">
 
-
       <div class="footer-grid">
-
 
         <!-- BRAND -->
 
         <div class="footer-brand">
 
           <a
+
             href="index.html"
+
             class="logo"
+
             aria-label="Aviora Falconry Bird Center"
+
           >
 
             <span class="logo-mark">
 
               <img
+
                 src="./imagess/logo-02.png"
+
                 alt="Aviora Falconry Bird Center"
+
               >
 
             </span>
-
 
             <span class="logo-text">
 
               Avi<span>ora</span>
 
               <small>
+
                 Bird Sanctuary
+
               </small>
 
             </span>
 
           </a>
 
-
           <p class="footer-description">
 
             A place where people, birds, and nature
+
             come together. Discover, learn, explore,
+
             and help protect the wild world around us.
 
           </p>
 
-
           <div class="footer-socials">
 
             <a href="#" aria-label="Facebook">
+
               <i
+
                 class="fa-brands fa-facebook-f"
+
               ></i>
+
             </a>
 
             <a href="#" aria-label="Instagram">
+
               <i
+
                 class="fa-brands fa-instagram"
+
               ></i>
+
             </a>
 
             <a href="#" aria-label="YouTube">
+
               <i
+
                 class="fa-brands fa-youtube"
+
               ></i>
+
             </a>
 
             <a href="#" aria-label="X">
+
               <i
+
                 class="fa-brands fa-x-twitter"
+
               ></i>
+
             </a>
 
           </div>
 
         </div>
 
-
         <!-- EXPLORE -->
 
         <div class="footer-column">
 
           <h3>
-            Explore
-          </h3>
 
+            Explore
+
+          </h3>
 
           <ul class="footer-links">
 
             <li>
+
               <a href="index.html">
+
                 Home
+
               </a>
+
             </li>
 
             <li>
+
               <a href="about.html">
+
                 About Us
+
               </a>
+
             </li>
 
             <li>
+
               <a href="meetabird.html">
+
                 Resident Birds
+
               </a>
+
             </li>
 
             <li>
+
               <a href="experience.html">
+
                 Experience
+
               </a>
+
             </li>
 
             <li>
+
               <a href="contact.html">
+
                 Contact
+
               </a>
+
             </li>
 
           </ul>
 
         </div>
-
 
         <!-- SERVICES -->
 
         <div class="footer-column">
 
           <h3>
-            Services
-          </h3>
 
+            Services
+
+          </h3>
 
           <ul class="footer-links">
 
             <li>
+
               <a href="services.html">
+
                 Bird Watching
+
               </a>
+
             </li>
 
             <li>
+
               <a href="services.html">
+
                 Nature Education
+
               </a>
+
             </li>
 
             <li>
+
               <a href="services.html">
+
                 Photography Tours
+
               </a>
+
             </li>
 
             <li>
+
               <a href="services.html">
+
                 Conservation
+
               </a>
+
             </li>
 
             <li>
+
               <a href="services.html">
+
                 Guided Expeditions
+
               </a>
+
             </li>
 
           </ul>
 
         </div>
 
-
         <!-- CONTACT -->
 
         <div class="footer-column">
 
           <h3>
+
             Contact
+
           </h3>
 
-
           <div class="footer-contact">
-
 
             <div class="footer-contact-item">
 
               <i
+
                 class="fa-solid fa-location-dot"
+
               ></i>
 
               <span>
 
                 18 Forest Trail
+
                 <br>
+
                 Aviora Nature Reserve
 
               </span>
 
             </div>
 
-
             <div class="footer-contact-item">
 
               <i
+
                 class="fa-regular fa-envelope"
+
               ></i>
 
               <a href="mailto:hello@aviora.example">
@@ -9608,11 +10890,12 @@ html[dir="rtl"] .feature-list li::before {
 
             </div>
 
-
             <div class="footer-contact-item">
 
               <i
+
                 class="fa-solid fa-phone"
+
               ></i>
 
               <a href="tel:+18005550188">
@@ -9623,154 +10906,189 @@ html[dir="rtl"] .feature-list li::before {
 
             </div>
 
-
             <div class="footer-contact-item">
 
               <i
+
                 class="fa-regular fa-clock"
+
               ></i>
 
               <span>
 
                 Mon – Sun,
+
                 8:00 AM – 6:00 PM
 
               </span>
 
             </div>
 
-
           </div>
 
         </div>
 
-
       </div>
 
-
       <div class="footer-divider"></div>
-
 
       <div class="footer-bottom">
 
         <p>
 
           ©
+
           <span id="currentYear">
+
             2026
+
           </span>
 
           Aviora Bird Sanctuary.
+
           All rights reserved.
 
         </p>
 
-
         <div class="footer-bottom-links">
 
           <a href="#">
+
             Privacy Policy
+
           </a>
 
           <a href="#">
+
             Terms of Use
+
           </a>
 
         </div>
 
       </div>
 
-
     </div>
 
   </footer>
 
-
   <!-- =====================================================
+
        LOGIN MODAL
+
   ===================================================== -->
 
   <div
+
     class="modal-backdrop"
+
     id="loginModal"
+
     role="dialog"
+
     aria-modal="true"
+
     aria-labelledby="loginTitle"
+
   >
 
     <div class="modal">
-
 
       <div class="modal-header">
 
         <div>
 
           <h2 id="loginTitle">
+
             Welcome back
+
           </h2>
 
           <p>
+
             Sign in to your Aviora account.
+
           </p>
 
         </div>
 
-
         <button
+
           class="modal-close"
+
           id="loginClose"
+
           type="button"
+
           aria-label="Close login"
+
         >
 
           <i
+
             class="fa-solid fa-xmark"
+
           ></i>
 
         </button>
 
       </div>
 
-
       <form
-        class="login-form"
-        id="loginForm"
-      >
 
+        class="login-form"
+
+        id="loginForm"
+
+      >
 
         <div class="form-group">
 
           <label for="loginEmail">
+
             Email
+
           </label>
 
           <input
+
             type="email"
+
             id="loginEmail"
+
             class="form-control"
+
             placeholder="you@example.com"
+
             required
+
           >
 
         </div>
-
 
         <div class="form-group">
 
           <label for="loginPassword">
+
             Password
+
           </label>
 
           <input
+
             type="password"
+
             id="loginPassword"
+
             class="form-control"
+
             placeholder="Enter your password"
+
             required
+
           >
 
         </div>
-
 
         <div class="login-options">
 
@@ -9779,35 +11097,44 @@ html[dir="rtl"] .feature-list li::before {
             <input type="checkbox">
 
             <span>
+
               Remember me
+
             </span>
 
           </label>
 
-
           <a
+
             href="#"
+
             class="forgot-link"
+
           >
+
             Forgot password?
+
           </a>
 
         </div>
 
-
         <button
+
           class="btn btn-primary"
+
           type="submit"
+
         >
 
           Sign In
 
           <i
+
             class="fa-solid fa-arrow-right"
+
           ></i>
 
         </button>
-
 
       </form>
 
@@ -9815,447 +11142,570 @@ html[dir="rtl"] .feature-list li::before {
 
   </div>
 
-
   <!-- =====================================================
+
        TOAST
+
   ===================================================== -->
 
   <div
+
     class="toast"
+
     id="toast"
+
     role="status"
+
     aria-live="polite"
+
   >
 
     <i
+
       class="fa-solid fa-circle-check"
+
     ></i>
 
     <span id="toastMessage">
+
       Done.
+
     </span>
 
   </div>
 
-
   <!-- =====================================================
+
        JAVASCRIPT
+
   ===================================================== -->
 
   <script>
 
     document.addEventListener(
+
       "DOMContentLoaded",
+
       () => {
 
-
         const html =
+
           document.documentElement;
 
-
         const $ =
+
           (id) =>
+
             document.getElementById(id);
 
-
         const themeToggle =
+
           $("themeToggle");
 
-
         const rtlToggle =
-          $("rtlToggle");
 
+          $("directionToggle");
 
         const mobileMenuBtn =
+
           $("mobileMenuBtn");
 
-
         const mainNav =
+
           $("mainNav");
 
-
         const loginOpen =
+
           $("loginOpen");
 
-
         const loginClose =
+
           $("loginClose");
 
-
         const loginModal =
+
           $("loginModal");
 
-
         const loginForm =
+
           $("loginForm");
 
-
         const toast =
+
           $("toast");
 
-
         const toastMessage =
+
           $("toastMessage");
 
-
         const currentYear =
+
           $("currentYear");
 
-
         /* =================================================
+
            YEAR
+
         ================================================= */
 
         if (currentYear) {
 
           currentYear.textContent =
+
             new Date().getFullYear();
 
         }
 
-
         /* =================================================
+
            TOAST
+
         ================================================= */
 
         let toastTimer;
 
-
         function showToast(message) {
 
           if (!toast || !toastMessage) {
+
             return;
+
           }
 
-
           toastMessage.textContent =
+
             message;
 
-
           toast.classList.add(
-            "active"
-          );
 
+            "active"
+
+          );
 
           clearTimeout(
+
             toastTimer
+
           );
 
-
           toastTimer =
+
             setTimeout(
+
               () => {
 
                 toast.classList.remove(
+
                   "active"
+
                 );
 
               },
+
               3000
+
             );
 
         }
 
-
         /* =================================================
+
            THEME
+
         ================================================= */
 
         function applyTheme(theme) {
 
           const selectedTheme =
+
             theme === "dark"
+
               ? "dark"
+
               : "light";
 
-
           html.setAttribute(
-            "data-theme",
-            selectedTheme
-          );
 
+            "data-theme",
+
+            selectedTheme
+
+          );
 
           localStorage.setItem(
-            "aviora-theme",
-            selectedTheme
-          );
 
+            "aviora-theme",
+
+            selectedTheme
+
+          );
 
           if (themeToggle) {
 
             const icon =
-              themeToggle.querySelector(
-                "i"
-              );
 
+              themeToggle.querySelector(
+
+                "i"
+
+              );
 
             if (icon) {
 
               icon.className =
+
                 selectedTheme === "dark"
+
                   ? "fa-solid fa-sun"
+
                   : "fa-solid fa-moon";
 
             }
 
-
             themeToggle.setAttribute(
+
               "aria-label",
+
               selectedTheme === "dark"
+
                 ? "Switch to light mode"
+
                 : "Switch to dark mode"
+
             );
 
           }
 
         }
 
-
         applyTheme(
-          localStorage.getItem(
-            "aviora-theme"
-          ) || "light"
-        );
 
+          localStorage.getItem(
+
+            "aviora-theme"
+
+          ) || "light"
+
+        );
 
         if (themeToggle) {
 
           themeToggle.addEventListener(
+
             "click",
+
             () => {
 
               const currentTheme =
+
                 html.getAttribute(
+
                   "data-theme"
+
                 ) === "dark"
+
                   ? "dark"
+
                   : "light";
 
-
               applyTheme(
+
                 currentTheme === "dark"
+
                   ? "light"
+
                   : "dark"
+
               );
 
             }
+
           );
 
         }
 
-
         /* =================================================
+
            RTL
+
         ================================================= */
 
         function applyDirection(direction) {
 
           const selectedDirection =
+
             direction === "rtl"
+
               ? "rtl"
+
               : "ltr";
 
-
           html.setAttribute(
+
             "dir",
-            selectedDirection
-          );
 
+            selectedDirection
+
+          );
 
           html.setAttribute(
-            "lang",
-            selectedDirection === "rtl"
-              ? "ar"
-              : "en"
-          );
 
+            "lang",
+
+            selectedDirection === "rtl"
+
+              ? "ar"
+
+              : "en"
+
+          );
 
           localStorage.setItem(
+
             "aviora-direction",
+
             selectedDirection
+
           );
 
         }
 
-
         applyDirection(
-          localStorage.getItem(
-            "aviora-direction"
-          ) || "ltr"
-        );
 
+          localStorage.getItem(
+
+            "aviora-direction"
+
+          ) || "ltr"
+
+        );
 
         if (rtlToggle) {
 
           rtlToggle.addEventListener(
+
             "click",
+
             () => {
 
               const currentDirection =
+
                 html.getAttribute("dir")
+
                 || "ltr";
 
-
               applyDirection(
+
                 currentDirection === "rtl"
+
                   ? "ltr"
+
                   : "rtl"
+
               );
 
-
               showToast(
+
                 currentDirection === "rtl"
+
                   ? "LTR mode enabled."
+
                   : "RTL mode enabled."
+
               );
 
             }
+
           );
 
         }
 
-
         /* =================================================
+
            MOBILE MENU
+
         ================================================= */
 
         function closeMobileMenu() {
 
           if (!mainNav) {
+
             return;
+
           }
 
-
           mainNav.classList.remove(
-            "mobile-open"
-          );
 
+            "mobile-open"
+
+          );
 
           if (mobileMenuBtn) {
 
             mobileMenuBtn.setAttribute(
-              "aria-expanded",
-              "false"
-            );
 
+              "aria-expanded",
+
+              "false"
+
+            );
 
             mobileMenuBtn.setAttribute(
+
               "aria-label",
+
               "Open menu"
+
             );
 
-
             const icon =
-              mobileMenuBtn.querySelector(
-                "i"
-              );
 
+              mobileMenuBtn.querySelector(
+
+                "i"
+
+              );
 
             if (icon) {
 
               icon.className =
+
                 "fa-solid fa-bars";
 
             }
 
           }
 
-
           document.body.classList.remove(
+
             "menu-open"
+
           );
 
         }
 
-
         if (
+
           mobileMenuBtn &&
+
           mainNav
+
         ) {
 
           mobileMenuBtn.addEventListener(
+
             "click",
+
             () => {
 
               const isOpen =
+
                 mainNav.classList.toggle(
+
                   "mobile-open"
+
                 );
 
-
               mobileMenuBtn.setAttribute(
+
                 "aria-expanded",
-                String(isOpen)
-              );
 
+                String(isOpen)
+
+              );
 
               mobileMenuBtn.setAttribute(
-                "aria-label",
-                isOpen
-                  ? "Close menu"
-                  : "Open menu"
-              );
 
+                "aria-label",
+
+                isOpen
+
+                  ? "Close menu"
+
+                  : "Open menu"
+
+              );
 
               const icon =
-                mobileMenuBtn.querySelector(
-                  "i"
-                );
 
+                mobileMenuBtn.querySelector(
+
+                  "i"
+
+                );
 
               if (icon) {
 
                 icon.className =
+
                   isOpen
+
                     ? "fa-solid fa-xmark"
+
                     : "fa-solid fa-bars";
 
               }
 
-
               document.body.classList.toggle(
+
                 "menu-open",
+
                 isOpen
+
               );
 
             }
+
           );
 
         }
 
-
         /* =================================================
+
            MOBILE DROPDOWN
+
         ================================================= */
 
         document
+
           .querySelectorAll(
+
             ".dropdown-toggle"
+
           )
+
           .forEach(
+
             (toggle) => {
 
               toggle.addEventListener(
+
                 "click",
+
                 (event) => {
 
                   if (
+
                     window.innerWidth <= 900
+
                   ) {
 
                     event.preventDefault();
 
-
                     const dropdown =
-                      toggle.closest(
-                        ".dropdown"
-                      );
 
+                      toggle.closest(
+
+                        ".dropdown"
+
+                      );
 
                     if (dropdown) {
 
                       dropdown.classList.toggle(
+
                         "open"
+
                       );
 
                     }
@@ -10263,29 +11713,41 @@ html[dir="rtl"] .feature-list li::before {
                   }
 
                 }
+
               );
 
             }
+
           );
 
-
         /* =================================================
+
            CLOSE MENU AFTER LINK
+
         ================================================= */
 
         document
+
           .querySelectorAll(
+
             ".main-nav a"
+
           )
+
           .forEach(
+
             (link) => {
 
               link.addEventListener(
+
                 "click",
+
                 () => {
 
                   if (
+
                     window.innerWidth <= 900
+
                   ) {
 
                     closeMobileMenu();
@@ -10293,97 +11755,117 @@ html[dir="rtl"] .feature-list li::before {
                   }
 
                 }
+
               );
 
             }
+
           );
 
-
         /* =================================================
+
            LOGIN MODAL
+
         ================================================= */
 
         function openLogin() {
 
           if (!loginModal) {
+
             return;
+
           }
 
-
           loginModal.classList.add(
+
             "active"
+
           );
 
-
           document.body.style.overflow =
+
             "hidden";
 
-
           setTimeout(
+
             () => {
 
               const email =
+
                 $("loginEmail");
 
-
               if (email) {
+
                 email.focus();
+
               }
 
             },
+
             150
+
           );
 
         }
-
 
         function closeLogin() {
 
           if (!loginModal) {
+
             return;
+
           }
 
-
           loginModal.classList.remove(
+
             "active"
+
           );
 
-
           document.body.style.overflow =
+
             "";
 
         }
 
-
         if (loginOpen) {
 
           loginOpen.addEventListener(
+
             "click",
+
             openLogin
+
           );
 
         }
-
 
         if (loginClose) {
 
           loginClose.addEventListener(
+
             "click",
+
             closeLogin
+
           );
 
         }
 
-
         if (loginModal) {
 
           loginModal.addEventListener(
+
             "click",
+
             (event) => {
 
               if (
+
                 event.target ===
+
                 loginModal
+
               ) {
 
                 closeLogin();
@@ -10391,107 +11873,125 @@ html[dir="rtl"] .feature-list li::before {
               }
 
             }
+
           );
 
         }
 
-
         /* =================================================
+
            LOGIN FORM
+
         ================================================= */
 
         if (loginForm) {
 
           loginForm.addEventListener(
+
             "submit",
+
             (event) => {
 
               event.preventDefault();
 
-
               const submitButton =
-                loginForm.querySelector(
-                  'button[type="submit"]'
-                );
 
+                loginForm.querySelector(
+
+                  'button[type="submit"]'
+
+                );
 
               if (submitButton) {
 
                 submitButton.disabled =
+
                   true;
 
-
                 const icon =
-                  submitButton.querySelector(
-                    "i"
-                  );
 
+                  submitButton.querySelector(
+
+                    "i"
+
+                  );
 
                 if (icon) {
 
                   icon.className =
+
                     "fa-solid fa-spinner fa-spin";
 
                 }
 
               }
 
-
               setTimeout(
+
                 () => {
 
                   if (submitButton) {
 
                     submitButton.disabled =
+
                       false;
 
-
                     const icon =
-                      submitButton.querySelector(
-                        "i"
-                      );
 
+                      submitButton.querySelector(
+
+                        "i"
+
+                      );
 
                     if (icon) {
 
                       icon.className =
+
                         "fa-solid fa-arrow-right";
 
                     }
 
                   }
 
-
                   closeLogin();
-
 
                   loginForm.reset();
 
-
                   showToast(
+
                     "Demo sign-in completed successfully."
+
                   );
 
                 },
+
                 900
+
               );
 
             }
+
           );
 
         }
 
-
         /* =================================================
+
            ESCAPE
+
         ================================================= */
 
         document.addEventListener(
+
           "keydown",
+
           (event) => {
 
             if (
+
               event.key === "Escape"
+
             ) {
 
               closeLogin();
@@ -10501,19 +12001,25 @@ html[dir="rtl"] .feature-list li::before {
             }
 
           }
+
         );
 
-
         /* =================================================
+
            RESIZE
+
         ================================================= */
 
         window.addEventListener(
+
           "resize",
+
           () => {
 
             if (
+
               window.innerWidth > 900
+
             ) {
 
               closeMobileMenu();
@@ -10521,182 +12027,194 @@ html[dir="rtl"] .feature-list li::before {
             }
 
           }
+
         );
 
-
         /* =================================================
+
            SMOOTH SCROLL
+
         ================================================= */
 
         document
+
           .querySelectorAll(
+
             'a[href^="#"]'
+
           )
+
           .forEach(
+
             (link) => {
 
               link.addEventListener(
+
                 "click",
+
                 (event) => {
 
                   const targetId =
+
                     link.getAttribute(
+
                       "href"
+
                     );
 
-
                   if (
+
                     !targetId ||
+
                     targetId === "#"
+
                   ) {
 
                     return;
 
                   }
 
-
                   const target =
-                    document.querySelector(
-                      targetId
-                    );
 
+                    document.querySelector(
+
+                      targetId
+
+                    );
 
                   if (target) {
 
                     event.preventDefault();
 
-
                     target.scrollIntoView({
+
                       behavior: "smooth",
+
                       block: "start"
+
                     });
 
                   }
 
                 }
+
               );
 
             }
+
           );
 
-
         /* =================================================
+
            SCROLL REVEAL
+
         ================================================= */
 
         const revealElements =
+
           document.querySelectorAll(
+
             ".reveal"
+
           );
 
-
         if (
+
           "IntersectionObserver"
+
           in window
+
         ) {
 
           const observer =
+
             new IntersectionObserver(
+
               (
+
                 entries,
+
                 observerInstance
+
               ) => {
 
                 entries.forEach(
+
                   (entry) => {
 
                     if (
+
                       entry.isIntersecting
+
                     ) {
 
                       entry.target.classList.add(
+
                         "visible"
+
                       );
 
-
                       observerInstance.unobserve(
+
                         entry.target
+
                       );
 
                     }
 
                   }
+
                 );
 
               },
+
               {
+
                 threshold: .12
+
               }
+
             );
 
-
           revealElements.forEach(
+
             (element) => {
 
               observer.observe(
+
                 element
+
               );
 
             }
+
           );
 
         } else {
 
           revealElements.forEach(
+
             (element) => {
 
               element.classList.add(
+
                 "visible"
+
               );
 
             }
+
           );
 
         }
 
       }
+
     );
-    const directionToggle = document.getElementById("directionToggle");
 
-directionToggle.addEventListener("click", function () {
-    const html = document.documentElement;
-
-    if (html.getAttribute("dir") === "rtl") {
-        html.setAttribute("dir", "ltr");
-        directionToggle.setAttribute("title", "Switch to RTL");
-        directionToggle.setAttribute(
-            "aria-label",
-            "Switch to right-to-left direction"
-        );
-    } else {
-        html.setAttribute("dir", "rtl");
-        directionToggle.setAttribute("title", "Switch to LTR");
-        directionToggle.setAttribute(
-            "aria-label",
-            "Switch to left-to-right direction"
-        );
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-links");
- 
-  if (!hamburger || !navMenu) {
-    console.error("Hamburger or navigation menu not found");
-    return;
-  }
- 
-  hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
-});
-  
 
   </script>
 
-  
-
 </body>
+
 </html>
