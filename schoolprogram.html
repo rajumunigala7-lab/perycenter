@@ -7779,6 +7779,39 @@ html[dir="rtl"] .feature-list li::before {
         padding-right: 27px;
     }
 }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .main-nav .nav-link,
+  .main-nav .dropdown {
+    width: 100%;
+  }
+
+  .main-nav .nav-link {
+    display: block;
+    padding: 12px 15px;
+  }
+}
 
 
 /* =========================================================
@@ -7802,6 +7835,54 @@ html[dir="rtl"] .feature-list li::before {
     .timeline-item:hover {
         transform: none;
     }
+}
+
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
+
+@media (max-width: 900px) {
+
+  /* Show hamburger button */
+  .mobile-menu-btn {
+    display: grid !important;
+  }
+
+  /* Hide navigation initially */
+  .main-nav {
+    display: none;
+  }
+
+  /* Show navigation when opened */
+  .main-nav.active {
+    display: flex;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+
+    padding: 15px;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-small);
+
+    z-index: 999;
+  }
+
+  .main-nav .nav-link,
+  .main-nav .dropdown-toggle {
+    width: 100%;
+    padding: 13px 15px;
+  }
+
+  .main-nav .dropdown {
+    width: 100%;
+  }
 }
 
 
@@ -7950,6 +8031,8 @@ html[dir="rtl"] .feature-list li::before {
         >
           <i class="fa-solid fa-bars"></i>
         </button>
+
+        
 
       </div>
     </div>
@@ -10595,19 +10678,25 @@ directionToggle.addEventListener("click", function () {
     }
 });
 
-  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-  const mainNav = document.getElementById("mainNav");
-
-  mobileMenuBtn.addEventListener("click", () => {
-    const isOpen = mobileMenuBtn.getAttribute("aria-expanded") === "true";
-
-    mobileMenuBtn.setAttribute("aria-expanded", String(!isOpen));
-    mainNav.classList.toggle("active", !isOpen);
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-links");
+ 
+  if (!hamburger || !navMenu) {
+    console.error("Hamburger or navigation menu not found");
+    return;
+  }
+ 
+  hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
   });
-
+});
   
 
   </script>
+
+  
 
 </body>
 </html>
