@@ -12,6 +12,7 @@
     content="Discover the story, team, values, conservation mission, and visitor experiences behind Aviora Bird Sanctuary."
   >
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/png" href="./imagess/logo-02.png">
@@ -20,6 +21,7 @@
     rel="stylesheet"
   >
 
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -28,7 +30,10 @@
    <link rel="stylesheet" href="nav.css">
   <style>
 
-  
+    /* =====================================================
+       ROOT / THEME
+    ===================================================== */
+
     :root {
       --primary: #1d5b49;
       --primary-dark: #123c31;
@@ -89,6 +94,11 @@
       --shadow-small:
         0 8px 30px rgba(0,0,0,0.22);
     }
+
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
 
     *,
     *::before,
@@ -172,6 +182,11 @@
       font-family: "Playfair Display", serif;
       line-height: 1.15;
     }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .site-header {
       position: fixed;
@@ -467,7 +482,7 @@
 
 
     .login-btn:hover {
-      background: var(--accent);
+      background: var(--primary);
 
       transform: translateY(-2px);
     }
@@ -559,6 +574,13 @@
       transform: translateY(-3px);
     }
     
+
+
+
+
+    /* =========================================================
+       HERO — HOMEPAGE 2
+    ========================================================= */
 
     .hero {
       min-height: 900px;
@@ -666,7 +688,7 @@
     }
 
     .btn-primary:hover {
-      background: var(--accent);
+      background: var(--primary);
       transform: translateY(-3px);
       box-shadow: 0 12px 30px rgba(213,168,75,.25);
     }
@@ -684,6 +706,7 @@
       transform: translateY(-3px);
     }
 
+    /* Homepage 2 floating information card */
 
     .hero-card {
       position: absolute;
@@ -789,7 +812,10 @@
       color: rgba(255,255,255,.7);
     }
 
-   
+    /* =========================================================
+       INTRO
+    ========================================================= */
+
     .intro {
       padding: 130px 0;
     }
@@ -857,6 +883,9 @@
       margin-top: 5px;
     }
 
+    /* =========================================================
+       STATS
+    ========================================================= */
 
     .stats {
       padding: 30px 0 110px;
@@ -895,6 +924,9 @@
       font-size: 14px;
     }
 
+    /* =========================================================
+       BIRDS
+    ========================================================= */
 
     .birds {
       padding: 120px 0;
@@ -997,7 +1029,10 @@
       font-size: 14px;
     }
 
-   
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
     .services {
       padding: 130px 0;
     }
@@ -1044,7 +1079,10 @@
       font-size: 14px;
     }
 
-   
+    /* =========================================================
+       EXPERIENCE
+    ========================================================= */
+
     .experience {
       padding: 120px 0;
       background:

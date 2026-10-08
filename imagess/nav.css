@@ -1,0 +1,50 @@
+
+/* ===== GLOBAL NAV ACTIVE LINE ===== */
+
+.main-nav > .nav-link,
+.main-nav .dropdown-toggle {
+    position: relative;
+}
+
+/* Underline */
+.main-nav > .nav-link::after,
+.main-nav .dropdown-toggle::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--primary, #ce5580);
+    border-radius: 10px;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+/* Hover and Active */
+.main-nav > .nav-link:hover::after,
+.main-nav > .nav-link.active::after,
+.main-nav .dropdown-toggle:hover::after,
+.main-nav .dropdown-toggle.active::after {
+    width: 70%;
+}
+
+/* Active link color */
+.main-nav > .nav-link.active,
+.main-nav .dropdown-toggle.active {
+    color: var(--primary, #ce5580);
+}
+
+/* Mobile */
+@media (max-width: 1100px) {
+    .main-nav > .nav-link::after,
+    .main-nav .dropdown-toggle::after {
+        display: none;
+    }
+
+    .main-nav > .nav-link.active,
+    .main-nav .dropdown-toggle.active {
+        color: var(--primary, #ce5580);
+        font-weight: 600;
+    }
+}

@@ -1,34 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Home2 | Aviora Bird Sanctuary</title>
+  <title>index |Aviora Bird Sanctuary </title>
 
   <meta
     name="description"
     content="Discover the story, team, values, conservation mission, and visitor experiences behind Aviora Bird Sanctuary."
   >
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link rel="icon" type="image/png" href="./imagess/logo-02.png">
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
-
-   <link rel="stylesheet" href="nav.css">
+ <link rel="stylesheet" href="nav.css">
   <style>
 
-  
+    /* =====================================================
+       ROOT / THEME
+    ===================================================== */
+
     :root {
       --primary: #1d5b49;
       --primary-dark: #123c31;
@@ -89,6 +93,11 @@
       --shadow-small:
         0 8px 30px rgba(0,0,0,0.22);
     }
+
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
 
     *,
     *::before,
@@ -172,6 +181,11 @@
       font-family: "Playfair Display", serif;
       line-height: 1.15;
     }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .site-header {
       position: fixed;
@@ -467,7 +481,7 @@
 
 
     .login-btn:hover {
-      background: var(--accent);
+      background: var(--primary);
 
       transform: translateY(-2px);
     }
@@ -560,25 +574,23 @@
     }
     
 
+
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      min-height: 900px;
-      padding-top: 82px;
       position: relative;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(7, 27, 22, 0.96) 0%,
-          rgba(7, 27, 22, 0.82) 38%,
-          rgba(7, 27, 22, 0.34) 70%,
-          rgba(7, 27, 22, 0.12) 100%
-        ),
-        url("./imagess/hornible.jpg")
-        center / cover no-repeat;
-
+      min-height: 790px;
+      padding: 150px 0 90px;
       display: flex;
       align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(213,168,75,.14), transparent 28%),
+        radial-gradient(circle at 10% 85%, rgba(29,91,73,.12), transparent 30%),
+        var(--bg);
     }
 
     .hero::before {
@@ -586,370 +598,499 @@
       position: absolute;
       width: 520px;
       height: 520px;
+      right: -220px;
+      top: 90px;
+      border: 1px solid rgba(213,168,75,.18);
       border-radius: 50%;
-      background: rgba(213,168,75,.08);
-      top: -220px;
-      inset-inline-end: -120px;
-      filter: blur(10px);
-      pointer-events: none;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto 0 0;
-      height: 180px;
-      background: linear-gradient(
-        transparent,
-        var(--bg)
-      );
-      pointer-events: none;
+      width: 700px;
+      height: 700px;
+      right: -310px;
+      top: 0;
+      border: 1px solid rgba(29,91,73,.08);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 70px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 3;
-      color: white;
-      padding: 95px 0 170px;
-      max-width: 760px;
+      max-width: 650px;
     }
 
-    .hero .eyebrow {
-      color: var(--accent-light);
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 20px;
     }
 
     .hero h1 {
-      font-size: clamp(52px, 7vw, 96px);
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-      max-width: 800px;
+      max-width: 690px;
+      margin-bottom: 22px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -2px;
+      font-weight: 600;
     }
 
-    h1 span {
-  display: block;
-  color: #d88b4a; /* Come Alive */
-  font-weight: 400;
- 
-  letter-spacing: -0.03em;
-}
+    .hero h1 span {
+      color: var(--accent);
+    }
 
     .hero-description {
-      max-width: 610px;
-      font-size: 18px;
+      max-width: 570px;
+      margin-bottom: 32px;
+      color: var(--text-soft);
+      font-size: 16px;
       line-height: 1.85;
-      color: rgba(255,255,255,.82);
-      margin-bottom: 34px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #201b0e;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(213,168,75,.25);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.35);
-      background: rgba(255,255,255,.08);
-      color: white;
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #14241f;
-      transform: translateY(-3px);
-    }
-
-
-    .hero-card {
-      position: absolute;
-      z-index: 5;
-      inset-inline-end: max(30px, calc((100vw - var(--container)) / 2));
-      top: 50%;
-      transform: translateY(-50%);
-      width: 285px;
-      padding: 25px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.24);
-      backdrop-filter: blur(18px);
-      color: white;
-      box-shadow: 0 25px 60px rgba(0,0,0,.18);
-    }
-
-    .hero-card-image {
-      height: 145px;
-      border-radius: 17px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
-    .hero-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-card small {
-      display: block;
-      color: var(--accent-light);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 10px;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
-
-    .hero-card h3 {
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
-
-    .hero-card p {
-      color: rgba(255,255,255,.72);
-      font-size: 12px;
-      line-height: 1.65;
-      margin-bottom: 17px;
-    }
-
-    .hero-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .hero-card-link i {
-      transition: var(--transition);
-    }
-
-    .hero-card-link:hover i {
-      transform: translateX(4px);
-    }
-
-    [dir="rtl"] .hero-card-link:hover i {
-      transform: translateX(-4px);
-    }
-
-    .hero-facts {
-      position: absolute;
-      z-index: 4;
-      bottom: 65px;
-      inset-inline-start: max(20px, calc((100vw - var(--container)) / 2));
-      display: flex;
-      gap: 34px;
-      color: white;
-    }
-
-    .hero-fact {
-      display: flex;
-      align-items: center;
       gap: 12px;
     }
 
-    .hero-fact i {
-      color: var(--accent-light);
-      font-size: 24px;
-    }
-
-    .hero-fact strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-    }
-
-    .hero-fact span {
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 30px;
+      color: var(--text-soft);
       font-size: 12px;
-      color: rgba(255,255,255,.7);
     }
 
-   
-    .intro {
-      padding: 130px 0;
+    .hero-note i {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(213,168,75,.13);
+      color: var(--accent);
     }
+
+    .hero-visual {
+      position: relative;
+      min-height: 570px;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 15px 0 0 45px;
+      overflow: hidden;
+      border-radius: 34px;
+      background:
+        linear-gradient(135deg, rgba(29,91,73,.88), rgba(18,60,49,.98));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .86;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(9,28,22,.7) 100%);
+    }
+
+    .hero-image-fallback {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.2);
+      font-size: 110px;
+    }
+
+    .hero-image img[src=""] {
+      display: none;
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: 0;
+      bottom: 55px;
+      z-index: 3;
+      width: 180px;
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-small);
+    }
+
+    .hero-badge strong {
+      display: block;
+      color: var(--primary);
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .hero-badge span {
+      display: block;
+      margin-top: 7px;
+      color: var(--text-soft);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .hero-floating {
+      position: absolute;
+      top: 0;
+      right: -10px;
+      z-index: 4;
+      width: 125px;
+      height: 125px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #201b0e;
+      box-shadow: 0 18px 45px rgba(213,168,75,.25);
+      text-align: center;
+    }
+
+    .hero-floating i {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 26px;
+    }
+
+    .hero-floating span {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-soft {
+      background: var(--bg-soft);
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 55px;
+    }
+
+    .section-header.center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .section-header.center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-title {
+      margin-bottom: 16px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 4vw, 54px);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      color: var(--text-soft);
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
 
     .intro-grid {
       display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 80px;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 75px;
       align-items: center;
     }
 
     .intro-image {
       position: relative;
+      min-height: 500px;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      box-shadow: var(--shadow);
     }
 
     .intro-image img {
-      height: 570px;
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
       object-fit: cover;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
     }
 
-    .experience-badge {
+    .intro-image-fallback {
       position: absolute;
-      bottom: 35px;
-      inset-inline-end: -25px;
-      width: 190px;
-      padding: 24px;
-      border-radius: 20px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.18);
+      font-size: 100px;
     }
 
-    .experience-badge strong {
+    .intro-card {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+      max-width: 245px;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.94);
+      color: #17231f;
+      box-shadow: 0 18px 45px rgba(0,0,0,.16);
+    }
+
+    .intro-card strong {
       display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
+      margin-bottom: 5px;
       color: var(--primary);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
     }
 
-    .experience-badge span {
-      font-size: 13px;
+    .intro-card span {
+      color: #65706b;
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .intro-content .section-title {
+      max-width: 600px;
+    }
+
+    .intro-content p {
+      margin-bottom: 18px;
       color: var(--text-soft);
-    }
-
-    .intro-content .section-description {
-      margin-bottom: 30px;
+      font-size: 15px;
+      line-height: 1.9;
     }
 
     .check-list {
       display: grid;
-      gap: 15px;
-      margin: 28px 0;
+      gap: 13px;
+      margin: 27px 0 30px;
     }
 
     .check-list li {
       display: flex;
-      gap: 12px;
       align-items: flex-start;
+      gap: 11px;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .check-list i {
-      color: var(--accent);
-      margin-top: 5px;
+      width: 23px;
+      height: 23px;
+      flex: 0 0 23px;
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+      border-radius: 50%;
+      background: rgba(63,138,112,.12);
+      color: var(--primary-light);
+      font-size: 10px;
     }
 
+    /* =========================
+       STATS
+    ========================= */
 
     .stats {
-      padding: 30px 0 110px;
+      padding: 0 0 105px;
     }
 
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .stat-card {
+      padding: 30px 25px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      overflow: hidden;
       background: var(--surface);
+      text-align: center;
+      box-shadow: var(--shadow-small);
+      transition: var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(213,168,75,.4);
+    }
+
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 15px;
+      border-radius: 15px;
+      background: rgba(213,168,75,.12);
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--primary);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .stat-card span {
+      color: var(--text-soft);
+      font-size: 12px;
+    }
+
+    /* =========================
+       EXPERIENCES
+    ========================= */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .experience-card {
+      position: relative;
+      min-height: 350px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--primary-dark);
       box-shadow: var(--shadow-small);
     }
 
-    .stat {
-      padding: 38px 28px;
-      text-align: center;
-      border-inline-end: 1px solid var(--border);
+    .experience-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+      opacity: .75;
+      transition: transform .6s ease;
     }
 
-    .stat:last-child {
-      border-inline-end: 0;
+    .experience-card:hover img {
+      transform: scale(1.06);
     }
 
-    .stat strong {
-      display: block;
+    .experience-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 25%, rgba(8,28,22,.92) 100%);
+    }
+
+    .experience-content {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .experience-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border-radius: 13px;
+      background: var(--accent);
+      color: #201b0e;
+    }
+
+    .experience-content h3 {
+      margin-bottom: 7px;
       font-family: "Playfair Display", serif;
-      font-size: 44px;
-      color: var(--primary);
-      margin-bottom: 5px;
+      font-size: 25px;
     }
 
-    .stat span {
-      color: var(--text-soft);
-      font-size: 14px;
+    .experience-content p {
+      color: rgba(255,255,255,.75);
+      font-size: 12px;
+      line-height: 1.7;
     }
 
-
-    .birds {
-      padding: 120px 0;
-      background: var(--bg-soft);
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: end;
-      margin-bottom: 50px;
-    }
-
-    .view-all {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    .view-all:hover i {
-      transform: translateX(4px);
-    }
-
-    [dir="rtl"] .view-all:hover i {
-      transform: translateX(-4px);
-    }
+    /* =========================
+       FEATURED BIRDS
+    ========================= */
 
     .birds-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .bird-card {
-      background: var(--surface);
+      overflow: hidden;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      overflow: hidden;
+      background: var(--surface);
+      box-shadow: var(--shadow-small);
       transition: var(--transition);
     }
 
     .bird-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-7px);
       box-shadow: var(--shadow);
     }
 
     .bird-image {
-      height: 300px;
       position: relative;
+      height: 275px;
       overflow: hidden;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     }
 
     .bird-image img {
@@ -959,255 +1100,126 @@
     }
 
     .bird-card:hover .bird-image img {
-      transform: scale(1.06);
-    }
-
-    .bird-tag {
-      position: absolute;
-      top: 16px;
-      inset-inline-start: 16px;
-      padding: 7px 12px;
-      border-radius: 50px;
-      background: rgba(255,255,255,.9);
-      color: var(--primary-dark);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .7px;
-    }
-
-    .bird-content {
-      padding: 24px;
-    }
-
-    .bird-content h3 {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    .bird-scientific {
-      color: var(--accent);
-      font-size: 13px;
-      font-style: italic;
-      margin-bottom: 13px;
-    }
-
-    .bird-content p {
-      color: var(--text-soft);
-      font-size: 14px;
-    }
-
-   
-    .services {
-      padding: 130px 0;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      padding: 35px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(61, 139, 112, .35);
-      box-shadow: var(--shadow-small);
-    }
-
-    .service-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: var(--bg-soft);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
-
-    .service-card h3 {
-      font-size: 25px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: var(--text-soft);
-      font-size: 14px;
-    }
-
-   
-    .experience {
-      padding: 120px 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(13, 38, 31, .96),
-          rgba(13, 38, 31, .8)
-        ),
-        url("https://images.unsplash.com/photo-1480044965905-02098d419e96?auto=format&fit=crop&w=2200&q=90")
-        center / cover;
-      color: white;
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .experience .section-title {
-      color: white;
-    }
-
-    .experience .section-description {
-      color: rgba(255,255,255,.72);
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 35px;
-    }
-
-    .experience-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255,255,255,.13);
-    }
-
-    .experience-item i {
-      color: var(--accent-light);
-    }
-
-    .experience-image {
-      position: relative;
-    }
-
-    .experience-image img {
-      height: 570px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-    }
-
-    
-    /* =========================================================
-       EDUCATION
-    ========================================================= */
-
-    .education {
-      padding: 130px 0;
-    }
-
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .education-card {
-      min-height: 310px;
-      padding: 40px;
-      border-radius: var(--radius);
-      position: relative;
-      overflow: hidden;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
-    }
-
-    .education-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 25%, rgba(5,18,14,.92));
-      z-index: 0;
-    }
-
-    .education-card img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      transition: transform .6s ease;
-    }
-
-    .education-card:hover img {
       transform: scale(1.05);
     }
 
-    .education-content {
-      position: relative;
-      z-index: 2;
+    .bird-label {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 7px 11px;
+      border-radius: 50px;
+      background: rgba(255,255,255,.92);
+      color: var(--primary-dark);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
     }
 
-    .education-content h3 {
-      font-size: 32px;
-      margin-bottom: 8px;
+    .bird-info {
+      padding: 23px;
     }
 
-    .education-content p {
-      color: rgba(255,255,255,.78);
-      max-width: 500px;
+    .bird-info h3 {
+      margin-bottom: 5px;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
     }
 
-    /* =========================================================
-       CTA
-    ========================================================= */
-
-    .cta {
-      padding: 0 0 130px;
+    .bird-scientific {
+      margin-bottom: 12px;
+      color: var(--accent-dark, #b98a2f);
+      font-size: 11px;
+      font-style: italic;
     }
 
-    .cta-box {
-      padding: 70px;
-      border-radius: var(--radius-lg);
-      background: var(--primary-dark);
-      color: white;
-      display: flex;
+    .bird-info p {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .bird-link {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      overflow: hidden;
-      position: relative;
+      gap: 7px;
+      margin-top: 17px;
+      color: var(--primary-light);
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .cta-box::after {
+    .bird-link:hover {
+      color: var(--accent);
+    }
+
+    .center-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 38px;
+    }
+
+    /* =========================
+       MISSION CTA
+    ========================= */
+
+    .mission {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 0;
+      background: var(--primary-dark);
+      color: #fff;
+    }
+
+    .mission::before {
       content: "";
       position: absolute;
-      width: 350px;
-      height: 350px;
+      width: 480px;
+      height: 480px;
+      right: -170px;
+      top: -180px;
+      border: 1px solid rgba(213,168,75,.2);
       border-radius: 50%;
-      background: rgba(255,255,255,.05);
-      top: -170px;
-      inset-inline-end: -100px;
     }
 
-    .cta-box h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      max-width: 680px;
+    .mission::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      left: -120px;
+      bottom: -160px;
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+
+    .mission-inner {
       position: relative;
       z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 50px;
     }
 
-    .cta-box p {
-      margin-top: 12px;
+    .mission h2 {
+      max-width: 720px;
+      margin-bottom: 15px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 4vw, 54px);
+      line-height: 1.1;
+    }
+
+    .mission p {
+      max-width: 650px;
       color: rgba(255,255,255,.7);
-      position: relative;
-      z-index: 2;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .mission .btn-primary {
+      white-space: nowrap;
     }
 
     /* =====================================================
@@ -3860,57 +3872,9 @@
 
     
 
-/* =====================================
-   HOME2 - CONSISTENT SECTION HEADINGS
-===================================== */
-
-.section-title {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    margin-bottom: 18px;
-    color: var(--text-dark, #0d261f);
-}
-
-/* Highlighted heading text */
-.section-title span {
-    color: var(--primary-light);
-}
-
-/* Section descriptions */
-.section-description {
-    font-family: "DM Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-soft);
-}
-
-/* Preserve headings on dark backgrounds */
-.experience .section-title {
-    color: #ffffff;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-    .section-title {
-        font-size: clamp(1.9rem, 6vw, 2.5rem);
-        line-height: 1.25;
-    }
-}
-
   </style>
 </head>
 
-
-<body>
-
-
-
-
-  </style>
-</head>
 
 <body>
 
@@ -3980,7 +3944,7 @@
 
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
-      
+       
         <a href="schoolprogram.html" class="nav-link">School Program</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -4040,361 +4004,325 @@
   </header>
   </header>
 
-  <!-- =========================================================
-       MAIN
-  ========================================================== -->
+
+  <!-- =========================
+       HERO
+  ========================= -->
 
   <main>
 
+    <section class="hero">
 
-    <!-- =======================================================
-         HOMEPAGE 2 HERO
-    ======================================================== -->
+      <div class="container hero-grid">
 
-    <section class="hero" id="home">
-
-      <div class="container">
-
-        <div class="hero-content">
+        <div class="hero-content reveal">
 
           <div class="">
-            A quieter way to discover nature
+            Welcome to Aviora
           </div>
 
           <h1>
-            Where Birds
-            <span>
-            Come Alive.
-            </span>
+            Where the
+            <span>sky begins</span>
+            and wild wings inspire.
           </h1>
 
           <p class="hero-description">
-
-            Enter a living sanctuary where rare birds, peaceful
-            landscapes and meaningful experiences come together.
-            Slow down, look closer and discover the wild from
-            a whole new perspective.
-
+            Step into a world dedicated to magnificent birds of prey.
+            Discover falconry, meet remarkable birds, learn about wildlife,
+            and experience the beauty of nature through a closer connection
+            with the sky.
           </p>
 
-
-          <div class="hero-buttons">
-
-            <a
-              href="#experience"
-              class="btn btn-primary"
-            >
-
-              Explore Sanctuary
-
+          <div class="hero-actions">
+            <a href="birds.html" class="btn btn-primary">
+              Explore Our Birds
               <i class="fa-solid fa-arrow-right"></i>
-
             </a>
 
+            <a href="services.html" class="btn btn-secondary">
+              Discover Experiences
+            </a>
+          </div>
 
-            <a
-              href="#birds"
-              class="btn btn-outline"
+          <div class="hero-note">
+            <i class="fa-solid fa-feather-pointed"></i>
+            <span>Learn. Connect. Respect. Protect.</span>
+          </div>
+
+        </div>
+
+
+        <div class="hero-visual reveal">
+
+          <div class="hero-image">
+            <img
+              src="./imagess/halconero.jpg"
+              alt="Falcon resting in nature"
+              onerror="this.style.display='none';"
             >
 
-              Meet Our Birds
+            <div class="hero-image-fallback">
+              <i class="fa-solid fa-dove"></i>
+            </div>
+          </div>
 
-            </a>
+          <div class="hero-badge">
+            <strong>15+</strong>
+            <span>Years of passion for falconry and wildlife education.</span>
+          </div>
 
+          <div class="hero-floating">
+            <div>
+              <i class="fa-solid fa-feather"></i>
+              <span>Born for<br>the sky</span>
+            </div>
           </div>
 
         </div>
 
       </div>
 
+    </section>
 
-      <!-- FLOATING HERO CARD -->
 
-      <div class="hero-card">
+    <!-- =========================
+         INTRO
+    ========================= -->
 
-        <div class="hero-card-image">
+    <section class="section">
+
+      <div class="container intro-grid">
+
+        <div class="intro-image reveal">
 
           <img
-            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=700&q=85"
-            alt="Bird resting in a natural habitat"
+            src="./imagess/feed.jpg"
+            alt="Bird sanctuary environment"
+            onerror="this.style.display='none';"
           >
+
+          <div class="intro-image-fallback">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+
+          <div class="intro-card">
+            <strong>More Than Birds</strong>
+            <span>
+              We create meaningful encounters that encourage curiosity,
+              respect, and a deeper appreciation for wildlife.
+            </span>
+          </div>
 
         </div>
 
 
-        <div>
+        <div class="intro-content reveal">
 
-          <small>
-            Today's Highlight
-          </small>
+          <div class="">
+            About Aviora
+          </div>
 
-          <h3>
-            Meet the Wild
-          </h3>
+          <h2 class="section-title">
+            A sanctuary built around respect for the wild.
+          </h2>
 
           <p>
-            Discover beautiful resident birds and learn the
-            stories behind their habitats.
+            Aviora Falconry Bird Center brings people closer to the remarkable
+            world of birds of prey through education, responsible falconry,
+            conservation, and unforgettable experiences.
           </p>
 
-          <a
-            href="#birds"
-            class="hero-card-link"
-          >
+          <p>
+            Our goal is simple: help people understand these extraordinary
+            creatures and leave with a stronger desire to protect the natural
+            world they call home.
+          </p>
 
-            Discover birds
+          <ul class="check-list">
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Responsible and educational bird experiences
+            </li>
 
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Hands-on learning about birds of prey
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              Wildlife awareness and conservation education
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              A safe and respectful environment for every bird
+            </li>
+          </ul>
+
+          <a href="about.html" class="btn btn-primary">
+            Our Story
             <i class="fa-solid fa-arrow-right"></i>
-
           </a>
 
         </div>
 
       </div>
 
-
-      <!-- HERO FACTS -->
-
-      <div class="hero-facts">
-
-        <div class="hero-fact">
-
-          <i class="fa-solid fa-feather-pointed"></i>
-
-          <div>
-
-            <strong>
-              120+
-            </strong>
-
-            <span>
-              Bird Species
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="hero-fact">
-
-          <i class="fa-solid fa-tree"></i>
-
-          <div>
-
-            <strong>
-              40 Acres
-            </strong>
-
-            <span>
-              Natural Habitat
-            </span>
-
-          </div>
-
-        </div>
-
-
-        <div class="hero-fact">
-
-          <i class="fa-solid fa-leaf"></i>
-
-          <div>
-
-            <strong>
-              25 Years
-            </strong>
-
-            <span>
-              Conservation
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
     </section>
 
 
-    <!-- =======================================================
-         ABOUT / INTRO
-    ======================================================== -->
-
-    <section class="intro" id="about">
-
-      <div class="container">
-
-        <div class="intro-grid">
-
-          <div class="intro-image">
-
-            <img
-              src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=85"
-              alt="Colorful bird sitting on a branch"
-            >
-
-            <div class="experience-badge">
-
-              <strong>
-                25+
-              </strong>
-
-              <span>
-                Years protecting and educating through nature.
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <div class="intro-content">
-
-            <div class="eyebrow">
-              About Aviora
-            </div>
-
-            <h2 class="section-title">
-              A sanctuary built around curiosity, care and conservation.
-            </h2>
-
-            <p class="section-description">
-
-              Aviora is more than a destination. It is a place to slow down,
-              observe closely and understand the remarkable world of birds.
-              Every visit helps connect people with the ecosystems that
-              sustain life.
-
-            </p>
-
-
-            <ul class="check-list">
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Ethical bird care and protected habitats.
-                </span>
-
-              </li>
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Educational programs for children and adults.
-                </span>
-
-              </li>
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Guided experiences led by passionate naturalists.
-                </span>
-
-              </li>
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Conservation programs supporting local ecosystems.
-                </span>
-
-              </li>
-
-            </ul>
-
-
-            <a
-              href="#services"
-              class="btn btn-primary"
-            >
-
-              Discover Our Mission
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
+    <!-- =========================
          STATS
-    ======================================================== -->
+    ========================= -->
 
     <section class="stats">
 
+      <div class="container stats-grid">
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+          <strong>25+</strong>
+          <span>Birds & Raptors</span>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <strong>8K+</strong>
+          <span>Visitors Welcomed</span>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <i class="fa-solid fa-book-open"></i>
+          </div>
+          <strong>40+</strong>
+          <span>Learning Programs</span>
+        </div>
+
+        <div class="stat-card reveal">
+          <div class="stat-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <strong>100%</strong>
+          <span>Passion for Wildlife</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EXPERIENCES
+    ========================= -->
+
+    <section class="section section-soft">
+
       <div class="container">
 
-        <div class="stats-grid">
+        <div class="section-header center reveal">
 
-          <div class="stat">
-
-            <strong>
-              120+
-            </strong>
-
-            <span>
-              Bird Species
-            </span>
-
+          <div class="">
+            Explore Aviora
           </div>
 
+          <h2 class="section-title">
+            Experiences that bring wings closer.
+          </h2>
 
-          <div class="stat">
+          <p class="section-description">
+            Whether you're discovering falconry for the first time or already
+            have a passion for birds, Aviora offers memorable ways to connect
+            with the natural world.
+          </p>
 
-            <strong>
-              40
-            </strong>
-
-            <span>
-              Acres of Habitat
-            </span>
-
-          </div>
-
-
-          <div class="stat">
-
-            <strong>
-              18K+
-            </strong>
-
-            <span>
-              Visitors Every Year
-            </span>
-
-          </div>
+        </div>
 
 
-          <div class="stat">
+        <div class="experience-grid">
 
-            <strong>
-              25
-            </strong>
+          <article class="experience-card reveal">
 
-            <span>
-              Years of Conservation
-            </span>
+            <img
+              src="./imagess/A falcon gets weighed during a health check_ Around 9,000 birds are treated at the hospital, located just outside Abu Dhabi, each year.jpg"
+              alt="Falconry experience"
+              onerror="this.style.display='none';"
+            >
 
-          </div>
+            <div class="experience-content">
+
+              <div class="experience-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+
+              <h3>Falconry Experience</h3>
+
+              <p>
+                Meet our magnificent birds and discover the traditional art
+                and responsibility behind falconry.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="experience-card reveal">
+
+            <img
+              src="./imagess/detective.jpg"
+              alt="Wildlife education"
+              onerror="this.style.display='none';"
+            >
+
+            <div class="experience-content">
+
+              <div class="experience-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+
+              <h3>Wildlife Education</h3>
+
+              <p>
+                Learn about raptors, habitats, conservation, behavior,
+                and the important role birds play in nature.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="experience-card reveal">
+
+            <img
+              src="./imagess/Nieuwe camera's in 2026.jpg"
+              alt="Bird photography experience"
+              onerror="this.style.display='none';"
+            >
+
+            <div class="experience-content">
+
+              <div class="experience-icon">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+
+              <h3>Bird Photography</h3>
+
+              <p>
+                Observe incredible birds up close and capture memorable
+                moments in a respectful environment.
+              </p>
+
+            </div>
+
+          </article>
 
         </div>
 
@@ -4403,551 +4331,145 @@
     </section>
 
 
-    <!-- =======================================================
-         RESIDENT BIRDS
-    ======================================================== -->
+    <!-- =========================
+         FEATURED BIRDS
+    ========================= -->
 
-    <section class="birds" id="birds">
+    <section class="section">
 
       <div class="container">
 
-        <div class="section-heading">
+        <div class="section-header reveal">
 
-          <div>
-
-            <div class="eyebrow">
-              Resident Birds
-            </div>
-
-            <h2 class="section-title">
-              Meet the residents of our sanctuary.
-            </h2>
-
-            <p class="section-description">
-
-              From magnificent raptors to colorful tropical species,
-              discover some of the extraordinary birds that call Aviora home.
-
-            </p>
-
+          <div class="">
+            Meet Our Birds
           </div>
 
+          <h2 class="section-title">
+            Extraordinary birds. Individual personalities.
+          </h2>
 
-          <a
-            href="#"
-            class="view-all"
-          >
-
-            View all birds
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-          </a>
+          <p class="section-description">
+            Every bird at Aviora has its own story, character, and role in
+            helping visitors understand the fascinating world of raptors.
+          </p>
 
         </div>
 
 
         <div class="birds-grid">
 
-
-          <!-- BIRD 1 -->
-
-          <article class="bird-card">
+          <article class="bird-card reveal">
 
             <div class="bird-image">
 
               <img
-                src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1000&q=85"
-                alt="Parrot"
-                loading="lazy"
+                src="./imagess/Peregrine Falcon.jpg"
+                alt="Falcon"
+                onerror="this.style.display='none';"
               >
 
-              <span class="bird-tag">
-                Tropical
+              <span class="bird-label">
+                Falcon
               </span>
 
             </div>
 
+            <div class="bird-info">
 
-            <div class="bird-content">
-
-              <h3>
-                Scarlet Macaw
-              </h3>
+              <h3>Falcon</h3>
 
               <div class="bird-scientific">
-                Ara macao
+                Master of the open sky
               </div>
 
               <p>
-
-                A brilliant tropical parrot known for its vivid colors,
-                intelligence and powerful curved beak.
-
+                Built for speed, agility, and precision, falcons are among
+                nature's most impressive aerial hunters.
               </p>
+
+              <a href="birds.html" class="bird-link">
+                Meet the birds
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- BIRD 2 -->
-
-          <article class="bird-card">
+          <article class="bird-card reveal">
 
             <div class="bird-image">
 
               <img
-                src="./imagess/woodpeaker.jpg"
+                src="./imagess/owl.jpg"
                 alt="Owl"
-                loading="lazy"
+                onerror="this.style.display='none';"
               >
 
-              <span class="bird-tag">
-                Nocturnal
+              <span class="bird-label">
+                Owl
               </span>
 
             </div>
 
+            <div class="bird-info">
 
-            <div class="bird-content">
-
-              <h3>
-                Great woodpeaker
-              </h3>
+              <h3>Owl</h3>
 
               <div class="bird-scientific">
-                Bubo virginianus
+                Silent guardian of the night
               </div>
 
               <p>
-
-                A powerful nocturnal hunter with exceptional hearing,
-                silent flight and unmistakable ear tufts.
-
+                Owls fascinate us with their incredible hearing, quiet flight,
+                and extraordinary adaptations for nocturnal life.
               </p>
+
+              <a href="birds.html" class="bird-link">
+                Meet the birds
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
 
             </div>
 
           </article>
 
 
-          <!-- BIRD 3 -->
-
-          <article class="bird-card">
+          <article class="bird-card reveal">
 
             <div class="bird-image">
 
               <img
-                src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=1000&q=85"
-                alt="Kingfisher bird"
-                loading="lazy"
+                src="./imagess/eagle.jpg"
+                alt="Eagle"
+                onerror="this.style.display='none';"
               >
 
-              <span class="bird-tag">
-                Wetlands
+              <span class="bird-label">
+                Eagle
               </span>
 
             </div>
 
+            <div class="bird-info">
 
-            <div class="bird-content">
-
-              <h3>
-                sparrow
-              </h3>
+              <h3>Eagle</h3>
 
               <div class="bird-scientific">
-                Alcedo atthis
+                Power above the landscape
               </div>
 
               <p>
-
-                A remarkable fishing specialist capable of diving into water
-                with extraordinary speed and precision.
-
+                Eagles represent strength, vision, and freedom, soaring high
+                above the landscapes they call home.
               </p>
 
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         SERVICES
-    ======================================================== -->
-
-    <section class="services" id="services">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <div class="eyebrow">
-              What We Offer
-            </div>
-
-            <h2 class="section-title">
-              Experiences designed to inspire.
-            </h2>
-
-            <p class="section-description">
-
-              Whether you are discovering birds for the first time or already
-              have a lifelong passion for them, there is something to explore.
-
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-binoculars"></i>
-            </div>
-
-            <h3>
-              Bird Watching
-            </h3>
-
-            <p>
-
-              Explore quiet observation trails and discover resident and
-              seasonal species with our expert guides.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-
-            <h3>
-              Nature Education
-            </h3>
-
-            <p>
-
-              Interactive programs help students and families understand
-              ecosystems, biodiversity and conservation.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-camera"></i>
-            </div>
-
-            <h3>
-              Photography Tours
-            </h3>
-
-            <p>
-
-              Capture beautiful moments with dedicated photography walks,
-              observation points and expert guidance.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-seedling"></i>
-            </div>
-
-            <h3>
-              Conservation
-            </h3>
-
-            <p>
-
-              Learn about habitat restoration, species protection and the projects
-              supported by Aviora.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-children"></i>
-            </div>
-
-            <h3>
-              Family Programs
-            </h3>
-
-            <p>
-
-              Fun and educational experiences created to make young visitors
-              curious about the natural world.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-compass"></i>
-            </div>
-
-            <h3>
-              Guided Expeditions
-            </h3>
-
-            <p>
-
-              Venture deeper into the sanctuary with naturalists who reveal
-              the hidden stories behind every trail.
-
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         EXPERIENCE
-    ======================================================== -->
-
-    <section class="experience" id="experience">
-
-      <div class="container">
-
-        <div class="experience-grid">
-
-
-          <div>
-
-            <div class="eyebrow">
-              The Aviora Experience
-            </div>
-
-            <h2 class="section-title">
-              Leave the ordinary behind.
-            </h2>
-
-            <p class="section-description">
-
-              Walk beneath ancient trees, hear wings moving through the
-              canopy and discover the small details that make every habitat
-              extraordinary.
-
-            </p>
-
-
-            <div class="experience-list">
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Guided sunrise bird walks
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Close observation of resident birds
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Interactive conservation sessions
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Photography and nature trails
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Educational talks by naturalists
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <br>
-
-
-            <a
-              href="#contact"
-              class="btn btn-primary"
-            >
-
-              Plan Your Visit
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-          </div>
-
-
-          <div class="experience-image">
-
-            <img
-              src="./imagess/Steenuil_.jpg"
-              alt="Bird flying through nature"
-              loading="lazy"
-            >
-
-
-            
-           
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         EDUCATIONAL HIGHLIGHTS
-    ======================================================== -->
-
-    <section class="education">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <div class="eyebrow">
-              Learn With Us
-            </div>
-
-            <h2 class="section-title">
-              Every visit can become a lesson.
-            </h2>
-
-            <p class="section-description">
-
-              Our educational experiences turn observation into understanding
-              and understanding into a reason to protect nature.
-
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="education-grid">
-
-
-          <article class="education-card">
-
-            <img
-              src="./imagess/Scaly-breasted Lorikeet.jpg"
-              alt="Bird education"
-              loading="lazy"
-            >
-
-            <div class="education-content">
-
-              <h3>
-                For Young Explorers
-              </h3>
-
-              <p>
-
-                Discover birds, habitats and conservation through engaging
-                activities designed for curious young minds.
-
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="education-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1200&q=85"
-              alt="Nature conservation"
-              loading="lazy"
-            >
-
-            <div class="education-content">
-
-              <h3>
-                For Curious Adults
-              </h3>
-
-              <p>
-
-                Deepen your knowledge through guided walks, talks and
-                immersive experiences with experienced naturalists.
-
-              </p>
+              <a href="birds.html" class="bird-link">
+                Meet the birds
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
 
             </div>
 
@@ -4955,56 +4477,53 @@
 
         </div>
 
-      </div>
 
-    </section>
-
-
-    <!-- =======================================================
-         CTA
-    ======================================================== -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <div class="cta-box">
-
-          <div>
-
-            <h2>
-              Your next great discovery may be just beyond the trees.
-            </h2>
-
-            <p>
-
-              Plan a meaningful day in nature with family, friends or your
-              classroom.
-
-            </p>
-
-          </div>
-
-
-          <a
-            href="#contact"
-            class="btn btn-primary"
-          >
-
-            Visit Aviora
-
+        <div class="center-button">
+          <a href="birds.html" class="btn btn-secondary">
+            View All Birds
             <i class="fa-solid fa-arrow-right"></i>
-
           </a>
-
         </div>
 
       </div>
 
     </section>
 
+
+    <!-- =========================
+         MISSION CTA
+    ========================= -->
+
+    <section class="mission">
+
+      <div class="container mission-inner">
+
+        <div class="reveal">
+
+          <h2>
+            Come closer to the wild. Leave inspired to protect it.
+          </h2>
+
+          <p>
+            Plan your visit to Aviora and experience the beauty, intelligence,
+            and power of birds of prey in a meaningful and respectful setting.
+          </p>
+
+        </div>
+
+        <div class="reveal">
+          <a href="contact.html" class="btn btn-primary">
+            Plan Your Visit
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
+
 
   <!-- =====================================================
        FOOTER

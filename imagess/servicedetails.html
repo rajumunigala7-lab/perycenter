@@ -1,34 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Home2 | Aviora Bird Sanctuary</title>
+  <title>servicedetails | Aviora Bird Sanctuary</title>
 
   <meta
     name="description"
     content="Discover the story, team, values, conservation mission, and visitor experiences behind Aviora Bird Sanctuary."
   >
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/png" href="./imagess/logo-02.png">
+  <link rel="icon" type="image/png" href="./imagess/logo-02.png">
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
     rel="stylesheet"
+    
   >
 
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
-
-   <link rel="stylesheet" href="nav.css">
+ <link rel="stylesheet" href="nav.css">
   <style>
 
-  
+    /* =====================================================
+       ROOT / THEME
+    ===================================================== */
+
     :root {
       --primary: #1d5b49;
       --primary-dark: #123c31;
@@ -89,6 +94,11 @@
       --shadow-small:
         0 8px 30px rgba(0,0,0,0.22);
     }
+
+
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
 
     *,
     *::before,
@@ -172,6 +182,11 @@
       font-family: "Playfair Display", serif;
       line-height: 1.15;
     }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .site-header {
       position: fixed;
@@ -467,21 +482,10 @@
 
 
     .login-btn:hover {
-      background: var(--accent);
+      background: var(--primary);
 
       transform: translateY(-2px);
     }
-    .btn-secondary {
-  background: transparent;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
-  color: var(--white);
-  transform: translateY(-3px);
-}
 
 
     .mobile-menu-btn {
@@ -501,715 +505,716 @@
 
       border-radius: 10px;
     }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
 
-      gap: 9px;
 
-      min-height: 52px;
 
-      padding: 0 24px;
+    /* =========================
+       HERO
+    ========================= */
 
-      border-radius: 50px;
-
-      font-weight: 700;
-      font-size: 14px;
-
-      transition: var(--transition);
+    .details-hero{
+      position:relative;
+      min-height:570px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      isolation:isolate;
+      background:var(--primary-dark);
     }
 
-
-    .btn-primary {
-      background: var(--accent);
-
-      color: #201b0e;
+    .details-hero-image{
+      position:absolute;
+      inset:0;
+      z-index:-2;
     }
 
-
-    .btn-primary:hover {
-      background: var(--accent-light);
-
-      transform: translateY(-3px);
-
-      box-shadow:
-        0 12px 30px
-        rgba(213,168,75,.25);
+    .details-hero-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
 
-
-    .btn-outline-light {
-      background: transparent;
-
-      color: #fff;
-
-      border:
-        1px solid
-        rgba(255,255,255,.5);
-    }
-
-
-    .btn-outline-light:hover {
-      background: #fff;
-
-      color: var(--primary-dark);
-
-      transform: translateY(-3px);
-    }
-    
-
-    .hero {
-      min-height: 900px;
-      padding-top: 82px;
-      position: relative;
-      overflow: hidden;
-
+    .hero-fallback{
+      position:absolute;
+      inset:0;
+      display:none;
+      place-items:center;
       background:
-        linear-gradient(
-          90deg,
-          rgba(7, 27, 22, 0.96) 0%,
-          rgba(7, 27, 22, 0.82) 38%,
-          rgba(7, 27, 22, 0.34) 70%,
-          rgba(7, 27, 22, 0.12) 100%
-        ),
-        url("./imagess/hornible.jpg")
-        center / cover no-repeat;
-
-      display: flex;
-      align-items: center;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      border-radius: 50%;
-      background: rgba(213,168,75,.08);
-      top: -220px;
-      inset-inline-end: -120px;
-      filter: blur(10px);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 180px;
-      background: linear-gradient(
-        transparent,
-        var(--bg)
-      );
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 3;
-      color: white;
-      padding: 95px 0 170px;
-      max-width: 760px;
-    }
-
-    .hero .eyebrow {
-      color: var(--accent-light);
-    }
-
-    .hero h1 {
-      font-size: clamp(52px, 7vw, 96px);
-      letter-spacing: -3px;
-      margin-bottom: 25px;
-      max-width: 800px;
-    }
-
-    h1 span {
-  display: block;
-  color: #d88b4a; /* Come Alive */
-  font-weight: 400;
- 
-  letter-spacing: -0.03em;
-}
-
-    .hero-description {
-      max-width: 610px;
-      font-size: 18px;
-      line-height: 1.85;
-      color: rgba(255,255,255,.82);
-      margin-bottom: 34px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 52px;
-      padding: 0 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #201b0e;
-    }
-
-    .btn-primary:hover {
-      background: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(213,168,75,.25);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.35);
-      background: rgba(255,255,255,.08);
-      color: white;
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #14241f;
-      transform: translateY(-3px);
-    }
-
-
-    .hero-card {
-      position: absolute;
-      z-index: 5;
-      inset-inline-end: max(30px, calc((100vw - var(--container)) / 2));
-      top: 50%;
-      transform: translateY(-50%);
-      width: 285px;
-      padding: 25px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.24);
-      backdrop-filter: blur(18px);
-      color: white;
-      box-shadow: 0 25px 60px rgba(0,0,0,.18);
-    }
-
-    .hero-card-image {
-      height: 145px;
-      border-radius: 17px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
-
-    .hero-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-card small {
-      display: block;
-      color: var(--accent-light);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 10px;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
-
-    .hero-card h3 {
-      font-size: 23px;
-      margin-bottom: 8px;
-    }
-
-    .hero-card p {
-      color: rgba(255,255,255,.72);
-      font-size: 12px;
-      line-height: 1.65;
-      margin-bottom: 17px;
-    }
-
-    .hero-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .hero-card-link i {
-      transition: var(--transition);
-    }
-
-    .hero-card-link:hover i {
-      transform: translateX(4px);
-    }
-
-    [dir="rtl"] .hero-card-link:hover i {
-      transform: translateX(-4px);
-    }
-
-    .hero-facts {
-      position: absolute;
-      z-index: 4;
-      bottom: 65px;
-      inset-inline-start: max(20px, calc((100vw - var(--container)) / 2));
-      display: flex;
-      gap: 34px;
-      color: white;
-    }
-
-    .hero-fact {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .hero-fact i {
-      color: var(--accent-light);
-      font-size: 24px;
-    }
-
-    .hero-fact strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-    }
-
-    .hero-fact span {
-      font-size: 12px;
-      color: rgba(255,255,255,.7);
-    }
-
-   
-    .intro {
-      padding: 130px 0;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .intro-image {
-      position: relative;
-    }
-
-    .intro-image img {
-      height: 570px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .experience-badge {
-      position: absolute;
-      bottom: 35px;
-      inset-inline-end: -25px;
-      width: 190px;
-      padding: 24px;
-      border-radius: 20px;
-      background: var(--surface);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-    }
-
-    .experience-badge strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 42px;
-      color: var(--primary);
-    }
-
-    .experience-badge span {
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    .intro-content .section-description {
-      margin-bottom: 30px;
-    }
-
-    .check-list {
-      display: grid;
-      gap: 15px;
-      margin: 28px 0;
-    }
-
-    .check-list li {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .check-list i {
-      color: var(--accent);
-      margin-top: 5px;
-    }
-
-
-    .stats {
-      padding: 30px 0 110px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--surface);
-      box-shadow: var(--shadow-small);
-    }
-
-    .stat {
-      padding: 38px 28px;
-      text-align: center;
-      border-inline-end: 1px solid var(--border);
-    }
-
-    .stat:last-child {
-      border-inline-end: 0;
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 44px;
-      color: var(--primary);
-      margin-bottom: 5px;
-    }
-
-    .stat span {
-      color: var(--text-soft);
-      font-size: 14px;
-    }
-
-
-    .birds {
-      padding: 120px 0;
-      background: var(--bg-soft);
-    }
-
-    .section-heading {
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      align-items: end;
-      margin-bottom: 50px;
-    }
-
-    .view-all {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-    }
-
-    .view-all:hover i {
-      transform: translateX(4px);
-    }
-
-    [dir="rtl"] .view-all:hover i {
-      transform: translateX(-4px);
-    }
-
-    .birds-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .bird-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: var(--transition);
-    }
-
-    .bird-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow);
-    }
-
-    .bird-image {
-      height: 300px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bird-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .6s ease;
-    }
-
-    .bird-card:hover .bird-image img {
-      transform: scale(1.06);
-    }
-
-    .bird-tag {
-      position: absolute;
-      top: 16px;
-      inset-inline-start: 16px;
-      padding: 7px 12px;
-      border-radius: 50px;
-      background: rgba(255,255,255,.9);
-      color: var(--primary-dark);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .7px;
-    }
-
-    .bird-content {
-      padding: 24px;
-    }
-
-    .bird-content h3 {
-      font-size: 26px;
-      margin-bottom: 8px;
-    }
-
-    .bird-scientific {
-      color: var(--accent);
-      font-size: 13px;
-      font-style: italic;
-      margin-bottom: 13px;
-    }
-
-    .bird-content p {
-      color: var(--text-soft);
-      font-size: 14px;
-    }
-
-   
-    .services {
-      padding: 130px 0;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      padding: 35px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      transition: var(--transition);
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(61, 139, 112, .35);
-      box-shadow: var(--shadow-small);
-    }
-
-    .service-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 16px;
-      background: var(--bg-soft);
-      color: var(--primary);
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
-
-    .service-card h3 {
-      font-size: 25px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: var(--text-soft);
-      font-size: 14px;
-    }
-
-   
-    .experience {
-      padding: 120px 0;
+        radial-gradient(circle at 75% 30%,rgba(213,168,75,.2),transparent 30%),
+        linear-gradient(135deg,var(--primary-dark),var(--primary));
+      color:rgba(255,255,255,.2);
+      font-size:110px;
+    }
+
+    .details-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
       background:
-        linear-gradient(
-          90deg,
-          rgba(13, 38, 31, .96),
-          rgba(13, 38, 31, .8)
-        ),
-        url("https://images.unsplash.com/photo-1480044965905-02098d419e96?auto=format&fit=crop&w=2200&q=90")
-        center / cover;
-      color: white;
+        linear-gradient(90deg,
+          rgba(10,28,23,.92) 0%,
+          rgba(10,28,23,.72) 42%,
+          rgba(10,28,23,.25) 100%);
     }
 
-    .experience-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
+    .hero-content{
+      max-width:760px;
+      padding:105px 0;
+      color:#fff;
     }
 
-    .experience .section-title {
-      color: white;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      margin-bottom:17px;
+      color:var(--accent-light);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:2.5px;
+      text-transform:uppercase;
     }
 
-    .experience .section-description {
-      color: rgba(255,255,255,.72);
+    .eyebrow::before{
+      content:"";
+      width:30px;
+      height:2px;
+      background:var(--accent);
     }
 
-    .experience-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 35px;
+    .hero-content h1{
+      max-width:780px;
+      font-family:"Playfair Display",serif;
+      font-size:clamp(44px,6vw,78px);
+      line-height:1.02;
+      letter-spacing:-2px;
+      margin-bottom:22px;
     }
 
-    .experience-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255,255,255,.13);
+    .hero-content h1 span{
+      color:var(--accent-light);
     }
 
-    .experience-item i {
-      color: var(--accent-light);
+    .hero-content p{
+      max-width:650px;
+      color:rgba(255,255,255,.82);
+      font-size:17px;
+      line-height:1.8;
+      margin-bottom:32px;
     }
 
-    .experience-image {
-      position: relative;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
-    .experience-image img {
-      height: 570px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
+    .hero-actions .btn-outline{
+      color:#fff;
+      border-color:rgba(255,255,255,.3);
     }
 
-    
-    /* =========================================================
-       EDUCATION
-    ========================================================= */
-
-    .education {
-      padding: 130px 0;
+    .hero-actions .btn-outline:hover{
+      color:var(--accent-light);
+      border-color:var(--accent);
     }
 
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+    /* =========================
+       SECTION COMMON
+    ========================= */
+
+    .section{
+      padding:105px 0;
     }
 
-    .education-card {
-      min-height: 310px;
-      padding: 40px;
-      border-radius: var(--radius);
-      position: relative;
-      overflow: hidden;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: end;
+    .section-head{
+      max-width:720px;
+      margin-bottom:48px;
     }
 
-    .education-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 25%, rgba(5,18,14,.92));
-      z-index: 0;
+    .section-head.center{
+      margin-inline:auto;
+      text-align:center;
     }
 
-    .education-card img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      transition: transform .6s ease;
+    .section-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      color:var(--accent-dark);
+      font-size:11px;
+      font-weight:800;
+      letter-spacing:2.5px;
+      text-transform:uppercase;
+      margin-bottom:13px;
     }
 
-    .education-card:hover img {
-      transform: scale(1.05);
+    .section-kicker::before{
+      content:"";
+      width:27px;
+      height:2px;
+      background:var(--accent);
     }
 
-    .education-content {
-      position: relative;
-      z-index: 2;
+    .section-head.center .section-kicker::after{
+      content:"";
+      width:27px;
+      height:2px;
+      background:var(--accent);
     }
 
-    .education-content h3 {
-      font-size: 32px;
-      margin-bottom: 8px;
+    .section-title{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(35px,4vw,55px);
+      line-height:1.1;
+      letter-spacing:-1.5px;
+      margin-bottom:16px;
     }
 
-    .education-content p {
-      color: rgba(255,255,255,.78);
-      max-width: 500px;
+    .section-description{
+      color:var(--text-soft);
+      font-size:15px;
+      line-height:1.85;
     }
 
-    /* =========================================================
+    /* =========================
+       SERVICE INTRO
+    ========================= */
+
+    .service-intro{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .service-intro-image{
+      position:relative;
+      min-height:580px;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:var(--primary-dark);
+    }
+
+    .service-intro-image img{
+      width:100%;
+      height:100%;
+      min-height:580px;
+      object-fit:cover;
+    }
+
+    .image-fallback{
+      position:absolute;
+      inset:0;
+      display:none;
+      place-items:center;
+      background:
+        radial-gradient(circle at 70% 30%,rgba(213,168,75,.25),transparent 25%),
+        linear-gradient(145deg,var(--primary-dark),var(--primary));
+      color:rgba(255,255,255,.25);
+      font-size:90px;
+    }
+
+    .floating-badge{
+      position:absolute;
+      left:25px;
+      bottom:25px;
+      max-width:270px;
+      padding:19px;
+      border-radius:18px;
+      background:rgba(255,255,255,.94);
+      color:#17231f;
+      box-shadow:0 15px 40px rgba(0,0,0,.18);
+      backdrop-filter:blur(10px);
+    }
+
+    .floating-badge strong{
+      display:block;
+      font-family:"Playfair Display",serif;
+      font-size:21px;
+      line-height:1.2;
+      margin-bottom:5px;
+    }
+
+    .floating-badge span{
+      color:#65706b;
+      font-size:12px;
+    }
+
+    html[data-theme="dark"] .floating-badge{
+      background:rgba(22,39,33,.94);
+      color:var(--text);
+    }
+
+    html[data-theme="dark"] .floating-badge span{
+      color:var(--text-soft);
+    }
+
+    .service-copy .section-kicker{
+      margin-bottom:15px;
+    }
+
+    .service-copy h2{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(35px,4vw,53px);
+      line-height:1.1;
+      letter-spacing:-1px;
+      margin-bottom:20px;
+    }
+
+    .service-copy h2 span{
+      color:var(--primary-light);
+    }
+
+    .service-copy > p{
+      color:var(--text-soft);
+      font-size:15px;
+      line-height:1.9;
+      margin-bottom:25px;
+    }
+
+    .service-features{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin:28px 0 32px;
+    }
+
+    .service-feature{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:15px;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--surface);
+    }
+
+    .service-feature-icon{
+      width:38px;
+      height:38px;
+      flex:0 0 38px;
+      display:grid;
+      place-items:center;
+      border-radius:11px;
+      color:var(--accent-dark);
+      background:var(--surface-2);
+    }
+
+    .service-feature strong{
+      display:block;
+      font-size:13px;
+      margin-bottom:2px;
+    }
+
+    .service-feature span{
+      color:var(--text-soft);
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    /* =========================
+       INFO CARDS
+    ========================= */
+
+    .info-section{
+      background:var(--bg-soft);
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .info-card{
+      position:relative;
+      padding:30px;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      transition:var(--transition);
+    }
+
+    .info-card:hover{
+      transform:translateY(-7px);
+      box-shadow:var(--shadow-small);
+    }
+
+    .info-icon{
+      width:54px;
+      height:54px;
+      display:grid;
+      place-items:center;
+      margin-bottom:23px;
+      border-radius:15px;
+      color:var(--primary);
+      background:rgba(29,91,73,.09);
+      font-size:20px;
+    }
+
+    html[data-theme="dark"] .info-icon{
+      background:rgba(98,173,145,.12);
+    }
+
+    .info-card h3{
+      font-size:19px;
+      margin-bottom:9px;
+    }
+
+    .info-card p{
+      color:var(--text-soft);
+      font-size:13px;
+      line-height:1.75;
+    }
+
+    /* =========================
+       EXPERIENCE CONTENT
+    ========================= */
+
+    .experience-section{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .experience-copy{
+      order:1;
+    }
+
+    .experience-image{
+      order:2;
+      min-height:480px;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:var(--primary-dark);
+      position:relative;
+    }
+
+    .experience-image img{
+      width:100%;
+      height:100%;
+      min-height:480px;
+      object-fit:cover;
+    }
+
+    .experience-list{
+      display:grid;
+      gap:13px;
+      margin:28px 0 32px;
+    }
+
+    .experience-list li{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      color:var(--text-soft);
+      font-size:14px;
+    }
+
+    .experience-list li i{
+      width:24px;
+      height:24px;
+      flex:0 0 24px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:rgba(213,168,75,.15);
+      color:var(--accent-dark);
+      font-size:10px;
+      margin-top:2px;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats-section{
+      padding:35px 0;
+      background:var(--primary-dark);
+      color:#fff;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .stat{
+      text-align:center;
+      padding:25px;
+      border-right:1px solid rgba(255,255,255,.12);
+    }
+
+    .stat:last-child{
+      border-right:0;
+    }
+
+    .stat strong{
+      display:block;
+      font-family:"Playfair Display",serif;
+      color:var(--accent-light);
+      font-size:42px;
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .stat span{
+      color:rgba(255,255,255,.7);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.5px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================= */
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .process-card{
+      position:relative;
+      padding:30px 25px;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      background:var(--surface);
+      overflow:hidden;
+      transition:var(--transition);
+    }
+
+    .process-card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-small);
+    }
+
+    .process-number{
+      position:absolute;
+      right:20px;
+      top:12px;
+      font-family:"Playfair Display",serif;
+      font-size:65px;
+      line-height:1;
+      color:var(--surface-2);
+      font-weight:700;
+    }
+
+    .process-icon{
+      position:relative;
+      width:48px;
+      height:48px;
+      display:grid;
+      place-items:center;
+      border-radius:13px;
+      background:var(--primary);
+      color:#fff;
+      margin-bottom:22px;
+    }
+
+    .process-card h3{
+      position:relative;
+      font-size:17px;
+      margin-bottom:8px;
+    }
+
+    .process-card p{
+      position:relative;
+      color:var(--text-soft);
+      font-size:13px;
+      line-height:1.7;
+    }
+
+    /* =========================
+       GALLERY STRIP
+    ========================= */
+
+    .mini-gallery{
+      display:grid;
+      grid-template-columns:1.35fr 1fr 1fr;
+      grid-template-rows:250px 250px;
+      gap:14px;
+    }
+
+    .gallery-item{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      background:var(--primary-dark);
+    }
+
+    .gallery-item:first-child{
+      grid-row:1 / 3;
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .6s ease;
+    }
+
+    .gallery-item:hover img{
+      transform:scale(1.06);
+    }
+
+    .gallery-overlay{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:25px 20px 18px;
+      color:#fff;
+      background:linear-gradient(transparent,rgba(0,0,0,.72));
+    }
+
+    .gallery-overlay strong{
+      display:block;
+      font-size:14px;
+    }
+
+    .gallery-overlay span{
+      color:rgba(255,255,255,.7);
+      font-size:11px;
+    }
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-layout{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:75px;
+      align-items:start;
+    }
+
+    .faq-intro{
+      position:sticky;
+      top:120px;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .faq-item{
+      border:1px solid var(--border);
+      border-radius:15px;
+      background:var(--surface);
+      overflow:hidden;
+    }
+
+    .faq-question{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:20px;
+      background:transparent;
+      color:var(--text);
+      text-align:left;
+      font-size:14px;
+      font-weight:800;
+    }
+
+    .faq-question i{
+      color:var(--accent-dark);
+      transition:transform var(--transition);
+    }
+
+    .faq-item.open .faq-question i{
+      transform:rotate(45deg);
+    }
+
+    .faq-answer{
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .35s ease;
+    }
+
+    .faq-answer-inner{
+      padding:0 20px 20px;
+      color:var(--text-soft);
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    /* =========================
        CTA
-    ========================================================= */
+    ========================= */
 
-    .cta {
-      padding: 0 0 130px;
+    .cta{
+      padding:0 0 105px;
     }
 
-    .cta-box {
-      padding: 70px;
-      border-radius: var(--radius-lg);
-      background: var(--primary-dark);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      overflow: hidden;
-      position: relative;
+    .cta-box{
+      position:relative;
+      min-height:340px;
+      display:flex;
+      align-items:center;
+      padding:65px;
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      background:var(--primary-dark);
+      color:#fff;
     }
 
-    .cta-box::after {
-      content: "";
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      background: rgba(255,255,255,.05);
-      top: -170px;
-      inset-inline-end: -100px;
+    .cta-box::before{
+      content:"";
+      position:absolute;
+      width:480px;
+      height:480px;
+      right:-120px;
+      top:-180px;
+      border-radius:50%;
+      border:1px solid rgba(213,168,75,.2);
     }
 
-    .cta-box h2 {
-      font-size: clamp(32px, 4vw, 52px);
-      max-width: 680px;
-      position: relative;
-      z-index: 2;
+    .cta-box::after{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      right:10px;
+      bottom:-190px;
+      border-radius:50%;
+      border:1px solid rgba(213,168,75,.15);
     }
 
-    .cta-box p {
-      margin-top: 12px;
-      color: rgba(255,255,255,.7);
-      position: relative;
-      z-index: 2;
+    .cta-content{
+      position:relative;
+      z-index:2;
+      max-width:680px;
     }
 
+    .cta-content .eyebrow{
+      margin-bottom:12px;
+    }
+
+    .cta-content h2{
+      font-family:"Playfair Display",serif;
+      font-size:clamp(35px,4vw,53px);
+      line-height:1.08;
+      margin-bottom:14px;
+    }
+
+    .cta-content p{
+      max-width:600px;
+      color:rgba(255,255,255,.72);
+      font-size:14px;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+   
     /* =====================================================
        FOOTER
     ===================================================== */
@@ -2635,1204 +2640,1499 @@
       }
 
     }
-        /* =====================================================
-       TABLET
-    ===================================================== */
-
-    @media (min-width:601px) and (max-width:900px) {
-
-      .container {
-        width: min(
-          var(--container),
-          calc(100% - 40px)
-        );
-      }
-
-      /* -------------------------
-         HEADER
-      ------------------------- */
-
-      .header-inner {
-        min-height: 72px;
-      }
-
-      .main-nav {
-        position: fixed;
-
-        top: 72px;
-        left: 20px;
-        right: 20px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-
-        gap: 3px;
-
-        max-height: calc(100vh - 90px);
-        overflow-y: auto;
-
-        padding: 12px;
-
-        border: 1px solid var(--border);
-        border-radius: 18px;
-
-        background: var(--surface);
-        box-shadow: var(--shadow);
-
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-
-        transform: translateY(-12px);
-
-        transition: .25s ease;
-      }
-
-      .main-nav.mobile-open {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-
-        transform: translateY(0);
-      }
-
-      .nav-link,
-      .dropdown-toggle {
-        width: 100%;
-        min-height: 46px;
-
-        padding: 12px 14px;
-
-        justify-content: space-between;
-      }
-
-      .dropdown-menu {
-        position: static;
-
-        display: none;
-
-        min-width: 0;
-
-        margin: 3px 0 5px;
-
-        box-shadow: none;
-
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
-
-      .dropdown.open .dropdown-menu {
-        display: block;
-      }
-
-      .mobile-menu-btn {
-        display: grid;
-      }
-
-      .login-btn {
-        width: 42px;
-        height: 42px;
-        padding: 0;
-      }
-
-      .login-btn span {
-        display: none;
-      }
-
-
-      /* -------------------------
-         HERO
-      ------------------------- */
-
-      .hero {
-        min-height: 650px;
-
-        padding: 135px 0 80px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-      .hero-content {
-        max-width: 760px;
-      }
-
-      .hero h1 {
-        max-width: 760px;
-
-        font-size: clamp(
-          46px,
-          7vw,
-          68px
-        );
-      }
-
-      .hero-description {
-        max-width: 650px;
-      }
-
-      .hero-visual {
-        min-height: 480px;
-      }
-
-      .hero-image {
-        inset: 10px 0 0 35px;
-      }
-
-      .hero-badge {
-        left: 0;
-        bottom: 35px;
-      }
-
-      .hero-floating {
-        right: 0;
-      }
-
-
-      /* -------------------------
-         GENERAL SECTIONS
-      ------------------------- */
-
-      .section {
-        padding: 85px 0;
-      }
-
-      .section-header {
-        margin-bottom: 45px;
-      }
-
-      .section-title {
-        font-size: clamp(
-          34px,
-          5vw,
-          48px
-        );
-      }
-
-
-      /* -------------------------
-         INTRO
-      ------------------------- */
-
-      .intro-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-      }
-
-      .intro-image {
-        min-height: 460px;
-      }
-
-      .intro-image img {
-        min-height: 460px;
-      }
-
-
-      /* -------------------------
-         STATS
-      ------------------------- */
-
-      .stats {
-        padding: 0 0 85px;
-      }
-
-      .stats-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-
-        gap: 15px;
-      }
-
-
-      /* -------------------------
-         EXPERIENCES
-      ------------------------- */
-
-      .experience-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-
-        gap: 18px;
-      }
-
-      .experience-card {
-        min-height: 320px;
-      }
-
-      .experience-card img {
-        min-height: 320px;
-      }
-
-
-      /* -------------------------
-         BIRDS
-      ------------------------- */
-
-      .birds-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-
-        gap: 18px;
-      }
-
-      .bird-image {
-        height: 260px;
-      }
-
-
-      /* -------------------------
-         MISSION
-      ------------------------- */
-
-      .mission {
-        padding: 80px 0;
-      }
-
-      .mission-inner {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-      }
-
-      .mission h2 {
-        max-width: 800px;
-      }
-
-
-      /* -------------------------
-         FOOTER
-      ------------------------- */
-
-      .footer-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-
-        gap: 40px 25px;
-      }
-
-      .footer-brand {
-        grid-column: 1 / -1;
-
-        max-width: 100%;
-      }
-
-      .footer-bottom {
-        flex-direction: column;
-
-        justify-content: center;
-
-        text-align: center;
-
-        gap: 15px;
-
-        padding: 18px 0;
-      }
-
-    }
-
-
     /* =====================================================
-       MOBILE
-    ===================================================== */
+   PERFECT MOBILE RESPONSIVE
+   SERVICE DETAILS PAGE
+   <= 600px
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  /* =====================================================
+     GLOBAL
+     ===================================================== */
+
+  html {
+    overflow-x: hidden;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - 30px);
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+
+  /* =====================================================
+     HEADER
+     ===================================================== */
+
+  .site-header {
+    height: 68px;
+  }
+
+  .header-inner {
+    min-height: 68px;
+    height: 68px;
+    gap: 8px;
+  }
+
+  .logo {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .logo-mark {
+    width: 39px;
+    height: 39px;
+    flex: 0 0 39px;
+  }
+
+  .logo-mark img {
+    padding: 3px;
+  }
+
+  .logo-text {
+    font-size: 21px;
+    letter-spacing: -.3px;
+    white-space: nowrap;
+  }
+
+  .logo-text small {
+    margin-top: 2px;
+    font-size: 7px;
+    letter-spacing: 1.3px;
+  }
+
+  .header-actions {
+    gap: 5px;
+    margin-left: auto;
+  }
+
+  .icon-btn,
+  .login-btn,
+  .mobile-menu-btn {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    border-radius: 10px;
+  }
+
+  .icon-btn {
+    font-size: 13px;
+  }
+
+  .login-btn {
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .login-btn span {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: grid;
+    font-size: 17px;
+  }
 
-    @media (max-width:600px) {
 
-      .container {
-        width: calc(100% - 32px);
-      }
+  /* =====================================================
+     MOBILE NAVIGATION
+     ===================================================== */
 
+  .main-nav {
+    position: fixed;
 
-      /* -------------------------
-         HEADER
-      ------------------------- */
+    top: 68px;
+    left: 10px;
+    right: 10px;
 
-      .header-inner {
-        min-height: 68px;
-      }
+    width: auto;
 
-      .logo {
-        gap: 8px;
-      }
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
-      .logo-mark {
-        width: 40px;
-        height: 40px;
+    gap: 2px;
 
-        flex-basis: 40px;
-      }
+    padding: 10px;
 
-      .logo-text {
-        font-size: 1.45rem;
-      }
+    border:
+      1px solid var(--border);
 
-      .logo-text small {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-      }
+    border-radius: 17px;
 
-      .header-actions {
-        gap: 5px;
-      }
+    background:
+      color-mix(
+        in srgb,
+        var(--surface) 96%,
+        transparent
+      );
 
-      .icon-btn,
-      .login-btn,
-      .mobile-menu-btn {
-        width: 38px;
-        height: 38px;
-      }
+    box-shadow:
+      0 20px 50px rgba(18,60,49,.15);
 
-      .login-btn {
-        padding: 0;
-      }
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-      .login-btn span {
-        display: none;
-      }
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-      .mobile-menu-btn {
-        display: grid;
-      }
+    transform:
+      translateY(-12px)
+      scale(.98);
 
+    transform-origin: top center;
 
-      /* -------------------------
-         MOBILE NAV
-      ------------------------- */
+    transition:
+      opacity .25s ease,
+      visibility .25s ease,
+      transform .25s ease;
+  }
 
-      .main-nav {
-        position: fixed;
+  .main-nav.mobile-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 
-        top: 68px;
-        left: 12px;
-        right: 12px;
+    transform:
+      translateY(0)
+      scale(1);
+  }
 
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
+  .nav-link,
+  .dropdown-toggle {
+    width: 100%;
+    min-height: 46px;
 
-        gap: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-        max-height: calc(100vh - 82px);
-        overflow-y: auto;
+    padding: 12px 14px;
 
-        padding: 10px;
+    border-radius: 10px;
 
-        border: 1px solid var(--border);
-        border-radius: 16px;
+    font-size: 14px;
+  }
 
-        background: var(--surface);
-        box-shadow: var(--shadow);
+  .nav-link:hover,
+  .nav-link.active,
+  .dropdown-toggle:hover {
+    background: var(--bg-soft);
+  }
 
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+  .dropdown {
+    width: 100%;
+  }
 
-        transform: translateY(-10px);
+  .dropdown-toggle {
+    cursor: pointer;
+  }
 
-        transition: .25s ease;
-      }
+  .dropdown-menu {
+    position: static;
 
-      .main-nav.mobile-open {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+    width: 100%;
+    min-width: 0;
 
-        transform: translateY(0);
-      }
+    display: none;
 
-      .nav-link,
-      .dropdown-toggle {
-        width: 100%;
+    margin:
+      2px
+      0
+      5px;
 
-        min-height: 46px;
+    padding: 5px;
 
-        padding: 11px 13px;
+    border:
+      1px solid var(--border);
 
-        justify-content: space-between;
-      }
+    border-radius: 11px;
 
-      .dropdown-menu {
-        position: static;
+    box-shadow: none;
 
-        display: none;
+    background: var(--bg-soft);
 
-        min-width: 0;
+    opacity: 1;
+    visibility: visible;
 
-        margin: 2px 0 5px;
+    transform: none;
+  }
 
-        padding: 4px;
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
 
-        box-shadow: none;
+  .dropdown-menu a {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
 
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-      }
 
-      .dropdown.open .dropdown-menu {
-        display: block;
-      }
+  /* =====================================================
+     HERO
+     ===================================================== */
 
+  .details-hero {
+    min-height: 610px;
 
-      /* -------------------------
-         HERO
-      ------------------------- */
+    display: flex;
+    align-items: flex-end;
 
-      .hero {
-        min-height: 590px;
+    margin: 0;
 
-        padding: 135px 0 70px;
+    background:
+      var(--primary-dark);
+  }
 
-        background:
-          linear-gradient(
-            180deg,
-            rgba(247,245,239,.96) 0%,
-            rgba(247,245,239,.98) 100%
-          ),
-          var(--bg);
-      }
+  .details-hero-image {
+    position: absolute;
+    inset: 0;
+  }
 
-      .hero::before {
-        width: 320px;
-        height: 320px;
+  .details-hero-image img {
+    width: 100%;
+    height: 100%;
 
-        right: -180px;
-        top: 70px;
-      }
+    object-fit: cover;
+    object-position: center;
+  }
 
-      .hero::after {
-        width: 420px;
-        height: 420px;
+  .details-hero::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10,28,23,.18) 0%,
+        rgba(10,28,23,.42) 30%,
+        rgba(10,28,23,.78) 62%,
+        rgba(10,28,23,.97) 100%
+      );
+  }
 
-        right: -220px;
-        top: 40px;
-      }
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
 
-      .hero-grid {
-        grid-template-columns: 1fr;
+    padding:
+      125px
+      0
+      48px;
+  }
 
-        gap: 38px;
-      }
+  .eyebrow {
+    gap: 7px;
 
-      .hero-content {
-        max-width: 100%;
-      }
+    margin-bottom: 13px;
 
-      .eyebrow {
-        margin-bottom: 14px;
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
 
-        font-size: 10px;
-        letter-spacing: 1.4px;
-      }
+  .eyebrow::before {
+    width: 22px;
+    height: 2px;
+  }
 
-      .eyebrow::before {
-        width: 23px;
-      }
+  .hero-content h1 {
+    width: 100%;
+    max-width: 100%;
 
-      .hero h1 {
-        max-width: 100%;
+    font-size:
+      clamp(
+        35px,
+        10.5vw,
+        49px
+      );
 
-        margin-bottom: 18px;
+    line-height: 1.05;
 
-        font-size:
-          clamp(
-            2.35rem,
-            12vw,
-            3.7rem
-          );
+    letter-spacing:
+      -1.2px;
 
-        line-height: 1.04;
+    margin-bottom: 17px;
+  }
 
-        letter-spacing: -1.5px;
-      }
+  .hero-content h1 span {
+    color: var(--accent-light);
+  }
 
-      .hero-description {
-        max-width: 100%;
+  .hero-content p {
+    width: 100%;
+    max-width: 100%;
 
-        margin-bottom: 25px;
+    font-size: 14px;
 
-        font-size: .9rem;
+    line-height: 1.75;
 
-        line-height: 1.75;
-      }
+    margin-bottom: 24px;
 
-      .hero-actions {
-        flex-direction: column;
+    color:
+      rgba(255,255,255,.78);
+  }
 
-        align-items: stretch;
+  .hero-actions {
+    width: 100%;
 
-        gap: 10px;
-      }
+    display: flex;
+    flex-direction: column;
 
-      .hero-actions .btn {
-        width: 100%;
-      }
+    gap: 10px;
+  }
 
-      .hero-note {
-        margin-top: 22px;
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 48px;
 
-        font-size: 11px;
-      }
+    justify-content: center;
+  }
 
-      .hero-visual {
-        min-height: 380px;
-      }
 
-      .hero-image {
-        inset: 0;
+  /* =====================================================
+     COMMON SECTION
+     ===================================================== */
 
-        border-radius: 24px;
-      }
+  .section {
+    padding: 62px 0;
+  }
 
-      .hero-badge {
-        left: 12px;
-        bottom: 18px;
+  .section-head {
+    width: 100%;
+    max-width: 100%;
 
-        width: 145px;
+    margin-bottom: 32px;
+  }
 
-        padding: 16px;
+  .section-head.center {
+    text-align: center;
+  }
 
-        border-radius: 15px;
-      }
+  .section-kicker {
+    gap: 7px;
 
-      .hero-badge strong {
-        font-size: 25px;
-      }
+    margin-bottom: 10px;
 
-      .hero-badge span {
-        font-size: 10px;
-      }
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
 
-      .hero-floating {
-        top: -12px;
-        right: 8px;
+  .section-kicker::before {
+    width: 20px;
+  }
 
-        width: 92px;
-        height: 92px;
-      }
+  .section-head.center
+  .section-kicker::after {
+    width: 20px;
+  }
 
-      .hero-floating i {
-        font-size: 20px;
-      }
+  .section-title {
+    font-size:
+      clamp(
+        29px,
+        8.5vw,
+        39px
+      );
 
-      .hero-floating span {
-        font-size: 8px;
-      }
+    line-height: 1.12;
 
+    letter-spacing:
+      -.8px;
 
-      /* -------------------------
-         GENERAL SECTIONS
-      ------------------------- */
+    margin-bottom: 13px;
+  }
 
-      .section {
-        padding: 70px 0;
-      }
+  .section-description {
+    font-size: 13px;
+    line-height: 1.75;
+  }
 
-      .section-header {
-        margin-bottom: 36px;
-      }
 
-      .section-title {
-        margin-bottom: 12px;
+  /* =====================================================
+     SERVICE INTRO
+     ===================================================== */
 
-        font-size: 2rem;
+  .service-intro {
+    display: flex;
+    flex-direction: column;
 
-        letter-spacing: -.5px;
-      }
+    gap: 34px;
+  }
 
-      .section-description {
-        font-size: 13px;
+  .service-intro-image {
+    width: 100%;
 
-        line-height: 1.75;
-      }
+    min-height: 390px;
 
+    order: 1;
 
-      /* -------------------------
-         INTRO
-      ------------------------- */
+    border-radius: 21px;
 
-      .intro-grid {
-        grid-template-columns: 1fr;
+    box-shadow:
+      0 18px 45px
+      rgba(18,60,49,.13);
+  }
 
-        gap: 35px;
-      }
+  .service-intro-image img {
+    width: 100%;
+    height: 100%;
 
-      .intro-image {
-        min-height: 360px;
+    min-height: 390px;
 
-        border-radius: 24px;
-      }
+    object-fit: cover;
+  }
 
-      .intro-image img {
-        min-height: 360px;
-      }
+  .floating-badge {
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
 
-      .intro-card {
-        right: 15px;
-        bottom: 15px;
+    width: auto;
+    max-width: none;
 
-        max-width: 210px;
+    padding: 14px 15px;
 
-        padding: 17px;
+    border-radius: 14px;
+  }
 
-        border-radius: 15px;
-      }
+  .floating-badge strong {
+    font-size: 17px;
+    line-height: 1.2;
+  }
 
-      .intro-card strong {
-        font-size: 20px;
-      }
+  .floating-badge span {
+    font-size: 10px;
+  }
 
-      .intro-card span {
-        font-size: 10px;
-      }
+  .service-copy {
+    width: 100%;
+    order: 2;
+  }
 
-      .intro-content p {
-        font-size: 13px;
+  .service-copy .section-kicker {
+    margin-bottom: 11px;
+  }
 
-        line-height: 1.8;
-      }
+  .service-copy h2 {
+    font-size:
+      clamp(
+        29px,
+        8vw,
+        38px
+      );
 
-      .check-list {
-        gap: 11px;
+    line-height: 1.12;
 
-        margin: 22px 0 26px;
-      }
+    letter-spacing:
+      -.8px;
 
-      .check-list li {
-        gap: 9px;
+    margin-bottom: 15px;
+  }
 
-        font-size: 13px;
-      }
+  .service-copy > p {
+    font-size: 13px;
 
+    line-height: 1.8;
 
-      /* -------------------------
-         STATS
-      ------------------------- */
+    margin-bottom: 21px;
+  }
 
-      .stats {
-        padding: 0 0 70px;
-      }
 
-      .stats-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
+  /* =====================================================
+     SERVICE FEATURES
+     ===================================================== */
 
-        gap: 10px;
-      }
+  .service-features {
+    display: grid;
+    grid-template-columns: 1fr;
 
-      .stat-card {
-        padding: 23px 12px;
+    gap: 9px;
 
-        border-radius: 16px;
-      }
+    margin:
+      20px
+      0
+      25px;
+  }
 
-      .stat-icon {
-        width: 43px;
-        height: 43px;
+  .service-feature {
+    width: 100%;
 
-        margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
 
-        border-radius: 12px;
-      }
+    gap: 10px;
 
-      .stat-card strong {
-        font-size: 27px;
-      }
+    padding: 12px;
 
-      .stat-card span {
-        font-size: 10px;
-      }
+    border-radius: 12px;
+  }
 
+  .service-feature-icon {
+    width: 35px;
+    height: 35px;
 
-      /* -------------------------
-         EXPERIENCES
-      ------------------------- */
+    flex: 0 0 35px;
 
-      .experience-grid {
-        grid-template-columns: 1fr;
+    border-radius: 9px;
 
-        gap: 16px;
-      }
+    font-size: 12px;
+  }
 
-      .experience-card {
-        min-height: 300px;
+  .service-feature strong {
+    font-size: 12px;
+    line-height: 1.4;
+  }
 
-        border-radius: 18px;
-      }
+  .service-feature span {
+    font-size: 10px;
+    line-height: 1.45;
+  }
 
-      .experience-card img {
-        min-height: 300px;
-      }
 
-      .experience-content {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-      }
+  /* =====================================================
+     INFO SECTION
+     ===================================================== */
 
-      .experience-icon {
-        width: 41px;
-        height: 41px;
+  .info-section {
+    padding:
+      62px
+      0;
+  }
 
-        margin-bottom: 12px;
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
 
-        border-radius: 11px;
-      }
+    gap: 12px;
+  }
 
-      .experience-content h3 {
-        margin-bottom: 5px;
+  .info-card {
+    width: 100%;
 
-        font-size: 22px;
-      }
+    padding: 22px 19px;
 
-      .experience-content p {
-        font-size: 11px;
-      }
+    border-radius: 16px;
 
+    box-shadow: none;
+  }
 
-      /* -------------------------
-         FEATURED BIRDS
-      ------------------------- */
+  .info-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 
-      .birds-grid {
-        grid-template-columns: 1fr;
+  .info-icon {
+    width: 46px;
+    height: 46px;
 
-        gap: 16px;
-      }
+    margin-bottom: 15px;
 
-      .bird-card {
-        border-radius: 18px;
-      }
+    border-radius: 12px;
 
-      .bird-image {
-        height: 245px;
-      }
+    font-size: 17px;
+  }
 
-      .bird-info {
-        padding: 20px;
-      }
+  .info-card h3 {
+    font-size: 17px;
+    line-height: 1.3;
 
-      .bird-info h3 {
-        font-size: 22px;
-      }
+    margin-bottom: 7px;
+  }
 
-      .bird-info p {
-        font-size: 12px;
-      }
+  .info-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
 
-      .center-button {
-        margin-top: 28px;
-      }
 
+  /* =====================================================
+     EXPERIENCE
+     ===================================================== */
 
-      /* -------------------------
-         MISSION CTA
-      ------------------------- */
+  .experience-section {
+    display: flex;
+    flex-direction: column;
 
-      .mission {
-        padding: 70px 0;
-      }
+    gap: 32px;
+  }
 
-      .mission-inner {
-        grid-template-columns: 1fr;
+  .experience-copy {
+    order: 1;
+  }
 
-        gap: 28px;
-      }
+  .experience-image {
+    width: 100%;
 
-      .mission h2 {
-        font-size: 2rem;
-      }
+    min-height: 350px;
 
-      .mission p {
-        font-size: 13px;
+    order: 2;
 
-        line-height: 1.75;
-      }
+    border-radius: 21px;
+  }
 
-      .mission .btn-primary {
-        width: 100%;
-      }
+  .experience-image img {
+    width: 100%;
+    height: 100%;
 
+    min-height: 350px;
 
-      /* -------------------------
-         BUTTONS
-      ------------------------- */
+    object-fit: cover;
+  }
 
-      .btn {
-        min-height: 50px;
+  .experience-list {
+    display: grid;
 
-        padding: 0 20px;
+    gap: 10px;
 
-        font-size: 13px;
-      }
+    margin:
+      21px
+      0
+      25px;
+  }
 
+  .experience-list li {
+    gap: 10px;
 
-      /* -------------------------
-         FOOTER
-      ------------------------- */
+    font-size: 12px;
 
-      .site-footer {
-        padding:
-          60px
-          0
-          20px;
-      }
+    line-height: 1.65;
+  }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+  .experience-list li i {
+    width: 22px;
+    height: 22px;
 
-        gap: 35px;
+    flex: 0 0 22px;
 
-        text-align: center;
-      }
+    font-size: 9px;
+  }
 
-      .footer-brand,
-      .footer-column {
-        width: 100%;
 
-        max-width: 100%;
+  /* =====================================================
+     STATS
+     ===================================================== */
 
-        text-align: center;
-      }
+  .stats-section {
+    padding: 34px 0;
+  }
 
-      .footer-brand .logo {
-        justify-content: center;
-      }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-      .footer-description {
-        max-width: 340px;
+  .stat {
+    padding:
+      21px
+      8px;
 
-        margin-inline: auto;
+    border-right:
+      1px solid
+      rgba(255,255,255,.12);
 
-        font-size: 13px;
-      }
+    border-bottom:
+      1px solid
+      rgba(255,255,255,.12);
+  }
 
-      .footer-socials {
-        justify-content: center;
-      }
+  .stat:nth-child(2n) {
+    border-right: 0;
+  }
 
-      .footer-column h3 {
-        margin-bottom: 18px;
-      }
+  .stat:nth-child(3),
+  .stat:nth-child(4) {
+    border-bottom: 0;
+  }
 
-      .footer-column h3::after {
-        left: 50%;
+  .stat strong {
+    font-size: 30px;
 
-        transform:
-          translateX(-50%);
-      }
+    margin-bottom: 6px;
+  }
 
-      .footer-links {
-        justify-items: center;
-      }
+  .stat span {
+    display: block;
 
-      .footer-contact {
-        justify-items: center;
-      }
+    font-size: 9px;
 
-      .footer-contact-item {
-        justify-content: center;
+    line-height: 1.4;
+  }
 
-        text-align: center;
-      }
 
-      .footer-divider {
-        margin-top: 40px;
-      }
+  /* =====================================================
+     PROCESS
+     ===================================================== */
 
-      .footer-bottom {
-        min-height: auto;
+  .process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
 
-        padding: 20px 0;
+    gap: 12px;
+  }
 
-        flex-direction: column;
+  .process-card {
+    width: 100%;
 
-        justify-content: center;
+    padding:
+      23px
+      19px;
 
-        text-align: center;
+    border-radius: 16px;
+  }
 
-        gap: 12px;
-      }
+  .process-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 
-      .footer-bottom-links {
-        flex-wrap: wrap;
+  .process-number {
+    right: 13px;
+    top: 8px;
 
-        justify-content: center;
+    font-size: 55px;
+  }
 
-        gap: 10px 22px;
-      }
+  .process-icon {
+    width: 43px;
+    height: 43px;
 
+    margin-bottom: 17px;
 
-      /* -------------------------
-         MODAL
-      ------------------------- */
+    border-radius: 11px;
+  }
 
-      .modal-backdrop {
-        padding: 16px;
-      }
+  .process-card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+  }
 
-      .modal {
-        width: 100%;
+  .process-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
 
-        max-width: 430px;
 
-        max-height:
-          calc(100vh - 32px);
+  /* =====================================================
+     GALLERY
+     ===================================================== */
 
-        overflow-y: auto;
+  .mini-gallery {
+    display: grid;
 
-        padding: 25px 20px;
+    grid-template-columns: 1fr 1fr;
 
-        border-radius: 18px;
-      }
+    grid-template-rows:
+      215px
+      150px
+      150px;
 
-      .modal-header h2 {
-        font-size: 1.5rem;
-      }
+    gap: 8px;
+  }
 
-      .modal-header {
-        margin-bottom: 22px;
-      }
+  .gallery-item {
+    border-radius: 12px;
+  }
 
+  .gallery-item:first-child {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
 
-      /* -------------------------
-         TOAST
-      ------------------------- */
+  .gallery-item img {
+    transition: none;
+  }
 
-      .toast {
-        left: 16px;
-        right: 16px;
+  .gallery-overlay {
+    padding:
+      27px
+      11px
+      11px;
+  }
 
-        bottom: 16px;
+  .gallery-overlay strong {
+    font-size: 11px;
+  }
 
-        min-width: 0;
+  .gallery-overlay span {
+    font-size: 9px;
+  }
 
-        max-width: none;
 
-        padding: 13px 15px;
-      }
+  /* =====================================================
+     FAQ
+     ===================================================== */
 
+  .faq-layout {
+    display: flex;
+    flex-direction: column;
 
-      /* -------------------------
-         REVEAL
-      ------------------------- */
+    gap: 30px;
+  }
 
-      .reveal {
-        transform: translateY(18px);
-      }
+  .faq-intro {
+    position: static;
+  }
 
-    }
+  .faq-list {
+    display: grid;
 
+    gap: 8px;
+  }
 
-    /* =====================================================
-       SMALL MOBILE
-    ===================================================== */
+  .faq-item {
+    border-radius: 12px;
+  }
 
-    @media (max-width:380px) {
+  .faq-question {
+    min-height: 52px;
 
-      .container {
-        width: calc(100% - 24px);
-      }
+    padding:
+      16px
+      14px;
 
+    font-size: 12px;
 
-      /* HEADER */
+    line-height: 1.5;
 
-      .header-inner {
-        min-height: 64px;
-      }
+    gap: 12px;
+  }
 
-      .logo-text {
-        font-size: 1.25rem;
-      }
+  .faq-question i {
+    flex: 0 0 auto;
 
-      .logo-text small {
-        display: none;
-      }
+    font-size: 11px;
+  }
 
-      .logo-mark {
-        width: 36px;
-        height: 36px;
+  .faq-answer-inner {
+    padding:
+      0
+      14px
+      17px;
 
-        flex-basis: 36px;
-      }
+    font-size: 11px;
 
-      .header-actions {
-        gap: 3px;
-      }
+    line-height: 1.75;
+  }
 
-      .icon-btn,
-      .login-btn,
-      .mobile-menu-btn {
-        width: 35px;
-        height: 35px;
-      }
 
-      .main-nav {
-        top: 64px;
-      }
+  /* =====================================================
+     CTA
+     ===================================================== */
 
+  .cta {
+    padding:
+      0
+      0
+      62px;
+  }
 
-      /* HERO */
+  .cta-box {
+    width: 100%;
 
-      .hero {
-        min-height: 550px;
+    min-height: 330px;
 
-        padding:
-          125px
-          0
-          60px;
-      }
+    display: flex;
+    align-items: center;
 
-      .hero h1 {
-        font-size: 2.2rem;
-      }
+    padding:
+      42px
+      20px;
 
-      .hero-description {
-        font-size: .86rem;
-      }
+    border-radius: 21px;
+  }
 
-      .hero-visual {
-        min-height: 330px;
-      }
+  .cta-box::before {
+    width: 300px;
+    height: 300px;
 
-      .hero-badge {
-        width: 130px;
+    right: -160px;
+    top: -110px;
+  }
 
-        padding: 13px;
-      }
+  .cta-box::after {
+    width: 220px;
+    height: 220px;
 
-      .hero-badge strong {
-        font-size: 22px;
-      }
+    right: -40px;
+    bottom: -160px;
+  }
 
-      .hero-floating {
-        width: 78px;
-        height: 78px;
-      }
+  .cta-content {
+    width: 100%;
+    max-width: 100%;
+  }
 
+  .cta-content .eyebrow {
+    margin-bottom: 10px;
+  }
 
-      /* SECTIONS */
+  .cta-content h2 {
+    font-size:
+      clamp(
+        29px,
+        8vw,
+        39px
+      );
 
-      .section {
-        padding: 60px 0;
-      }
+    line-height: 1.1;
 
-      .section-title {
-        font-size: 1.8rem;
-      }
+    margin-bottom: 13px;
+  }
 
+  .cta-content p {
+    font-size: 12px;
+    line-height: 1.75;
 
-      /* INTRO */
+    margin-bottom: 21px;
+  }
 
-      .intro-image {
-        min-height: 320px;
-      }
+  .cta-content .btn {
+    width: 100%;
 
-      .intro-image img {
-        min-height: 320px;
-      }
+    min-height: 48px;
 
-      .intro-card {
-        right: 10px;
-        bottom: 10px;
+    justify-content: center;
+  }
 
-        width: 175px;
 
-        padding: 14px;
-      }
+  /* =====================================================
+     FOOTER
+     ===================================================== */
 
+  .site-footer {
+    padding:
+      58px
+      0
+      20px;
+  }
 
-      /* EXPERIENCES */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
 
-      .experience-card,
-      .experience-card img {
-        min-height: 275px;
-      }
+    gap: 34px;
 
+    text-align: center;
+  }
 
-      /* BIRDS */
+  .footer-brand,
+  .footer-column {
+    width: 100%;
+    max-width: 100%;
 
-      .bird-image {
-        height: 220px;
-      }
+    text-align: center;
+  }
 
-      .bird-info {
-        padding: 17px;
-      }
+  .footer-brand .logo {
+    justify-content: center;
+  }
 
+  .footer-description {
+    max-width: 330px;
 
-      /* MISSION */
+    margin-inline: auto;
 
-      .mission {
-        padding: 60px 0;
-      }
+    font-size: 12px;
+    line-height: 1.75;
+  }
 
-      .mission h2 {
-        font-size: 1.8rem;
-      }
+  .footer-socials {
+    justify-content: center;
 
+    margin-top: 19px;
+  }
 
-      /* FOOTER */
+  .footer-socials a {
+    width: 36px;
+    height: 36px;
 
-      .site-footer {
-        padding-top: 50px;
-      }
+    border-radius: 9px;
+  }
 
+  .footer-column h3 {
+    margin:
+      0
+      0
+      18px;
 
-      /* MODAL */
+    font-size: 14px;
+  }
 
-      .modal {
-        padding: 22px 16px;
-      }
+  .footer-column h3::after {
+    left: 50%;
 
-    }
+    transform:
+      translateX(-50%);
+  }
 
+  .footer-links {
+    justify-items: center;
 
-    /* =====================================================
-       MOBILE LANDSCAPE
-    ===================================================== */
+    gap: 9px;
+  }
 
-    @media (max-width:600px)
-    and (orientation:landscape) {
+  .footer-links a {
+    font-size: 12px;
+  }
 
-      .hero {
-        min-height: 500px;
+  .footer-contact {
+    justify-items: center;
 
-        padding:
-          115px
-          0
-          55px;
-      }
+    gap: 13px;
+  }
 
-      .hero-actions {
-        flex-direction: row;
+  .footer-contact-item {
+    justify-content: center;
 
-        align-items: center;
-      }
+    text-align: center;
 
-      .hero-actions .btn {
-        width: auto;
-      }
+    font-size: 11px;
+  }
 
-      .hero-visual {
-        min-height: 320px;
-      }
+  .footer-contact-item i {
+    width: 29px;
+    height: 29px;
 
-      .intro-image {
-        min-height: 320px;
-      }
+    flex: 0 0 29px;
+  }
 
-      .intro-image img {
-        min-height: 320px;
-      }
+  .footer-divider {
+    margin-top: 38px;
+  }
 
-    }
-   @media (max-width: 380px) {
+  .footer-bottom {
+    min-height: auto;
+
+    padding:
+      20px
+      0
+      5px;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    gap: 11px;
+  }
+
+  .footer-bottom p {
+    font-size: 10px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 8px 20px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 10px;
+  }
+
+
+  /* =====================================================
+     LOGIN MODAL
+     ===================================================== */
+
+  .modal-backdrop {
+    padding: 14px;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 430px;
+
+    max-height:
+      calc(100vh - 28px);
+
+    overflow-y: auto;
+
+    padding:
+      24px
+      18px;
+
+    border-radius: 17px;
+  }
+
+  .modal-header {
+    margin-bottom: 20px;
+  }
+
+  .modal-header h2 {
+    font-size: 1.45rem;
+  }
+
+  .modal-header p {
+    font-size: .75rem;
+  }
+
+  .modal-close {
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
+  }
+
+  .login-form {
+    gap: 14px;
+  }
+
+  .login-form label {
+    font-size: .75rem;
+  }
+
+  .form-control {
+    min-height: 48px;
+
+    padding:
+      11px
+      13px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+  }
+
+  .login-options {
+    font-size: .72rem;
+  }
+
+
+  /* =====================================================
+     TOAST
+     ===================================================== */
+
+  .toast {
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+
+    width: auto;
+    min-width: 0;
+    max-width: none;
+
+    padding:
+      12px
+      14px;
+
+    border-radius: 11px;
+  }
+
+  .toast span {
+    font-size: 11px;
+  }
+
+
+  /* =====================================================
+     REVEAL
+     ===================================================== */
+
+  .reveal {
+    transform:
+      translateY(18px);
+  }
+}
+
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+   <= 380px
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  /* Header */
+
+  .site-header,
+  .header-inner {
+    min-height: 64px;
+    height: 64px;
+  }
+
+  .logo-mark {
+    width: 35px;
+    height: 35px;
+
+    flex-basis: 35px;
+  }
+
+  .logo-text {
+    font-size: 19px;
+  }
+
+  .logo-text small {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 3px;
+  }
+
+  .icon-btn,
+  .login-btn,
+  .mobile-menu-btn {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .main-nav {
+    top: 64px;
+  }
+
+
+  /* Hero */
+
+  .details-hero {
+    min-height: 570px;
+  }
+
+  .hero-content {
+    padding:
+      105px
+      0
+      42px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 12px;
+  }
+
+
+  /* Intro */
+
+  .service-intro-image,
+  .service-intro-image img {
+    min-height: 325px;
+  }
+
+  .floating-badge {
+    padding: 12px;
+  }
+
+  .floating-badge strong {
+    font-size: 15px;
+  }
+
+  .floating-badge span {
+    font-size: 9px;
+  }
+
+
+  /* Section */
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+
+
+  /* Stats */
+
+  .stat {
+    padding:
+      18px
+      5px;
+  }
+
+  .stat strong {
+    font-size: 25px;
+  }
+
+  .stat span {
+    font-size: 8px;
+  }
+
+
+  /* Gallery */
+
+  .mini-gallery {
+    grid-template-rows:
+      190px
+      135px
+      135px;
+  }
+
+
+  /* CTA */
+
+  .cta {
+    padding-bottom: 50px;
+  }
+
+  .cta-box {
+    min-height: 310px;
+
+    padding:
+      35px
+      17px;
+  }
+
+  .cta-content h2 {
+    font-size: 27px;
+  }
+
+
+  /* Modal */
+
+  .modal {
+    padding:
+      21px
+      15px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE LANDSCAPE
+   ===================================================== */
+
+@media (max-width: 600px)
+and (orientation: landscape) {
+
+  .details-hero {
+    min-height: 500px;
+  }
+
+  .hero-content {
+    padding:
+      105px
+      0
+      45px;
+  }
+
+  .hero-actions {
+    flex-direction: row;
+  }
+
+  .hero-actions .btn {
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .service-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 25px;
+  }
+
+  .service-intro-image {
+    min-height: 330px;
+  }
+
+  .service-intro-image img {
+    min-height: 330px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE RTL
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  html[dir="rtl"] .hero-content {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .service-copy {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .experience-copy {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .faq-question {
+    text-align: right;
+  }
+
+  html[dir="rtl"] .footer-brand,
+  html[dir="rtl"] .footer-column {
+    text-align: center;
+  }
+
+  html[dir="rtl"] .footer-contact-item {
+    flex-direction: row-reverse;
+  }
+
+  html[dir="rtl"] .footer-links a:hover {
+    transform: none;
+  }
+}
+
+
+/* =====================================================
+   MOBILE TOUCH
+   ===================================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .info-card:hover,
+  .process-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .gallery-item:hover img {
+    transform: none;
+  }
+
+  .btn,
+  .nav-link,
+  .dropdown-toggle,
+  .faq-question {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+ @media (max-width: 380px) {
 
   .logo-text {
     font-size: 18px;
@@ -3858,47 +4158,6 @@
 }
 
 
-    
-
-/* =====================================
-   HOME2 - CONSISTENT SECTION HEADINGS
-===================================== */
-
-.section-title {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
-    margin-bottom: 18px;
-    color: var(--text-dark, #0d261f);
-}
-
-/* Highlighted heading text */
-.section-title span {
-    color: var(--primary-light);
-}
-
-/* Section descriptions */
-.section-description {
-    font-family: "DM Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-soft);
-}
-
-/* Preserve headings on dark backgrounds */
-.experience .section-title {
-    color: #ffffff;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-    .section-title {
-        font-size: clamp(1.9rem, 6vw, 2.5rem);
-        line-height: 1.25;
-    }
-}
 
   </style>
 </head>
@@ -3907,15 +4166,7 @@
 <body>
 
 
-
-
-  </style>
-</head>
-
-<body>
-
-
-  <!-- =====================================================
+  <<!-- =====================================================
        HEADER
   ===================================================== -->
 
@@ -3980,7 +4231,7 @@
 
         <a href="about.html" class="nav-link">About</a>
         <a href="services.html" class="nav-link">Services</a>
-      
+       
         <a href="schoolprogram.html" class="nav-link">School Program</a>
         <a href="blog.html" class="nav-link">Blog</a>
         <a href="contact.html" class="nav-link">Contact</a>
@@ -4040,174 +4291,764 @@
   </header>
   </header>
 
-  <!-- =========================================================
-       MAIN
-  ========================================================== -->
+  <!-- =========================
+       HERO
+  ========================== -->
 
-  <main>
+  <section class="details-hero">
 
+    <div class="details-hero-image">
 
-    <!-- =======================================================
-         HOMEPAGE 2 HERO
-    ======================================================== -->
+      <img
+        src="./imagess/Favorite bird_ Flying peafowl_.jpg"
+        alt="Falconry experience at Aviora"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+      >
 
-    <section class="hero" id="home">
+      <div class="hero-fallback">
+        <i class="fa-solid fa-feather-pointed"></i>
+      </div>
 
-      <div class="container">
+    </div>
 
-        <div class="hero-content">
+    <div class="container">
+      <div class="hero-content reveal">
 
-          <div class="">
-            A quieter way to discover nature
-          </div>
+        <div class="">
+          Service Details
+        </div>
 
-          <h1>
-            Where Birds
-            <span>
-            Come Alive.
-            </span>
-          </h1>
+        <h1>
+          Get closer to the wild,
+          <span>one experience at a time.</span>
+        </h1>
 
-          <p class="hero-description">
+        <p>
+          Discover immersive falconry and wildlife experiences created
+          to help you understand, respect, and connect with remarkable birds.
+        </p>
 
-            Enter a living sanctuary where rare birds, peaceful
-            landscapes and meaningful experiences come together.
-            Slow down, look closer and discover the wild from
-            a whole new perspective.
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary">
+            Book This Experience
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
 
-          </p>
-
-
-          <div class="hero-buttons">
-
-            <a
-              href="#experience"
-              class="btn btn-primary"
-            >
-
-              Explore Sanctuary
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-
-            <a
-              href="#birds"
-              class="btn btn-outline"
-            >
-
-              Meet Our Birds
-
-            </a>
-
-          </div>
-
+          <a href="#details" class="btn btn-outline">
+            Explore Details
+          </a>
         </div>
 
       </div>
+    </div>
+  </section>
 
 
-      <!-- FLOATING HERO CARD -->
+  <!-- =========================
+       MAIN SERVICE DETAILS
+  ========================== -->
 
-      <div class="hero-card">
+  <section class="section" id="details">
 
-        <div class="hero-card-image">
+    <div class="container">
+
+      <div class="service-intro">
+
+        <div class="service-intro-image reveal">
 
           <img
-            src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=700&q=85"
-            alt="Bird resting in a natural habitat"
+            src="./imagess/fly.jpg"
+            alt="Falconry experience"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
           >
+
+          <div class="image-fallback">
+            <i class="fa-solid fa-dove"></i>
+          </div>
+
+          <div class="floating-badge">
+            <strong>A moment you'll remember.</strong>
+            <span>Guided by experienced bird handlers and educators.</span>
+          </div>
 
         </div>
 
 
-        <div>
+        <div class="service-copy reveal">
 
-          <small>
-            Today's Highlight
-          </small>
+          <div class="section-kicker">
+            Featured Experience
+          </div>
 
-          <h3>
-            Meet the Wild
-          </h3>
+          <h2>
+            Falconry
+            <span>Experience</span>
+          </h2>
 
           <p>
-            Discover beautiful resident birds and learn the
-            stories behind their habitats.
+            Step into the world of falconry and discover the incredible
+            relationship between people and birds of prey. Your experience
+            combines close observation, expert guidance, responsible handling,
+            and the unforgettable sight of a bird taking flight.
           </p>
 
-          <a
-            href="#birds"
-            class="hero-card-link"
-          >
+          <p>
+            Every encounter is designed around the comfort and welfare of our
+            birds, giving you an authentic experience without compromising
+            their natural behavior.
+          </p>
 
-            Discover birds
+          <div class="service-features">
 
-            <i class="fa-solid fa-arrow-right"></i>
+            <div class="service-feature">
+              <div class="service-feature-icon">
+                <i class="fa-solid fa-feather"></i>
+              </div>
+              <div>
+                <strong>Bird Interaction</strong>
+                <span>Observe and interact responsibly.</span>
+              </div>
+            </div>
 
+            <div class="service-feature">
+              <div class="service-feature-icon">
+                <i class="fa-solid fa-user-tie"></i>
+              </div>
+              <div>
+                <strong>Expert Guidance</strong>
+                <span>Learn from experienced handlers.</span>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <div class="service-feature-icon">
+                <i class="fa-solid fa-camera"></i>
+              </div>
+              <div>
+                <strong>Photography</strong>
+                <span>Capture memorable moments.</span>
+              </div>
+            </div>
+
+            <div class="service-feature">
+              <div class="service-feature-icon">
+                <i class="fa-solid fa-shield-heart"></i>
+              </div>
+              <div>
+                <strong>Welfare First</strong>
+                <span>Bird safety guides every session.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <a href="#booking" class="btn btn-primary">
+            Reserve Your Experience
+            <i class="fa-solid fa-calendar-check"></i>
           </a>
 
         </div>
 
       </div>
 
+    </div>
 
-      <!-- HERO FACTS -->
+  </section>
 
-      <div class="hero-facts">
 
-        <div class="hero-fact">
+  <!-- =========================
+       EXPERIENCE INFO
+  ========================== -->
 
-          <i class="fa-solid fa-feather-pointed"></i>
+  <section class="section info-section">
 
-          <div>
+    <div class="container">
 
-            <strong>
-              120+
-            </strong>
+      <div class="section-head center reveal">
 
-            <span>
-              Bird Species
+        <div class="">
+          What You'll Get
+        </div>
+
+        <h2 class="section-title">
+          More than a visit.
+          <br>It's an experience.
+        </h2>
+
+        <p class="section-description">
+          From your first introduction to the birds through the final flight,
+          every part of the experience is carefully planned.
+        </p>
+
+      </div>
+
+
+      <div class="info-grid">
+
+        <article class="info-card reveal">
+          <div class="info-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3>Learn About Birds</h3>
+          <p>
+            Understand bird behavior, species, habitats, conservation,
+            and the fascinating traditions of falconry.
+          </p>
+        </article>
+
+
+        <article class="info-card reveal">
+          <div class="info-icon">
+            <i class="fa-solid fa-hand"></i>
+          </div>
+          <h3>Responsible Interaction</h3>
+          <p>
+            Experience close encounters under the supervision of trained
+            team members who put bird welfare first.
+          </p>
+        </article>
+
+
+        <article class="info-card reveal">
+          <div class="info-icon">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <h3>Flight Demonstration</h3>
+          <p>
+            Watch powerful birds take to the air and see their speed,
+            precision, intelligence, and natural instincts.
+          </p>
+        </article>
+
+
+        <article class="info-card reveal">
+          <div class="info-icon">
+            <i class="fa-solid fa-camera-retro"></i>
+          </div>
+          <h3>Photography Moments</h3>
+          <p>
+            Bring your camera and capture beautiful moments during the
+            guided experience and flight demonstrations.
+          </p>
+        </article>
+
+
+        <article class="info-card reveal">
+          <div class="info-icon">
+            <i class="fa-solid fa-tree"></i>
+          </div>
+          <h3>Nature Connection</h3>
+          <p>
+            Spend meaningful time outdoors while discovering the ecosystems
+            and habitats that support wild birds.
+          </p>
+        </article>
+
+
+        <article class="info-card reveal">
+          <div class="info-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3>Conservation Awareness</h3>
+          <p>
+            Learn how responsible wildlife care, education, and conservation
+            can help protect birds for future generations.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WHAT TO EXPECT
+  ========================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="experience-section">
+
+        <div class="experience-copy reveal">
+
+          <div class="">
+            Your Experience
+          </div>
+
+          <h2 class="section-title">
+            Feel the power of
+            <span style="color:var(--primary-light);">
+              a bird in flight.
             </span>
+          </h2>
 
+          <p class="section-description">
+            Your session combines education, observation, interaction,
+            and flight demonstrations. Whether you're visiting for the
+            first time or returning as a bird enthusiast, there is always
+            something new to discover.
+          </p>
+
+          <ul class="experience-list">
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Welcome and introduction to the Aviora team.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Introduction to the birds participating in your session.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Learn about responsible falconry and bird welfare.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Guided bird interaction and observation.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Live flight demonstration and photography opportunities.</span>
+            </li>
+
+            <li>
+              <i class="fa-solid fa-check"></i>
+              <span>Time for questions, photographs, and final discussion.</span>
+            </li>
+
+          </ul>
+
+          <a href="contact.html" class="btn btn-primary">
+            Contact Our Team
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+
+        <div class="experience-image reveal">
+
+          <img
+            src="./imagess/Do Flamingos Migrate_.jpg"
+            alt="Bird flying during a falconry demonstration"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          >
+
+          <div class="image-fallback">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       STATS
+  ========================== -->
+
+  <section class="stats-section">
+
+    <div class="container">
+
+      <div class="stats-grid">
+
+        <div class="stat reveal">
+          <strong>6+</strong>
+          <span>Experience Types</span>
+        </div>
+
+        <div class="stat reveal">
+          <strong>20+</strong>
+          <span>Birds & Species</span>
+        </div>
+
+        <div class="stat reveal">
+          <strong>100%</strong>
+          <span>Welfare Focused</span>
+        </div>
+
+        <div class="stat reveal">
+          <strong>365</strong>
+          <span>Days of Discovery</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       HOW IT WORKS
+  ========================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-head center reveal">
+
+        <div class="">
+          How It Works
+        </div>
+
+        <h2 class="section-title">
+          Your visit,
+          <br>made simple.
+        </h2>
+
+        <p class="section-description">
+          We've kept the booking process simple so you can spend less time
+          planning and more time enjoying the birds.
+        </p>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <article class="process-card reveal">
+
+          <span class="process-number">01</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <h3>Choose</h3>
+
+          <p>
+            Select the experience that best matches your interests,
+            group, and available time.
+          </p>
+
+        </article>
+
+
+        <article class="process-card reveal">
+
+          <span class="process-number">02</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+
+          <h3>Plan</h3>
+
+          <p>
+            Contact our team to choose a suitable date and receive
+            everything you need before your visit.
+          </p>
+
+        </article>
+
+
+        <article class="process-card reveal">
+
+          <span class="process-number">03</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-feather-pointed"></i>
+          </div>
+
+          <h3>Experience</h3>
+
+          <p>
+            Arrive, meet the birds, learn from our team, and enjoy
+            an unforgettable wildlife experience.
+          </p>
+
+        </article>
+
+
+        <article class="process-card reveal">
+
+          <span class="process-number">04</span>
+
+          <div class="process-icon">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+
+          <h3>Remember</h3>
+
+          <p>
+            Take home your photographs, new knowledge, and memories
+            of your time with the birds.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       IMAGE GALLERY
+  ========================== -->
+
+  <section class="section info-section">
+
+    <div class="container">
+
+      <div class="section-head reveal">
+
+        <div class="">
+          Inside The Experience
+        </div>
+
+        <h2 class="section-title">
+          Moments from
+          <br>Aviora.
+        </h2>
+
+        <p class="section-description">
+          Every experience is different. These are just a few of the
+          moments you may discover during your visit.
+        </p>
+
+      </div>
+
+
+      <div class="mini-gallery">
+
+        <div class="gallery-item reveal">
+
+          <img
+            src="./imagess/download (58).jpg"
+            alt="Falconry bird at Aviora"
+            onerror="this.style.display='none';"
+          >
+
+          <div class="gallery-overlay">
+            <strong>Meet the Birds</strong>
+            <span>Closer encounters with remarkable birds.</span>
           </div>
 
         </div>
 
 
-        <div class="hero-fact">
+        <div class="gallery-item reveal">
 
-          <i class="fa-solid fa-tree"></i>
+          <img
+            src="./imagess/gb.jpg"
+            alt="Bird handler with falcon"
+            onerror="this.style.display='none';"
+          >
 
-          <div>
-
-            <strong>
-              40 Acres
-            </strong>
-
-            <span>
-              Natural Habitat
-            </span>
-
+          <div class="gallery-overlay">
+            <strong>Expert Handling</strong>
+            <span>Guided by experienced handlers.</span>
           </div>
 
         </div>
 
 
-        <div class="hero-fact">
+        <div class="gallery-item reveal">
 
-          <i class="fa-solid fa-leaf"></i>
+          <img
+            src="./imagess/Great Blue Turaco.jpg"
+            alt="Falcon in flight"
+            onerror="this.style.display='none';"
+          >
 
-          <div>
+          <div class="gallery-overlay">
+            <strong>Take Flight</strong>
+            <span>Witness the beauty of natural flight.</span>
+          </div>
 
-            <strong>
-              25 Years
-            </strong>
+        </div>
 
-            <span>
-              Conservation
-            </span>
+
+        <div class="gallery-item reveal">
+
+          <img
+            src="./imagess/download (48).jpg"
+            alt="Wildlife education"
+            onerror="this.style.display='none';"
+          >
+
+          <div class="gallery-overlay">
+            <strong>Learn</strong>
+            <span>Discover the world of birds.</span>
+          </div>
+
+        </div>
+
+
+        <div class="gallery-item reveal">
+
+          <img
+            src="./imagess/Aviary Birds.jpg"
+            alt="Bird photography"
+            onerror="this.style.display='none';"
+          >
+
+          <div class="gallery-overlay">
+            <strong>Capture The Moment</strong>
+            <span>Bring your camera along.</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FAQ
+  ========================== -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="faq-layout">
+
+        <div class="faq-intro reveal">
+
+          <div class="">
+            Frequently Asked
+          </div>
+
+          <h2 class="section-title">
+            Have questions?
+          </h2>
+
+          <p class="section-description">
+            Here are some of the most common questions visitors ask
+            before booking an Aviora experience.
+          </p>
+
+        </div>
+
+
+        <div class="faq-list">
+
+          <div class="faq-item open reveal">
+
+            <button class="faq-question" type="button">
+              <span>How long does the experience take?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Most guided experiences take approximately 60–90 minutes.
+                Private and educational programs may take longer depending
+                on the group and activities selected.
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question" type="button">
+              <span>Do I need previous falconry experience?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Not at all. Our experiences are designed for beginners,
+                families, wildlife enthusiasts, photographers, and visitors
+                who simply want to learn more about birds.
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question" type="button">
+              <span>Can children participate?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Many of our experiences are family friendly. Age requirements
+                can vary by activity, so please contact our team before booking
+                if you are visiting with young children.
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question" type="button">
+              <span>Can I take photographs?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. Photography is welcome during most sessions. Our team
+                will let you know when photography is appropriate and how to
+                keep a comfortable distance from the birds.
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question" type="button">
+              <span>What should I wear?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Comfortable outdoor clothing and closed-toe shoes are
+                recommended. Weather conditions can change, so bringing
+                suitable sun or rain protection is a good idea.
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="faq-item reveal">
+
+            <button class="faq-question" type="button">
+              <span>How do I book an experience?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Use the booking button below or contact our team through
+                the Contact page. We'll help you choose the right experience
+                and arrange a suitable date.
+              </div>
+            </div>
 
           </div>
 
@@ -4215,115 +5056,46 @@
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-    <!-- =======================================================
-         ABOUT / INTRO
-    ======================================================== -->
+  <!-- =========================
+       BOOKING CTA
+  ========================== -->
 
-    <section class="intro" id="about">
+  <section class="cta" id="booking">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="intro-grid">
+      <div class="cta-box reveal">
 
-          <div class="intro-image">
+        <div class="cta-content">
 
-            <img
-              src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=85"
-              alt="Colorful bird sitting on a branch"
-            >
-
-            <div class="experience-badge">
-
-              <strong>
-                25+
-              </strong>
-
-              <span>
-                Years protecting and educating through nature.
-              </span>
-
-            </div>
-
+          <div class="eyebrow">
+            Plan Your Visit
           </div>
 
+          <h2>
+            Your next unforgettable
+            encounter is waiting.
+          </h2>
 
-          <div class="intro-content">
+          <p>
+            Ready to meet the birds? Contact Aviora and let our team help
+            you choose the perfect experience for your next visit.
+          </p>
 
-            <div class="eyebrow">
-              About Aviora
-            </div>
+          <div class="hero-actions">
 
-            <h2 class="section-title">
-              A sanctuary built around curiosity, care and conservation.
-            </h2>
-
-            <p class="section-description">
-
-              Aviora is more than a destination. It is a place to slow down,
-              observe closely and understand the remarkable world of birds.
-              Every visit helps connect people with the ecosystems that
-              sustain life.
-
-            </p>
-
-
-            <ul class="check-list">
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Ethical bird care and protected habitats.
-                </span>
-
-              </li>
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Educational programs for children and adults.
-                </span>
-
-              </li>
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Guided experiences led by passionate naturalists.
-                </span>
-
-              </li>
-
-              <li>
-
-                <i class="fa-solid fa-circle-check"></i>
-
-                <span>
-                  Conservation programs supporting local ecosystems.
-                </span>
-
-              </li>
-
-            </ul>
-
-
-            <a
-              href="#services"
-              class="btn btn-primary"
-            >
-
-              Discover Our Mission
-
+            <a href="contact.html" class="btn btn-primary">
+              Book Your Experience
               <i class="fa-solid fa-arrow-right"></i>
+            </a>
 
+            <a href="services.html" class="btn btn-outline">
+              View All Services
             </a>
 
           </div>
@@ -4332,679 +5104,10 @@
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
-    <!-- =======================================================
-         STATS
-    ======================================================== -->
-
-    <section class="stats">
-
-      <div class="container">
-
-        <div class="stats-grid">
-
-          <div class="stat">
-
-            <strong>
-              120+
-            </strong>
-
-            <span>
-              Bird Species
-            </span>
-
-          </div>
-
-
-          <div class="stat">
-
-            <strong>
-              40
-            </strong>
-
-            <span>
-              Acres of Habitat
-            </span>
-
-          </div>
-
-
-          <div class="stat">
-
-            <strong>
-              18K+
-            </strong>
-
-            <span>
-              Visitors Every Year
-            </span>
-
-          </div>
-
-
-          <div class="stat">
-
-            <strong>
-              25
-            </strong>
-
-            <span>
-              Years of Conservation
-            </span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         RESIDENT BIRDS
-    ======================================================== -->
-
-    <section class="birds" id="birds">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <div class="eyebrow">
-              Resident Birds
-            </div>
-
-            <h2 class="section-title">
-              Meet the residents of our sanctuary.
-            </h2>
-
-            <p class="section-description">
-
-              From magnificent raptors to colorful tropical species,
-              discover some of the extraordinary birds that call Aviora home.
-
-            </p>
-
-          </div>
-
-
-          <a
-            href="#"
-            class="view-all"
-          >
-
-            View all birds
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-          </a>
-
-        </div>
-
-
-        <div class="birds-grid">
-
-
-          <!-- BIRD 1 -->
-
-          <article class="bird-card">
-
-            <div class="bird-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1000&q=85"
-                alt="Parrot"
-                loading="lazy"
-              >
-
-              <span class="bird-tag">
-                Tropical
-              </span>
-
-            </div>
-
-
-            <div class="bird-content">
-
-              <h3>
-                Scarlet Macaw
-              </h3>
-
-              <div class="bird-scientific">
-                Ara macao
-              </div>
-
-              <p>
-
-                A brilliant tropical parrot known for its vivid colors,
-                intelligence and powerful curved beak.
-
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- BIRD 2 -->
-
-          <article class="bird-card">
-
-            <div class="bird-image">
-
-              <img
-                src="./imagess/woodpeaker.jpg"
-                alt="Owl"
-                loading="lazy"
-              >
-
-              <span class="bird-tag">
-                Nocturnal
-              </span>
-
-            </div>
-
-
-            <div class="bird-content">
-
-              <h3>
-                Great woodpeaker
-              </h3>
-
-              <div class="bird-scientific">
-                Bubo virginianus
-              </div>
-
-              <p>
-
-                A powerful nocturnal hunter with exceptional hearing,
-                silent flight and unmistakable ear tufts.
-
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <!-- BIRD 3 -->
-
-          <article class="bird-card">
-
-            <div class="bird-image">
-
-              <img
-                src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=1000&q=85"
-                alt="Kingfisher bird"
-                loading="lazy"
-              >
-
-              <span class="bird-tag">
-                Wetlands
-              </span>
-
-            </div>
-
-
-            <div class="bird-content">
-
-              <h3>
-                sparrow
-              </h3>
-
-              <div class="bird-scientific">
-                Alcedo atthis
-              </div>
-
-              <p>
-
-                A remarkable fishing specialist capable of diving into water
-                with extraordinary speed and precision.
-
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         SERVICES
-    ======================================================== -->
-
-    <section class="services" id="services">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <div class="eyebrow">
-              What We Offer
-            </div>
-
-            <h2 class="section-title">
-              Experiences designed to inspire.
-            </h2>
-
-            <p class="section-description">
-
-              Whether you are discovering birds for the first time or already
-              have a lifelong passion for them, there is something to explore.
-
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-binoculars"></i>
-            </div>
-
-            <h3>
-              Bird Watching
-            </h3>
-
-            <p>
-
-              Explore quiet observation trails and discover resident and
-              seasonal species with our expert guides.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-
-            <h3>
-              Nature Education
-            </h3>
-
-            <p>
-
-              Interactive programs help students and families understand
-              ecosystems, biodiversity and conservation.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-camera"></i>
-            </div>
-
-            <h3>
-              Photography Tours
-            </h3>
-
-            <p>
-
-              Capture beautiful moments with dedicated photography walks,
-              observation points and expert guidance.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-seedling"></i>
-            </div>
-
-            <h3>
-              Conservation
-            </h3>
-
-            <p>
-
-              Learn about habitat restoration, species protection and the projects
-              supported by Aviora.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-children"></i>
-            </div>
-
-            <h3>
-              Family Programs
-            </h3>
-
-            <p>
-
-              Fun and educational experiences created to make young visitors
-              curious about the natural world.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-compass"></i>
-            </div>
-
-            <h3>
-              Guided Expeditions
-            </h3>
-
-            <p>
-
-              Venture deeper into the sanctuary with naturalists who reveal
-              the hidden stories behind every trail.
-
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         EXPERIENCE
-    ======================================================== -->
-
-    <section class="experience" id="experience">
-
-      <div class="container">
-
-        <div class="experience-grid">
-
-
-          <div>
-
-            <div class="eyebrow">
-              The Aviora Experience
-            </div>
-
-            <h2 class="section-title">
-              Leave the ordinary behind.
-            </h2>
-
-            <p class="section-description">
-
-              Walk beneath ancient trees, hear wings moving through the
-              canopy and discover the small details that make every habitat
-              extraordinary.
-
-            </p>
-
-
-            <div class="experience-list">
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Guided sunrise bird walks
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Close observation of resident birds
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Interactive conservation sessions
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Photography and nature trails
-                </span>
-
-              </div>
-
-
-              <div class="experience-item">
-
-                <i class="fa-solid fa-check"></i>
-
-                <span>
-                  Educational talks by naturalists
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <br>
-
-
-            <a
-              href="#contact"
-              class="btn btn-primary"
-            >
-
-              Plan Your Visit
-
-              <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-          </div>
-
-
-          <div class="experience-image">
-
-            <img
-              src="./imagess/Steenuil_.jpg"
-              alt="Bird flying through nature"
-              loading="lazy"
-            >
-
-
-            
-           
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         EDUCATIONAL HIGHLIGHTS
-    ======================================================== -->
-
-    <section class="education">
-
-      <div class="container">
-
-        <div class="section-heading">
-
-          <div>
-
-            <div class="eyebrow">
-              Learn With Us
-            </div>
-
-            <h2 class="section-title">
-              Every visit can become a lesson.
-            </h2>
-
-            <p class="section-description">
-
-              Our educational experiences turn observation into understanding
-              and understanding into a reason to protect nature.
-
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="education-grid">
-
-
-          <article class="education-card">
-
-            <img
-              src="./imagess/Scaly-breasted Lorikeet.jpg"
-              alt="Bird education"
-              loading="lazy"
-            >
-
-            <div class="education-content">
-
-              <h3>
-                For Young Explorers
-              </h3>
-
-              <p>
-
-                Discover birds, habitats and conservation through engaging
-                activities designed for curious young minds.
-
-              </p>
-
-            </div>
-
-          </article>
-
-
-          <article class="education-card">
-
-            <img
-              src="https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?auto=format&fit=crop&w=1200&q=85"
-              alt="Nature conservation"
-              loading="lazy"
-            >
-
-            <div class="education-content">
-
-              <h3>
-                For Curious Adults
-              </h3>
-
-              <p>
-
-                Deepen your knowledge through guided walks, talks and
-                immersive experiences with experienced naturalists.
-
-              </p>
-
-            </div>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         CTA
-    ======================================================== -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <div class="cta-box">
-
-          <div>
-
-            <h2>
-              Your next great discovery may be just beyond the trees.
-            </h2>
-
-            <p>
-
-              Plan a meaningful day in nature with family, friends or your
-              classroom.
-
-            </p>
-
-          </div>
-
-
-          <a
-            href="#contact"
-            class="btn btn-primary"
-          >
-
-            Visit Aviora
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
 
   <!-- =====================================================
        FOOTER

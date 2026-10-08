@@ -11,7 +11,7 @@
     content="Discover the story, team, values, conservation mission, and visitor experiences behind Aviora Bird Sanctuary."
   >
 
-  <!-- Fonts -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="./imagess/logo-02.png">
@@ -22,7 +22,7 @@
     
   >
 
-  <!-- Font Awesome -->
+  
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -30,9 +30,7 @@
 
   <style>
 
-    /* =====================================================
-       ROOT / THEME
-    ===================================================== */
+  
 
     :root {
       --primary: #1d5b49;
@@ -96,9 +94,7 @@
     }
 
 
-    /* =====================================================
-       GLOBAL
-    ===================================================== */
+    
 
     *,
     *::before,
@@ -183,10 +179,6 @@
       line-height: 1.15;
     }
 
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
 
     .site-header {
       position: fixed;
@@ -508,9 +500,7 @@
 
 
 
-    /* =========================
-       HERO
-    ========================= */
+   
 
     .details-hero{
       position:relative;
@@ -610,19 +600,71 @@
       gap:12px;
     }
 
-    .hero-actions .btn-outline{
-      color:#fff;
-      border-color:rgba(255,255,255,.3);
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 9px;
+
+      min-height: 52px;
+
+      padding: 0 24px;
+
+      border-radius: 50px;
+
+      font-weight: 700;
+      font-size: 14px;
+
+      transition: var(--transition);
     }
 
-    .hero-actions .btn-outline:hover{
-      color:var(--accent-light);
-      border-color:var(--accent);
+
+    .btn-primary {
+      background: var(--accent);
+
+      color: #201b0e;
     }
 
-    /* =========================
-       SECTION COMMON
-    ========================= */
+
+    .btn-primary:hover {
+      background: var(--accent-light);
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 30px
+        rgba(213,168,75,.25);
+    }
+
+
+    .btn-outline-light {
+      background: transparent;
+
+      color: #fff;
+
+      border:
+        1px solid
+        rgba(255,255,255,.5);
+    }
+
+
+    .btn-outline-light:hover {
+      background: #fff;
+      
+
+      color: var(--primary-dark);
+
+      transform: translateY(-3px);
+    }
+    
+
+
+
+
+
+
+   
 
     .section{
       padding:105px 0;
@@ -678,9 +720,7 @@
       line-height:1.85;
     }
 
-    /* =========================
-       SERVICE INTRO
-    ========================= */
+  
 
     .service-intro{
       display:grid;
@@ -815,9 +855,7 @@
       line-height:1.5;
     }
 
-    /* =========================
-       INFO CARDS
-    ========================= */
+  
 
     .info-section{
       background:var(--bg-soft);
@@ -870,9 +908,7 @@
       line-height:1.75;
     }
 
-    /* =========================
-       EXPERIENCE CONTENT
-    ========================= */
+   
 
     .experience-section{
       display:grid;
@@ -928,9 +964,7 @@
       margin-top:2px;
     }
 
-    /* =========================
-       STATS
-    ========================= */
+ 
 
     .stats-section{
       padding:35px 0;
@@ -969,9 +1003,7 @@
       letter-spacing:.5px;
     }
 
-    /* =========================
-       PROCESS
-    ========================= */
+  
 
     .process-grid{
       display:grid;
@@ -1030,9 +1062,7 @@
       line-height:1.7;
     }
 
-    /* =========================
-       GALLERY STRIP
-    ========================= */
+  
 
     .mini-gallery{
       display:grid;
@@ -1083,9 +1113,6 @@
       font-size:11px;
     }
 
-    /* =========================
-       FAQ
-    ========================= */
 
     .faq-layout{
       display:grid;
@@ -1147,9 +1174,7 @@
       line-height:1.8;
     }
 
-    /* =========================
-       CTA
-    ========================= */
+ 
 
     .cta{
       padding:0 0 105px;
@@ -1215,9 +1240,7 @@
     }
 
    
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+  
 
     .site-footer {
       position: relative;
@@ -1532,9 +1555,7 @@
     }
 
 
-    /* =====================================================
-       LOGIN MODAL
-    ===================================================== */
+   
 
     .modal-backdrop {
       position: fixed;
@@ -1748,9 +1769,6 @@
     }
 
 
-    /* =====================================================
-       TOAST
-    ===================================================== */
 
     .toast {
       position: fixed;
@@ -1811,10 +1829,6 @@
     }
 
 
-    /* =====================================================
-       REVEAL
-    ===================================================== */
-
     .reveal {
       opacity: 0;
 
@@ -1834,10 +1848,6 @@
         translateY(0);
     }
 
-
-    /* =====================================================
-       RTL
-    ===================================================== */
 
     html[dir="rtl"] .dropdown-menu {
       left: auto;
@@ -1893,9 +1903,6 @@
     }
 
 
-    /* =====================================================
-       LARGE DESKTOP
-    ===================================================== */
 
     @media (min-width:1200px) {
 
@@ -1917,9 +1924,6 @@
     }
 
 
-    /* =====================================================
-       TABLET
-    ===================================================== */
 
     @media (min-width:601px)
     and (max-width:900px) {
@@ -2092,9 +2096,6 @@
     }
 
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
 
     @media (max-width:600px) {
 
@@ -2522,9 +2523,6 @@
     }
 
 
-    /* =====================================================
-       SMALL MOBILE
-    ===================================================== */
 
     @media (max-width:380px) {
 
@@ -2599,9 +2597,6 @@
     }
 
 
-    /* =====================================================
-       REDUCED MOTION
-    ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -2625,9 +2620,6 @@
     }
 
 
-    /* =====================================================
-       EXTRA LARGE
-    ===================================================== */
 
     @media (min-width:1600px) {
 
@@ -2640,17 +2632,9 @@
       }
 
     }
-    /* =====================================================
-   PERFECT MOBILE RESPONSIVE
-   SERVICE DETAILS PAGE
-   <= 600px
-   ===================================================== */
 
 @media (max-width: 600px) {
 
-  /* =====================================================
-     GLOBAL
-     ===================================================== */
 
   html {
     overflow-x: hidden;
@@ -2669,9 +2653,6 @@
   }
 
 
-  /* =====================================================
-     HEADER
-     ===================================================== */
 
   .site-header {
     height: 68px;
@@ -2744,9 +2725,6 @@
   }
 
 
-  /* =====================================================
-     MOBILE NAVIGATION
-     ===================================================== */
 
   .main-nav {
     position: fixed;
@@ -2879,9 +2857,6 @@
   }
 
 
-  /* =====================================================
-     HERO
-     ===================================================== */
 
   .details-hero {
     min-height: 610px;
@@ -2997,9 +2972,6 @@
   }
 
 
-  /* =====================================================
-     COMMON SECTION
-     ===================================================== */
 
   .section {
     padding: 62px 0;
@@ -3056,9 +3028,6 @@
   }
 
 
-  /* =====================================================
-     SERVICE INTRO
-     ===================================================== */
 
   .service-intro {
     display: flex;
@@ -3146,9 +3115,6 @@
   }
 
 
-  /* =====================================================
-     SERVICE FEATURES
-     ===================================================== */
 
   .service-features {
     display: grid;
@@ -3197,9 +3163,6 @@
   }
 
 
-  /* =====================================================
-     INFO SECTION
-     ===================================================== */
 
   .info-section {
     padding:
@@ -3253,9 +3216,6 @@
   }
 
 
-  /* =====================================================
-     EXPERIENCE
-     ===================================================== */
 
   .experience-section {
     display: flex;
@@ -3316,9 +3276,6 @@
   }
 
 
-  /* =====================================================
-     STATS
-     ===================================================== */
 
   .stats-section {
     padding: 34px 0;
@@ -3366,10 +3323,6 @@
     line-height: 1.4;
   }
 
-
-  /* =====================================================
-     PROCESS
-     ===================================================== */
 
   .process-grid {
     display: grid;
@@ -3420,9 +3373,6 @@
   }
 
 
-  /* =====================================================
-     GALLERY
-     ===================================================== */
 
   .mini-gallery {
     display: grid;
@@ -3466,9 +3416,6 @@
   }
 
 
-  /* =====================================================
-     FAQ
-     ===================================================== */
 
   .faq-layout {
     display: flex;
@@ -3523,9 +3470,6 @@
   }
 
 
-  /* =====================================================
-     CTA
-     ===================================================== */
 
   .cta {
     padding:
@@ -3603,9 +3547,6 @@
   }
 
 
-  /* =====================================================
-     FOOTER
-     ===================================================== */
 
   .site-footer {
     padding:
@@ -3742,9 +3683,6 @@
   }
 
 
-  /* =====================================================
-     LOGIN MODAL
-     ===================================================== */
 
   .modal-backdrop {
     padding: 14px;
@@ -3809,9 +3747,6 @@
   }
 
 
-  /* =====================================================
-     TOAST
-     ===================================================== */
 
   .toast {
     left: 14px;
@@ -3834,10 +3769,6 @@
   }
 
 
-  /* =====================================================
-     REVEAL
-     ===================================================== */
-
   .reveal {
     transform:
       translateY(18px);
@@ -3845,10 +3776,6 @@
 }
 
 
-/* =====================================================
-   EXTRA SMALL MOBILE
-   <= 380px
-   ===================================================== */
 
 @media (max-width: 380px) {
 
@@ -3892,12 +3819,14 @@
     min-height: 34px;
   }
 
+  
+
   .main-nav {
     top: 64px;
   }
 
 
-  /* Hero */
+ 
 
   .details-hero {
     min-height: 570px;
@@ -3919,7 +3848,7 @@
   }
 
 
-  /* Intro */
+  
 
   .service-intro-image,
   .service-intro-image img {
@@ -3939,7 +3868,7 @@
   }
 
 
-  /* Section */
+ 
 
   .section {
     padding: 50px 0;
@@ -3950,7 +3879,7 @@
   }
 
 
-  /* Stats */
+
 
   .stat {
     padding:
@@ -3967,7 +3896,7 @@
   }
 
 
-  /* Gallery */
+
 
   .mini-gallery {
     grid-template-rows:
@@ -3977,7 +3906,7 @@
   }
 
 
-  /* CTA */
+ 
 
   .cta {
     padding-bottom: 50px;
@@ -3996,7 +3925,6 @@
   }
 
 
-  /* Modal */
 
   .modal {
     padding:
@@ -4006,9 +3934,6 @@
 }
 
 
-/* =====================================================
-   MOBILE LANDSCAPE
-   ===================================================== */
 
 @media (max-width: 600px)
 and (orientation: landscape) {
@@ -4051,9 +3976,6 @@ and (orientation: landscape) {
 }
 
 
-/* =====================================================
-   MOBILE RTL
-   ===================================================== */
 
 @media (max-width: 600px) {
 
@@ -4088,9 +4010,6 @@ and (orientation: landscape) {
 }
 
 
-/* =====================================================
-   MOBILE TOUCH
-   ===================================================== */
 
 @media (hover: none) and (pointer: coarse) {
 
@@ -4113,9 +4032,6 @@ and (orientation: landscape) {
 }
 
 
-/* =====================================================
-   REDUCED MOTION
-   ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -4147,9 +4063,6 @@ and (orientation: landscape) {
 
 }
     
-/* =========================================
-   REMOVE LOGIN / BOOK A VISIT ON MOBILE
-========================================= */
 
 @media (max-width: 900px) {
   .login-btn {
@@ -4166,16 +4079,13 @@ and (orientation: landscape) {
 <body>
 
 
-  <<!-- =====================================================
-       HEADER
-  ===================================================== -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
 
-      <!-- LOGO -->
+  
 
       <a
         href="index.html"
@@ -4206,7 +4116,7 @@ and (orientation: landscape) {
       </a>
 
 
-      <!-- NAVIGATION -->
+      
 
        <nav class="main-nav" id="mainNav">
 
@@ -4240,7 +4150,7 @@ and (orientation: landscape) {
 
       <div class="header-actions">
 
-        <!-- RTL BUTTON -->
+       
         <button
           class="icon-btn"
           id="directionToggle"
@@ -4252,7 +4162,6 @@ and (orientation: landscape) {
         </button>
 
 
-        <!-- DARK / LIGHT BUTTON -->
         <button
           class="icon-btn"
           id="themeToggle"
@@ -4263,7 +4172,7 @@ and (orientation: landscape) {
           <i class="fa-solid fa-moon"></i>
         </button>
 
-       <!-- LOGIN -->
+     
         <a href="cta.html"
                class="login-btn">
  
@@ -4274,7 +4183,6 @@ and (orientation: landscape) {
  
             </a>
 
-        <!-- MOBILE MENU -->
         <button
           class="icon-btn mobile-menu-btn"
           id="mobileMenuBtn"
@@ -4291,9 +4199,7 @@ and (orientation: landscape) {
   </header>
   </header>
 
-  <!-- =========================
-       HERO
-  ========================== -->
+ 
 
   <section class="details-hero">
 
@@ -4314,9 +4220,7 @@ and (orientation: landscape) {
     <div class="container">
       <div class="hero-content reveal">
 
-        <div class="">
-          Service Details
-        </div>
+        
 
         <h1>
           Get closer to the wild,
@@ -4334,9 +4238,6 @@ and (orientation: landscape) {
             <i class="fa-solid fa-arrow-right"></i>
           </a>
 
-          <a href="#details" class="btn btn-outline">
-            Explore Details
-          </a>
         </div>
 
       </div>
@@ -4344,9 +4245,7 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       MAIN SERVICE DETAILS
-  ========================== -->
+ 
 
   <section class="section" id="details">
 
@@ -4456,9 +4355,7 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       EXPERIENCE INFO
-  ========================== -->
+ 
 
   <section class="section info-section">
 
@@ -4563,9 +4460,7 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       WHAT TO EXPECT
-  ========================== -->
+
 
   <section class="section">
 
@@ -4656,9 +4551,6 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       STATS
-  ========================== -->
 
   <section class="stats-section">
 
@@ -4693,9 +4585,6 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       HOW IT WORKS
-  ========================== -->
 
   <section class="section">
 
@@ -4800,9 +4689,6 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       IMAGE GALLERY
-  ========================== -->
 
   <section class="section info-section">
 
@@ -4915,9 +4801,6 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       FAQ
-  ========================== -->
 
   <section class="section">
 
@@ -5061,9 +4944,6 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =========================
-       BOOKING CTA
-  ========================== -->
 
   <section class="cta" id="booking">
 
@@ -5094,10 +4974,7 @@ and (orientation: landscape) {
               <i class="fa-solid fa-arrow-right"></i>
             </a>
 
-            <a href="services.html" class="btn btn-outline">
-              View All Services
-            </a>
-
+           
           </div>
 
         </div>
@@ -5109,9 +4986,6 @@ and (orientation: landscape) {
   </section>
 
 
-  <!-- =====================================================
-       FOOTER
-  ===================================================== -->
 
   <footer class="site-footer">
 
@@ -5194,7 +5068,7 @@ and (orientation: landscape) {
         </div>
 
 
-        <!-- EXPLORE -->
+   
 
         <div class="footer-column">
 
@@ -5240,7 +5114,7 @@ and (orientation: landscape) {
         </div>
 
 
-        <!-- SERVICES -->
+    
 
         <div class="footer-column">
 
@@ -5286,7 +5160,7 @@ and (orientation: landscape) {
         </div>
 
 
-        <!-- CONTACT -->
+
 
         <div class="footer-column">
 
@@ -5407,9 +5281,6 @@ and (orientation: landscape) {
   </footer>
 
 
-  <!-- =====================================================
-       LOGIN MODAL
-  ===================================================== -->
 
   <div
     class="modal-backdrop"
@@ -5537,9 +5408,6 @@ and (orientation: landscape) {
   </div>
 
 
-  <!-- =====================================================
-       TOAST
-  ===================================================== -->
 
   <div
     class="toast"
@@ -5559,9 +5427,6 @@ and (orientation: landscape) {
   </div>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ===================================================== -->
 
   <script>
 
@@ -5623,9 +5488,6 @@ and (orientation: landscape) {
           $("currentYear");
 
 
-        /* =================================================
-           YEAR
-        ================================================= */
 
         if (currentYear) {
 
@@ -5635,9 +5497,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           TOAST
-        ================================================= */
 
         let toastTimer;
 
@@ -5678,9 +5537,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           THEME
-        ================================================= */
 
         function applyTheme(theme) {
 
@@ -5765,9 +5621,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           RTL
-        ================================================= */
 
         function applyDirection(direction) {
 
@@ -5836,9 +5689,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           MOBILE MENU
-        ================================================= */
 
         function closeMobileMenu() {
 
@@ -5945,9 +5795,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           MOBILE DROPDOWN
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -5990,10 +5837,6 @@ and (orientation: landscape) {
           );
 
 
-        /* =================================================
-           CLOSE MENU AFTER LINK
-        ================================================= */
-
         document
           .querySelectorAll(
             ".main-nav a"
@@ -6020,9 +5863,6 @@ and (orientation: landscape) {
           );
 
 
-        /* =================================================
-           LOGIN MODAL
-        ================================================= */
 
         function openLogin() {
 
@@ -6117,9 +5957,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           LOGIN FORM
-        ================================================= */
 
         if (loginForm) {
 
@@ -6203,10 +6040,6 @@ and (orientation: landscape) {
         }
 
 
-        /* =================================================
-           ESCAPE
-        ================================================= */
-
         document.addEventListener(
           "keydown",
           (event) => {
@@ -6225,9 +6058,6 @@ and (orientation: landscape) {
         );
 
 
-        /* =================================================
-           RESIZE
-        ================================================= */
 
         window.addEventListener(
           "resize",
@@ -6244,10 +6074,6 @@ and (orientation: landscape) {
           }
         );
 
-
-        /* =================================================
-           SMOOTH SCROLL
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -6301,9 +6127,6 @@ and (orientation: landscape) {
           );
 
 
-        /* =================================================
-           SCROLL REVEAL
-        ================================================= */
 
         const revealElements =
           document.querySelectorAll(
@@ -6398,6 +6221,8 @@ directionToggle.addEventListener("click", function () {
         );
     }
 });
+
+
   </script>
 
 </body>

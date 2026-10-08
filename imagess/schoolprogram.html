@@ -11,7 +11,7 @@
     content="Discover the story, team, values, conservation mission, and visitor experiences behind Aviora Bird Sanctuary."
   >
 
-
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/png" href="./imagess/logo-02.png">
@@ -21,13 +21,17 @@
     rel="stylesheet"
   >
 
-  
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   >
-
+ <link rel="stylesheet" href="nav.css">
   <style>
+
+    /* =====================================================
+       ROOT / THEME
+    ===================================================== */
 
     :root {
       --primary: #1d5b49;
@@ -93,6 +97,9 @@
     }
 
 
+    /* =====================================================
+       GLOBAL
+    ===================================================== */
 
     *,
     *::before,
@@ -228,7 +235,7 @@
 }
 
 
-
+/* Mobile */
 @media (max-width: 767px) {
 
     .btn {
@@ -243,6 +250,10 @@
     }
 }
 
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .site-header {
       position: fixed;
@@ -525,7 +536,7 @@
 
       background: var(--accent);
 
-      color: var(--black);
+      color: var(--white);
 
       border:
         1px solid var(--primary);
@@ -538,14 +549,15 @@
 
 
     .login-btn:hover {
-      background: var(--accent);
-      color: white;
+      background: var(--primary);
 
       transform: translateY(-2px);
     }
 
 
-  
+    /* =====================================================
+   MOBILE / TABLET NAVIGATION
+===================================================== */
 
 @media (max-width: 900px) {
 
@@ -553,12 +565,12 @@
         min-height: 72px;
     }
 
- 
+    /* Hamburger */
     .mobile-menu-btn {
         display: grid !important;
     }
 
-   
+    /* Mobile navigation */
     .main-nav {
         position: fixed;
 
@@ -595,7 +607,7 @@
         transition: .25s ease;
     }
 
- 
+    /* OPEN */
     .main-nav.mobile-open {
         opacity: 1;
         visibility: visible;
@@ -603,7 +615,7 @@
         transform: translateY(0);
     }
 
-
+    /* Links */
     .main-nav .nav-link,
     .main-nav .dropdown-toggle {
         width: 100%;
@@ -616,7 +628,7 @@
         font-size: 13px;
     }
 
-  
+    /* Dropdown */
     .main-nav .dropdown-menu {
         position: static;
 
@@ -638,13 +650,14 @@
         display: block;
     }
 
+    /* Hide login */
     .login-btn {
         display: none !important;
     }
 }
 
 
-
+/* SMALL MOBILE */
 
 @media (max-width: 600px) {
 
@@ -660,6 +673,7 @@
 }
 
 
+/* VERY SMALL MOBILE */
 
 @media (max-width: 380px) {
 
@@ -692,6 +706,10 @@
   }
 
 
+    
+/* =========================================
+   REMOVE LOGIN / BOOK A VISIT ON MOBILE
+========================================= */
 
 @media (max-width: 900px) {
   .login-btn {
@@ -699,6 +717,10 @@
   }
 }
 
+
+    /* =========================================================
+       BLOG HERO
+       ========================================================= */
 
     .blog-hero {
       position: relative;
@@ -778,6 +800,9 @@
       line-height: 1.8;
     }
 
+    /* =========================================================
+       CATEGORY BAR
+       ========================================================= */
 
     .category-wrap {
       margin-top: -34px;
@@ -821,6 +846,9 @@
       background: var(--primary);
     }
 
+    /* =========================================================
+       FEATURED ARTICLE
+       ========================================================= */
 
     .featured-section {
       padding-top: 85px;
@@ -963,6 +991,9 @@
       font-size: 11px;
     }
 
+    /* =========================================================
+       BLOG TOOLBAR
+       ========================================================= */
 
     .blog-toolbar {
       display: flex;
@@ -1013,6 +1044,9 @@
       color: var(--text-soft);
     }
 
+    /* =========================================================
+       BLOG GRID
+       ========================================================= */
 
     .blog-grid {
       display: grid;
@@ -1153,6 +1187,9 @@
       font-size: 25px;
     }
 
+    /* =========================================================
+       EDITORIAL BANNER
+       ========================================================= */
 
     .editorial-banner {
       position: relative;
@@ -1206,6 +1243,10 @@
       font-size: 15px;
       line-height: 1.8;
     }
+
+    /* =========================================================
+       NEWSLETTER
+       ========================================================= */
 
     .newsletter-section {
       padding: 100px 0;
@@ -1272,6 +1313,10 @@
       padding-inline: 21px;
     }
 
+    
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .site-footer {
       position: relative;
@@ -1586,6 +1631,9 @@
     }
 
 
+    /* =====================================================
+       LOGIN MODAL
+    ===================================================== */
 
     .modal-backdrop {
       position: fixed;
@@ -1799,6 +1847,9 @@
     }
 
 
+    /* =====================================================
+       TOAST
+    ===================================================== */
 
     .toast {
       position: fixed;
@@ -1859,6 +1910,9 @@
     }
 
 
+    /* =====================================================
+       REVEAL
+    ===================================================== */
 
     .reveal {
       opacity: 0;
@@ -1879,6 +1933,10 @@
         translateY(0);
     }
 
+
+    /* =====================================================
+       RTL
+    ===================================================== */
 
     html[dir="rtl"] .dropdown-menu {
       left: auto;
@@ -1934,6 +1992,9 @@
     }
 
 
+    /* =====================================================
+       LARGE DESKTOP
+    ===================================================== */
 
     @media (min-width:1200px) {
 
@@ -1953,7 +2014,7 @@
       }
 
     }
-
+/* HEADER BRAND TAGLINE */
 .site-header .logo-text small {
     display: block !important;
     font-size: 12px !important;
@@ -1965,7 +2026,7 @@
     white-space: nowrap;
 }
  
-
+/* MOBILE */
 @media (max-width: 900px) {
     .site-header .logo-text small {
         font-size: 12px !important;
@@ -1975,6 +2036,9 @@
     }
 }
 
+    /* =====================================================
+       TABLET
+    ===================================================== */
 
     @media (min-width:601px)
     and (max-width:900px) {
@@ -2146,6 +2210,10 @@
 
     }
 
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
 
     @media (max-width:600px) {
 
@@ -2573,6 +2641,9 @@
     }
 
 
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
 
     @media (max-width:380px) {
 
@@ -2647,6 +2718,9 @@
     }
 
 
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -2670,6 +2744,10 @@
     }
 
 
+    /* =====================================================
+       EXTRA LARGE
+    ===================================================== */
+
     @media (min-width:1600px) {
 
       .container {
@@ -2681,7 +2759,16 @@
       }
 
     }
-  
+    /* =========================================================
+   BLOG PAGE — MOBILE + TABLET RESPONSIVE
+   Same responsive behavior as About Page
+   ========================================================= */
+
+
+/* =========================================================
+   TABLET VIEW
+   901px → 1200px
+   ========================================================= */
 
 @media (max-width: 1200px) {
 
@@ -2689,7 +2776,7 @@
         width: min(100% - 40px, 1100px);
     }
 
-  
+    /* HEADER */
 
     .header-inner {
         min-height: 76px;
@@ -2717,7 +2804,7 @@
     }
 
 
-  
+    /* BLOG HERO */
 
     .blog-hero {
         min-height: 500px;
@@ -2733,7 +2820,7 @@
     }
 
 
-
+    /* CATEGORY TAB */
 
     .category-bar {
         gap: 6px;
@@ -2746,7 +2833,7 @@
     }
 
 
-
+    /* FEATURED */
 
     .featured-card {
         grid-template-columns: 1fr 1fr;
@@ -2765,7 +2852,7 @@
     }
 
 
-  
+    /* BLOG GRID */
 
     .blog-grid {
         grid-template-columns:
@@ -2787,7 +2874,7 @@
     }
 
 
-  
+    /* NEWSLETTER */
 
     .newsletter-box {
         padding: 45px;
@@ -2799,7 +2886,7 @@
     }
 
 
-    
+    /* FOOTER */
 
     .footer-grid {
         gap: 35px;
@@ -2808,7 +2895,10 @@
 }
 
 
-
+/* =========================================================
+   TABLET
+   601px → 900px
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -2816,6 +2906,10 @@
         width: min(100% - 40px, 760px);
     }
 
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     .header-inner {
         min-height: 72px;
@@ -2917,6 +3011,9 @@
 }
 
 
+        /* =========================================================
+           HERO
+        ========================================================= */
 
         .school-hero {
 
@@ -3151,6 +3248,10 @@
         }
 
 
+        /* =========================================================
+           SECTION COMMON
+        ========================================================= */
+
         .school-intro,
         .programs-section,
         .activities-section,
@@ -3251,6 +3352,9 @@
         }
 
 
+        /* =========================================================
+           INTRO
+        ========================================================= */
 
         .intro-grid {
 
@@ -3401,7 +3505,9 @@
         }
 
 
-      
+        /* =========================================================
+           PROGRAMS
+        ========================================================= */
 
         .programs-section {
 
@@ -3516,6 +3622,9 @@
         }
 
 
+        /* =========================================================
+           ACTIVITIES
+        ========================================================= */
 
         .activities-grid {
 
@@ -3646,6 +3755,9 @@
         }
 
 
+        /* =========================================================
+           LEARNING
+        ========================================================= */
 
         .learning-section {
 
@@ -3763,7 +3875,9 @@
         }
 
 
-       
+        /* =========================================================
+           TIMELINE
+        ========================================================= */
 
         .timeline {
 
@@ -3910,6 +4024,9 @@
         }
 
 
+        /* =========================================================
+           SPECIES
+        ========================================================= */
 
         .species-section {
 
@@ -4033,6 +4150,9 @@
         }
 
 
+        /* =========================================================
+           STATS
+        ========================================================= */
 
         .stats-section {
 
@@ -4102,6 +4222,10 @@
             text-transform: uppercase;
         }
 
+
+        /* =========================================================
+           ENROLLMENT
+        ========================================================= */
 
         .enrollment-grid {
 
@@ -4263,6 +4387,10 @@
         }
 
 
+        /* =========================================================
+           CTA
+        ========================================================= */
+
         .cta-section {
 
             padding:
@@ -4350,6 +4478,9 @@
 
 
     
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .site-footer {
       position: relative;
@@ -4664,7 +4795,9 @@
     }
 
 
-   
+    /* =====================================================
+       LOGIN MODAL
+    ===================================================== */
 
     .modal-backdrop {
       position: fixed;
@@ -4878,6 +5011,9 @@
     }
 
 
+    /* =====================================================
+       TOAST
+    ===================================================== */
 
     .toast {
       position: fixed;
@@ -4938,6 +5074,10 @@
     }
 
 
+    /* =====================================================
+       REVEAL
+    ===================================================== */
+
     .reveal {
       opacity: 0;
 
@@ -4957,6 +5097,10 @@
         translateY(0);
     }
 
+
+    /* =====================================================
+       RTL
+    ===================================================== */
 
     html[dir="rtl"] .dropdown-menu {
       left: auto;
@@ -5012,6 +5156,10 @@
     }
 
 
+    /* =====================================================
+       LARGE DESKTOP
+    ===================================================== */
+
     @media (min-width:1200px) {
 
       .container {
@@ -5032,6 +5180,9 @@
     }
 
 
+    /* =====================================================
+       TABLET
+    ===================================================== */
 
     @media (min-width:601px)
     and (max-width:900px) {
@@ -5202,6 +5353,11 @@
       }
 
     }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
 
     @media (max-width:600px) {
 
@@ -5629,6 +5785,10 @@
     }
 
 
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
     @media (max-width:380px) {
 
       .container {
@@ -5703,7 +5863,9 @@
     
 
 
-  
+    /* =====================================================
+       REDUCED MOTION
+    ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -5726,6 +5888,11 @@
 
     }
 
+
+    /* =====================================================
+       EXTRA LARGE
+    ===================================================== */
+
     @media (min-width:1600px) {
 
       .container {
@@ -5739,7 +5906,16 @@
     }
 
     
-  
+    /* =========================================================
+   AVIORA FALCONRY SCHOOL
+   COMPLETE RESPONSIVE SYSTEM
+   Same responsive behavior as About Page
+   ========================================================= */
+
+
+/* =========================================================
+   BASE RESPONSIVE SAFETY
+   ========================================================= */
 
 *,
 *::before,
@@ -5771,6 +5947,10 @@ textarea {
 }
 
 
+/* =========================================================
+   DESKTOP DEFAULT
+   1024px AND ABOVE
+   ========================================================= */
 
 @media (min-width: 1024px) {
 
@@ -5780,6 +5960,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     .site-header {
         height: 82px;
@@ -5805,6 +5988,9 @@ textarea {
     
 
 
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .school-hero,
     .program-hero,
@@ -5838,6 +6024,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       INTRO / STORY
+       ===================================================== */
 
     .school-intro,
     .about-story {
@@ -5882,7 +6071,9 @@ textarea {
     }
 
 
-   
+    /* =====================================================
+       SECTION HEADINGS
+       ===================================================== */
 
     .section-heading {
         max-width: 760px;
@@ -5901,6 +6092,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       WHY FALCONRY SCHOOL
+       ===================================================== */
 
     .values-grid,
     .school-values-grid {
@@ -5910,6 +6104,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       PROGRAM CARDS
+       ===================================================== */
 
     .program-grid {
         display: grid;
@@ -5934,6 +6131,10 @@ textarea {
     }
 
 
+    /* =====================================================
+       IMAGE CARDS
+       ===================================================== */
+
     .image-card-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5954,6 +6155,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       FEATURE SECTION
+       ===================================================== */
 
     .feature-grid {
         display: grid;
@@ -5997,6 +6201,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       LEARNING SECTION
+       ===================================================== */
 
     .learning-grid {
         display: grid;
@@ -6011,6 +6218,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       TIMELINE
+       ===================================================== */
 
     .day-timeline {
         max-width: 1100px;
@@ -6041,6 +6251,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       SPECIES
+       ===================================================== */
 
     .species-grid {
         display: grid;
@@ -6056,6 +6269,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       STATS
+       ===================================================== */
 
     .stats-grid {
         display: grid;
@@ -6074,6 +6290,10 @@ textarea {
         line-height: 1;
     }
 
+
+    /* =====================================================
+       ENROLLMENT
+       ===================================================== */
 
     .enrollment-grid {
         display: grid;
@@ -6103,7 +6323,9 @@ textarea {
     }
 
 
-    
+    /* =====================================================
+       CTA
+       ===================================================== */
 
     .cta-inner {
         padding: 70px;
@@ -6122,6 +6344,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     .footer-grid {
         display: grid;
@@ -6137,7 +6362,10 @@ textarea {
 }
 
 
-
+/* =========================================================
+   TABLET
+   768px - 1023px
+   ========================================================= */
 
 @media (min-width: 768px) and (max-width: 1023px) {
 
@@ -6147,6 +6375,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       HEADER
+       ===================================================== */
 
     .site-header {
         height: 76px;
@@ -6170,6 +6401,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .school-hero,
     .program-hero,
@@ -6203,6 +6437,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       INTRO
+       ===================================================== */
 
     .school-intro,
     .about-story {
@@ -6237,6 +6474,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       SECTION HEADING
+       ===================================================== */
 
     .section-heading {
         max-width: 680px;
@@ -6253,6 +6493,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       VALUES
+       ===================================================== */
 
     .values-grid,
     .school-values-grid {
@@ -6267,7 +6510,9 @@ textarea {
     }
 
 
-    
+    /* =====================================================
+       PROGRAMS
+       ===================================================== */
 
     .program-grid {
         display: grid;
@@ -6280,7 +6525,9 @@ textarea {
     }
 
 
-    
+    /* =====================================================
+       IMAGE CARDS
+       ===================================================== */
 
     .image-card-grid {
         display: grid;
@@ -6296,6 +6543,10 @@ textarea {
         grid-column: span 2;
     }
 
+
+    /* =====================================================
+       FEATURE
+       ===================================================== */
 
     .feature-grid {
         display: grid;
@@ -6324,6 +6575,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       LEARNING
+       ===================================================== */
 
     .learning-grid {
         display: grid;
@@ -6336,13 +6590,19 @@ textarea {
     }
 
 
+    /* =====================================================
+       TIMELINE
+       ===================================================== */
+
     .day-timeline {
         max-width: 850px;
         margin-inline: auto;
     }
 
 
-    
+    /* =====================================================
+       SPECIES
+       ===================================================== */
 
     .species-grid {
         display: grid;
@@ -6355,6 +6615,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       STATS
+       ===================================================== */
 
     .stats-grid {
         display: grid;
@@ -6370,6 +6633,10 @@ textarea {
         font-size: 36px;
     }
 
+
+    /* =====================================================
+       ENROLLMENT
+       ===================================================== */
 
     .enrollment-grid {
         display: grid;
@@ -6396,7 +6663,9 @@ textarea {
     }
 
 
-  
+    /* =====================================================
+       CTA
+       ===================================================== */
 
     .cta-inner {
         padding: 50px 35px;
@@ -6405,6 +6674,11 @@ textarea {
     .cta-inner h2 {
         font-size: 38px;
     }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     .footer-grid {
         display: grid;
@@ -6420,10 +6694,16 @@ textarea {
 }
 
 
+/* =========================================================
+   MOBILE
+   0px - 767px
+   ========================================================= */
 
 @media (max-width: 767px) {
 
-  
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
 
     html {
         font-size: 15px;
@@ -6449,7 +6729,10 @@ textarea {
     }
 
 
-  
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
     .site-header {
         height: 70px;
         width: 100%;
@@ -6499,6 +6782,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       MOBILE NAVIGATION
+       ===================================================== */
 
     .mobile-nav {
         position: fixed;
@@ -6558,6 +6844,10 @@ textarea {
         border-bottom: 0;
     }
 
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .school-hero,
     .program-hero,
@@ -6652,6 +6942,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       SECTION HEADING
+       ===================================================== */
 
     .section-heading {
         width: 100%;
@@ -6679,7 +6972,9 @@ textarea {
     }
 
 
-   
+    /* =====================================================
+       INTRO / ABOUT STORY
+       ===================================================== */
 
     .school-intro,
     .about-story {
@@ -6742,6 +7037,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       IMAGE BADGE
+       ===================================================== */
 
     .story-badge,
     .intro-badge {
@@ -6753,6 +7051,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       VALUES / WHY FALCONRY
+       ===================================================== */
 
     .values-grid,
     .school-values-grid {
@@ -6786,6 +7087,10 @@ textarea {
         line-height: 1.7;
     }
 
+
+    /* =====================================================
+       PROGRAM CARDS
+       ===================================================== */
 
     .program-grid {
         width: 100%;
@@ -6825,6 +7130,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       IMAGE CARDS
+       ===================================================== */
 
     .image-card-grid {
         width: 100%;
@@ -6871,7 +7179,9 @@ textarea {
     }
 
 
- 
+    /* =====================================================
+       FEATURE / FALCONRY TRAINING SECTION
+       ===================================================== */
 
     .feature-section {
         padding: 65px 0;
@@ -6948,6 +7258,11 @@ textarea {
         line-height: 1.55;
     }
 
+
+    /* =====================================================
+       LEARNING CARDS
+       ===================================================== */
+
     .learning-grid {
         width: 100%;
 
@@ -6988,6 +7303,12 @@ textarea {
         font-size: 13px;
         line-height: 1.65;
     }
+
+
+    /* =====================================================
+       DAY AT FALCONRY SCHOOL
+       ===================================================== */
+
     .day-timeline {
         width: 100%;
 
@@ -7071,7 +7392,10 @@ textarea {
     }
 
 
-   
+    /* =====================================================
+       SPECIES / BIRDS OF PREY
+       ===================================================== */
+
     .species-grid {
         width: 100%;
 
@@ -7114,6 +7438,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       STATS
+       ===================================================== */
 
     .stats-grid {
         width: 100%;
@@ -7145,6 +7472,9 @@ textarea {
     }
 
 
+    /* =====================================================
+       ENROLLMENT
+       ===================================================== */
 
     .enrollment-grid {
         width: 100%;
@@ -7221,6 +7551,10 @@ textarea {
     }
 
 
+    /* =====================================================
+       CTA
+       ===================================================== */
+
     .school-cta {
         padding: 55px 0;
     }
@@ -7255,7 +7589,9 @@ textarea {
     }
 
 
-
+    /* =====================================================
+       FOOTER
+       ===================================================== */
 
     .site-footer {
         padding: 55px 0 24px;
@@ -7307,6 +7643,11 @@ textarea {
         font-size: 11px;
     }
 
+
+    /* =====================================================
+       LOGIN MODAL
+       ===================================================== */
+
     .login-modal {
         padding: 15px;
     }
@@ -7320,6 +7661,12 @@ textarea {
         border-radius: 18px;
     }
 }
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   320px - 380px
+   ========================================================= */
 
 @media (max-width: 380px) {
 
@@ -7398,6 +7745,9 @@ textarea {
 
 
 
+/* =========================================================
+   MOBILE LANDSCAPE
+   ========================================================= */
 
 @media (max-width: 767px) and (orientation: landscape) {
 
@@ -7415,6 +7765,7 @@ textarea {
     }
 
 
+    /* ---------- HERO ---------- */
 
     .school-hero,
     .program-hero,
@@ -7449,7 +7800,7 @@ textarea {
     }
 
 
- 
+    /* ---------- TWO COLUMN CONTENT ---------- */
 
     .intro-grid,
     .about-story-grid,
@@ -7484,7 +7835,7 @@ textarea {
     }
 
 
-  
+    /* ---------- CARDS ---------- */
 
     .program-grid,
     .learning-grid {
@@ -7504,13 +7855,17 @@ textarea {
     }
 
 
-   
+    /* ---------- FOOTER ---------- */
 
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
+
+/* =========================================================
+   RTL — DESKTOP
+   ========================================================= */
 
 html[dir="rtl"] {
 
@@ -7535,6 +7890,10 @@ html[dir="rtl"] .feature-list li::before {
     right: 0;
 }
 
+
+/* =========================================================
+   RTL — MOBILE
+   ========================================================= */
 
 @media (max-width: 767px) {
 
@@ -7597,6 +7956,9 @@ html[dir="rtl"] .feature-list li::before {
 }
 
 
+/* =========================================================
+   TOUCH DEVICES
+   ========================================================= */
 
 @media (hover: none) and (pointer: coarse) {
 
@@ -7617,18 +7979,23 @@ html[dir="rtl"] .feature-list li::before {
     }
 }
 
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
 
 @media (max-width: 900px) {
 
- 
+  /* Show hamburger button */
   .mobile-menu-btn {
     display: grid !important;
   }
 
+  /* Hide navigation initially */
   .main-nav {
     display: none;
   }
 
+  /* Show navigation when opened */
   .main-nav.active {
     display: flex;
     position: absolute;
@@ -7662,6 +8029,10 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
 
     html {
@@ -7682,7 +8053,7 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
-
+/* MOBILE NAVIGATION FIX */
 @media (max-width: 900px) {
 
   .site-header {
@@ -7747,7 +8118,7 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
-
+/* FINAL HAMBURGER VISIBILITY FIX */
 @media (max-width: 900px) {
   #mainNav {
     display: none !important;
@@ -7769,6 +8140,9 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
+/* ==========================================
+   MOBILE HORIZONTAL SCROLLING FIX
+========================================== */
 
 @media screen and (max-width: 900px) {
 
@@ -7829,6 +8203,7 @@ html[dir="rtl"] .feature-list li::before {
     max-width: 100%;
   }
 
+  /* Keep hamburger navigation working */
   #mainNav.mobile-open {
     display: flex !important;
   }
@@ -7836,6 +8211,10 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
+/* ========================================
+   FINAL MOBILE HEADER WIDTH FIX
+   No changes to desktop
+======================================== */
 
 @media (max-width: 900px) {
 
@@ -7912,7 +8291,7 @@ html[dir="rtl"] .feature-list li::before {
     display: grid !important;
   }
 
- 
+  /* Keep the working hamburger menu */
   #mainNav.mobile-open {
     display: flex !important;
     opacity: 1 !important;
@@ -7924,7 +8303,7 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
-
+/* MOBILE HERO AND HEADER FIT */
 @media (max-width: 900px) {
   .school-hero {
     width: 100%;
@@ -7987,7 +8366,7 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
-
+/* MOBILE WIDTH FIX */
 @media (max-width: 900px) {
   html,
   body {
@@ -8085,6 +8464,9 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
+/* =========================================================
+   FIX: MOBILE HORIZONTAL SCROLL / FIT SCREEN
+========================================================= */
 @media (max-width: 900px) {
 
   html, body {
@@ -8102,7 +8484,7 @@ html[dir="rtl"] .feature-list li::before {
     max-width: 100%;
   }
 
-  
+  /* ---------- Activities: stack into 1 column ---------- */
   .activities-grid {
     grid-template-columns: 1fr !important;
   }
@@ -8126,7 +8508,7 @@ html[dir="rtl"] .feature-list li::before {
     padding: 20px;
   }
 
- 
+  /* ---------- Timeline: single column, dot on the left ---------- */
   .timeline {
     max-width: 100%;
   }
@@ -8160,7 +8542,7 @@ html[dir="rtl"] .feature-list li::before {
     padding: 0;
   }
 
-  
+  /* ---------- Other grids ---------- */
   .program-grid,
   .learning-grid,
   .species-grid,
@@ -8208,6 +8590,9 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
+/* =========================================================
+   FINAL FIX: STOP PAGE BEING WIDER THAN SCREEN
+========================================================= */
 @media (max-width: 900px) {
 
   html, body {
@@ -8217,7 +8602,7 @@ html[dir="rtl"] .feature-list li::before {
     position: relative;
   }
 
- 
+  /* Decorative circles are the usual cause of sideways scroll */
   .school-hero {
     overflow: hidden !important;
     position: relative;
@@ -8229,7 +8614,7 @@ html[dir="rtl"] .feature-list li::before {
     display: none !important;
   }
 
- 
+  /* Hero content must never be wider than the screen */
   .school-hero .container,
   .school-hero .hero-content,
   .school-hero .hero-actions,
@@ -8265,6 +8650,7 @@ html[dir="rtl"] .feature-list li::before {
     padding-inline: 12px !important;
   }
 
+  /* Anything that can push the page wider */
   .reveal,
   section,
   .container,
@@ -8299,6 +8685,9 @@ html[dir="rtl"] .feature-list li::before {
 
 
 
+/* =========================================================
+   LAST-RESORT CONTAINMENT (stops any child widening the page)
+========================================================= */
 html {
   overflow-x: clip;
   max-width: 100%;
@@ -8307,7 +8696,7 @@ html {
 body {
   overflow-x: clip;
   max-width: 100%;
-  min-width: 0;         
+  min-width: 0;          /* removes the old min-width: 320px */
 }
 
 body > * {
@@ -8318,7 +8707,7 @@ main,
 section,
 footer,
 .site-header {
-  overflow-x: clip;      
+  overflow-x: clip;      /* anything wider than the screen is cut inside its own section */
   max-width: 100%;
 }
 
@@ -8351,13 +8740,17 @@ footer,
 
 <body>
 
- 
+ <!-- =====================================================
+
+       HEADER
+
+  ===================================================== -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
- 
+      <!-- LOGO -->
 
       <a
 
@@ -8395,7 +8788,7 @@ footer,
 
       </a>
 
-     
+      <!-- NAVIGATION -->
 
        <nav class="main-nav" id="mainNav">
 
@@ -8443,7 +8836,7 @@ footer,
 
       <div class="header-actions">
 
-      
+        <!-- RTL BUTTON -->
 
         <button
 
@@ -8463,7 +8856,7 @@ footer,
 
         </button>
 
-       
+        <!-- DARK / LIGHT BUTTON -->
 
         <button
 
@@ -8483,7 +8876,7 @@ footer,
 
         </button>
 
-      
+       <!-- LOGIN -->
 
         <a href="cta.html"
 
@@ -8497,7 +8890,7 @@ footer,
 
             </a>
 
-     
+        <!-- MOBILE MENU -->
 
         <button
 
@@ -8524,6 +8917,12 @@ footer,
     </div>
 
   </header>
+
+<!-- =========================================================
+
+     HERO
+
+========================================================= -->
 
 <main id="home">
 
@@ -8586,6 +8985,12 @@ footer,
     </div>
 
 </section>
+
+<!-- =========================================================
+
+     INTRO
+
+========================================================= -->
 
 <section class="school-intro"
 
@@ -8755,6 +9160,12 @@ footer,
 
 </section>
 
+<!-- =========================================================
+
+     PROGRAMS
+
+========================================================= -->
+
 <section class="programs-section"
 
          id="programs">
@@ -8793,7 +9204,7 @@ footer,
 
                     class="program-image"
 
-                    src="./imagess/halconero.jpg"
+                    src="./imagess/junior.jpg"
 
                     alt="Outdoor learning"
 
@@ -8871,7 +9282,7 @@ footer,
 
                     class="program-image"
 
-                    src="./imagess/groupvisit.jpg"
+                    src="https\://images.unsplash.com/photo-1452570053594-1b985d6ea890?auto=format&fit=crop&w=1000&q=85"
 
                     alt="Bird in flight"
 
@@ -9023,6 +9434,11 @@ footer,
 
 </section>
 
+<!-- =========================================================
+
+     ACTIVITIES
+
+========================================================= -->
 
 <section class="activities-section"
 
@@ -9178,7 +9594,11 @@ footer,
 
 </section>
 
+<!-- =========================================================
 
+     LEARNING
+
+========================================================= -->
 
 <section class="learning-section"
 
@@ -9228,14 +9648,10 @@ footer,
 
                 <p>
 
-                    Learn to notice posture, movement, alertness, and
-                     other behavioural signals. A bird’s body language 
-                     can provide important clues about how it is feeling.
-                     Changes in posture, wing position, movement vocalizations,
-                    or level of alertness may indicate comfort, stress, fear, or
-                      curiosity. By observing these signals carefully and calmly, 
-                        we can better understand birds in this best of the beheviour
-                         of the posture
+                    Learn to notice posture, movement,
+
+                    alertness and other behavioural signals.
+
                 </p>
 
             </article>
@@ -9256,15 +9672,10 @@ footer,
 
                 <p>
 
-                   Understand the principles of calm, respectful,
-                    and supervised bird handling. Always approach 
-                    birds quietly and carefully to avoid causing stress or fear.
-                    Handling should only be carried out by trained people using
-                    appropriate safety equipment and under proper supervision.
-                    Birds should be supported gently and returned to a safe to make
-                     the birds best for handling sensitive maintain good beheviour 
-                     is best  
-                   
+                    Understand the principles of calm,
+
+                    respectful and supervised bird handling.
+
                 </p>
 
             </article>
@@ -9287,13 +9698,7 @@ footer,
 
                     Explore how weather, terrain and
 
-                    bird behaviour affect flight.Discover
-                     the fascinating science behind bird flight.
-                      Learn how weather, terrain, wind currents, and bird behaviour
-                       work together to influence how birds of prey soar, 
-                       glide, hunt, and navigate through the sky.
-                       hunt, and raise their young. People can also avoid using harmful
-                       pesticides, protect nesting sites, reduce pollution, and never
+                    bird behaviour affect flight.
 
                 </p>
 
@@ -9318,12 +9723,6 @@ footer,
                     Discover how responsible people can
 
                     support raptor habitats and ecosystems.
-                     By protecting forests, wetlands, grasslands, and other natural
-                      areas, we can provide birds of prey with safe places to live, 
-                      hunt, and raise their young. People can also avoid using harmful
-                       pesticides, protect nesting sites, reduce pollution, and never 
-                       disturb wild raptors. Supporting wildlife conservation programs 
-                      
 
                 </p>
 
@@ -9335,7 +9734,263 @@ footer,
 
 </section>
 
+<!-- =========================================================
 
+     TIMELINE
+
+========================================================= -->
+
+<section class="timeline-section"
+
+         id="timeline">
+
+    <div class="container">
+
+        <div class="section-heading center reveal">
+
+            <div class="">
+
+                A Day At Falconry School
+
+            </div>
+
+            <h2 class="section-title">
+
+                Learn, observe, practise and reflect.
+
+            </h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+
+                        09:00 AM
+
+                    </div>
+
+                    <h3>
+
+                        Welcome & Safety
+
+                    </h3>
+
+                    <p>
+
+                        Introduction to the day, equipment
+
+                        and bird welfare principles.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                </div>
+
+                <div></div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div></div>
+
+                <div class="timeline-dot">
+
+                    <i class="fa-solid fa-feather"></i>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+
+                        10:00 AM
+
+                    </div>
+
+                    <h3>
+
+                        Meet the Birds
+
+                    </h3>
+
+                    <p>
+
+                        Observe natural behaviour and learn
+
+                        how individual birds differ.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+
+                        11:30 AM
+
+                    </div>
+
+                    <h3>
+
+                        Equipment Workshop
+
+                    </h3>
+
+                    <p>
+
+                        Explore gloves, equipment and
+
+                        responsible preparation.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot">
+
+                    <i class="fa-solid fa-toolbox"></i>
+
+                </div>
+
+                <div></div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div></div>
+
+                <div class="timeline-dot">
+
+                    <i class="fa-solid fa-person-running"></i>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+
+                        01:30 PM
+
+                    </div>
+
+                    <h3>
+
+                        Flight Session
+
+                    </h3>
+
+                    <p>
+
+                        Observe controlled flight exercises
+
+                        under trained supervision.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+
+                        03:00 PM
+
+                    </div>
+
+                    <h3>
+
+                        Conservation Walk
+
+                    </h3>
+
+                    <p>
+
+                        Explore habitat and discuss the
+
+                        role of raptors in ecosystems.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-dot">
+
+                    <i class="fa-solid fa-tree"></i>
+
+                </div>
+
+                <div></div>
+
+            </div>
+
+            <div class="timeline-item reveal">
+
+                <div></div>
+
+                <div class="timeline-dot">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                </div>
+
+                <div class="timeline-content">
+
+                    <div class="timeline-time">
+
+                        04:00 PM
+
+                    </div>
+
+                    <h3>
+
+                        Reflection & Questions
+
+                    </h3>
+
+                    <p>
+
+                        Review the day and discuss what
+
+                        students discovered.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+
+     SPECIES
+
+========================================================= -->
 
 <section class="species-section"
 
@@ -9511,7 +10166,11 @@ footer,
 
 </section>
 
+<!-- =========================================================
 
+     STATS
+
+========================================================= -->
 
 <section class="stats-section">
 
@@ -9589,7 +10248,11 @@ footer,
 
 </section>
 
+<!-- =========================================================
 
+     ENROLLMENT
+
+========================================================= -->
 
 <section class="enrollment-section"
 
@@ -9913,6 +10576,11 @@ footer,
 
 </section>
 
+<!-- =========================================================
+
+     CTA
+
+========================================================= -->
 
 <section class="cta-section">
 
@@ -9954,7 +10622,12 @@ footer,
 
 </main>
 
-  
+  <!-- =====================================================
+
+       FOOTER
+
+  ===================================================== -->
+
   <footer class="site-footer">
 
     <div class="container">
@@ -10057,7 +10730,7 @@ footer,
 
         </div>
 
-      
+        <!-- EXPLORE -->
 
         <div class="footer-column">
 
@@ -10123,7 +10796,7 @@ footer,
 
         </div>
 
-   
+        <!-- SERVICES -->
 
         <div class="footer-column">
 
@@ -10189,7 +10862,7 @@ footer,
 
         </div>
 
-       
+        <!-- CONTACT -->
 
         <div class="footer-column">
 
@@ -10319,7 +10992,12 @@ footer,
 
   </footer>
 
- 
+  <!-- =====================================================
+
+       LOGIN MODAL
+
+  ===================================================== -->
+
   <div
 
     class="modal-backdrop"
@@ -10484,7 +11162,12 @@ footer,
 
   </div>
 
-  
+  <!-- =====================================================
+
+       TOAST
+
+  ===================================================== -->
+
   <div
 
     class="toast"
@@ -10511,6 +11194,11 @@ footer,
 
   </div>
 
+  <!-- =====================================================
+
+       JAVASCRIPT
+
+  ===================================================== -->
 
   <script>
 
@@ -10574,7 +11262,12 @@ footer,
 
           $("currentYear");
 
-        
+        /* =================================================
+
+           YEAR
+
+        ================================================= */
+
         if (currentYear) {
 
           currentYear.textContent =
@@ -10583,7 +11276,12 @@ footer,
 
         }
 
-       
+        /* =================================================
+
+           TOAST
+
+        ================================================= */
+
         let toastTimer;
 
         function showToast(message) {
@@ -10630,7 +11328,12 @@ footer,
 
         }
 
-       
+        /* =================================================
+
+           THEME
+
+        ================================================= */
+
         function applyTheme(theme) {
 
           const selectedTheme =
@@ -10741,6 +11444,12 @@ footer,
 
         }
 
+        /* =================================================
+
+           RTL
+
+        ================================================= */
+
         function applyDirection(direction) {
 
           const selectedDirection =
@@ -10831,7 +11540,11 @@ footer,
 
         }
 
-      
+        /* =================================================
+
+           MOBILE MENU
+
+        ================================================= */
 
         function closeMobileMenu() {
 
@@ -10967,7 +11680,11 @@ footer,
 
         }
 
-       
+        /* =================================================
+
+           MOBILE DROPDOWN
+
+        ================================================= */
 
         document
 
@@ -11023,7 +11740,12 @@ footer,
 
           );
 
-       
+        /* =================================================
+
+           CLOSE MENU AFTER LINK
+
+        ================================================= */
+
         document
 
           .querySelectorAll(
@@ -11060,7 +11782,11 @@ footer,
 
           );
 
-      
+        /* =================================================
+
+           LOGIN MODAL
+
+        ================================================= */
 
         function openLogin() {
 
@@ -11172,7 +11898,11 @@ footer,
 
         }
 
-       
+        /* =================================================
+
+           LOGIN FORM
+
+        ================================================= */
 
         if (loginForm) {
 
@@ -11266,7 +11996,11 @@ footer,
 
         }
 
-      
+        /* =================================================
+
+           ESCAPE
+
+        ================================================= */
 
         document.addEventListener(
 
@@ -11290,7 +12024,12 @@ footer,
 
         );
 
-      
+        /* =================================================
+
+           RESIZE
+
+        ================================================= */
+
         window.addEventListener(
 
           "resize",
@@ -11311,7 +12050,12 @@ footer,
 
         );
 
-        
+        /* =================================================
+
+           SMOOTH SCROLL
+
+        ================================================= */
+
         document
 
           .querySelectorAll(
@@ -11380,6 +12124,11 @@ footer,
 
           );
 
+        /* =================================================
+
+           SCROLL REVEAL
+
+        ================================================= */
 
         const revealElements =
 
@@ -11485,7 +12234,7 @@ footer,
 
 
   </script>
-
+<script src="nav.js" defer></script>
 </body>
 
 </html>
