@@ -173,6 +173,9 @@
       line-height: 1.15;
     }
 
+
+
+
     .site-header {
       position: fixed;
       top: 0;
@@ -411,6 +414,55 @@
     }
 
 
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
+
     .icon-btn {
       width: 40px;
       height: 40px;
@@ -627,7 +679,7 @@
 
     h1 span {
   display: block;
-  color: #d88b4a; /* Come Alive */
+  color: #d88b4a; 
   font-weight: 400;
  
   letter-spacing: -0.03em;
@@ -888,17 +940,158 @@
       font-size: 44px;
       color: var(--primary);
       margin-bottom: 5px;
+
     }
 
     .stat span {
       color: var(--text-soft);
       font-size: 14px;
     }
+    
+
+
+
+.section-title {
+    color: var(--text);
+    text-align: center;
+}
+
+.section-description {
+    color: var(--text-soft);
+    line-height: 1.8;
+    text-align: center;
+}
+
+.section-eyebrow {
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+
+
+.check-list li,
+.check-list li span {
+    color: var(--text);
+}
+
+.check-list li i {
+    color: var(--accent-dark);
+}
+
+
+.experience-item h3 {
+    color: var(--text);
+}
+
+.experience-item p {
+    color: var(--text-soft);
+}
+
+
+.intro-content .section-title {
+    color: var(--text);
+    text-align: left;
+}
+
+.intro-content .section-description {
+    color: var(--text-soft);
+    text-align: left;
+}
+
+
+.experience .section-title {
+    color: var(--text);
+    text-align: left;
+}
+
+.experience .section-description {
+    color: var(--text-soft);
+    text-align: left;
+}
+
+
+html[data-theme="dark"] .section-eyebrow,
+html[data-theme="dark"] .check-list li i {
+    color: var(--accent-light);
+}
+
+
+.section-title,
+.section-description,
+.section-eyebrow,
+.check-list li,
+.experience-item h3,
+.experience-item p {
+    transition: color var(--transition);
+}
+
+
+.birds {
+    background: var(--bg);
+    color: var(--text);
+    transition: background var(--transition), color var(--transition);
+}
+
+
+.birds .section-heading {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+
+.birds .section-eyebrow {
+    color: var(--accent-dark);
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: color var(--transition);
+}
+
+
+.birds .section-title {
+    color: var(--text);
+    text-align: left;
+    transition: color var(--transition);
+}
+
+
+.birds .section-description {
+    color: var(--text-soft);
+    text-align: left;
+    line-height: 1.8;
+    transition: color var(--transition);
+}
+
+
+html[data-theme="dark"] .birds .section-eyebrow {
+    color: var(--accent-light);
+}
+
+
+@media (max-width: 768px) {
+    .birds .section-heading {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .birds .section-title,
+    .birds .section-description {
+        text-align: left;
+    }
+}
+
+
+
+
+
 
 
     .birds {
       padding: 120px 0;
       background: var(--bg-soft);
+      justify-content: center;
+      text-align: center;
+      
     }
 
     .section-heading {
@@ -907,6 +1100,9 @@
       gap: 30px;
       align-items: end;
       margin-bottom: 50px;
+      justify-content: center;
+      text-align: center;
+   
     }
 
     .view-all {
@@ -978,11 +1174,13 @@
 
     .bird-content {
       padding: 24px;
+      
     }
 
     .bird-content h3 {
       font-size: 26px;
       margin-bottom: 8px;
+    
     }
 
     .bird-scientific {
@@ -995,6 +1193,7 @@
     .bird-content p {
       color: var(--text-soft);
       font-size: 14px;
+      
     }
 
    
@@ -1037,6 +1236,7 @@
     .service-card h3 {
       font-size: 25px;
       margin-bottom: 12px;
+     
     }
 
     .service-card p {
@@ -1045,66 +1245,152 @@
     }
 
    
+   
+
+.experience {
+    padding: 120px 5%;
+    
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+.experience .section-title {
+  color: #0d1714;
+    text-align: center;
+}
+
+.experience .section-description {
+    color:black;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.experience-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 35px;
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.experience-item i {
+    flex-shrink: 0;
+    color: var(--accent-light, #d9b56d);
+    font-size: 20px;
+}
+
+
+.experience .section-title {
+    color:black;
+    text-align: left;
+}
+
+.experience .section-description {
+  color: #0d1714;
+   
+    line-height: 1.8;
+    text-align: left;
+}
+
+.experience-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    text-align: left;
+}
+
+.experience-item h3,
+.experience-item p {
+    text-align: left;
+    margin-left: 0;
+}
+
+
+.experience-image {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg, 18px);
+}
+
+.experience-image img {
+    display: block;
+    width: 100%;
+    height: 570px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-lg, 18px);
+    transition: transform 0.5s ease;
+}
+
+.experience-image:hover img {
+    transform: scale(1.04);
+}
+
+
+@media (max-width: 900px) {
     .experience {
-      padding: 120px 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(13, 38, 31, .96),
-          rgba(13, 38, 31, .8)
-        ),
-        url("https://images.unsplash.com/photo-1480044965905-02098d419e96?auto=format&fit=crop&w=2200&q=90")
-        center / cover;
-      color: white;
+        padding: 90px 5%;
     }
 
     .experience-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .experience .section-title {
-      color: white;
-    }
-
-    .experience .section-description {
-      color: rgba(255,255,255,.72);
-    }
-
-    .experience-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 35px;
-    }
-
-    .experience-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255,255,255,.13);
-    }
-
-    .experience-item i {
-      color: var(--accent-light);
-    }
-
-    .experience-image {
-      position: relative;
+        gap: 40px;
     }
 
     .experience-image img {
-      height: 570px;
-      object-fit: cover;
-      border-radius: var(--radius-lg);
+        height: 480px;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .experience {
+        padding: 65px 20px;
+        background-position: center;
     }
 
-    
-    /* =========================================================
-       EDUCATION
-    ========================================================= */
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .experience-image {
+        order: -1;
+    }
+
+    .experience-image img {
+        height: 350px;
+    }
+
+    .experience .section-title {
+        font-size: 30px;
+    }
+
+    .experience-list {
+        margin-top: 25px;
+    }
+
+    .experience-item {
+        gap: 12px;
+    }
+}
 
     .education {
       padding: 130px 0;
@@ -1164,10 +1450,6 @@
       max-width: 500px;
     }
 
-    /* =========================================================
-       CTA
-    ========================================================= */
-
     .cta {
       padding: 0 0 130px;
     }
@@ -1210,9 +1492,6 @@
       z-index: 2;
     }
 
-    /* =====================================================
-       FOOTER
-    ===================================================== */
 
     .site-footer {
       position: relative;
@@ -1527,10 +1806,6 @@
     }
 
 
-    /* =====================================================
-       LOGIN MODAL
-    ===================================================== */
-
     .modal-backdrop {
       position: fixed;
 
@@ -1743,9 +2018,6 @@
     }
 
 
-    /* =====================================================
-       TOAST
-    ===================================================== */
 
     .toast {
       position: fixed;
@@ -1806,9 +2078,6 @@
     }
 
 
-    /* =====================================================
-       REVEAL
-    ===================================================== */
 
     .reveal {
       opacity: 0;
@@ -1830,9 +2099,6 @@
     }
 
 
-    /* =====================================================
-       RTL
-    ===================================================== */
 
     html[dir="rtl"] .dropdown-menu {
       left: auto;
@@ -1888,9 +2154,6 @@
     }
 
 
-    /* =====================================================
-       LARGE DESKTOP
-    ===================================================== */
 
     @media (min-width:1200px) {
 
@@ -1912,9 +2175,6 @@
     }
 
 
-    /* =====================================================
-       TABLET
-    ===================================================== */
 
     @media (min-width:601px)
     and (max-width:900px) {
@@ -2087,9 +2347,6 @@
     }
 
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
 
     @media (max-width:600px) {
 
@@ -2517,9 +2774,6 @@
     }
 
 
-    /* =====================================================
-       SMALL MOBILE
-    ===================================================== */
 
     @media (max-width:380px) {
 
@@ -2594,9 +2848,6 @@
     }
 
 
-    /* =====================================================
-       REDUCED MOTION
-    ===================================================== */
 
     @media (prefers-reduced-motion: reduce) {
 
@@ -2620,9 +2871,6 @@
     }
 
 
-    /* =====================================================
-       EXTRA LARGE
-    ===================================================== */
 
     @media (min-width:1600px) {
 
@@ -2635,9 +2883,6 @@
       }
 
     }
-        /* =====================================================
-       TABLET
-    ===================================================== */
 
     @media (min-width:601px) and (max-width:900px) {
 
@@ -2648,9 +2893,6 @@
         );
       }
 
-      /* -------------------------
-         HEADER
-      ------------------------- */
 
       .header-inner {
         min-height: 72px;
@@ -2742,9 +2984,6 @@
       }
 
 
-      /* -------------------------
-         HERO
-      ------------------------- */
 
       .hero {
         min-height: 650px;
@@ -2794,9 +3033,6 @@
       }
 
 
-      /* -------------------------
-         GENERAL SECTIONS
-      ------------------------- */
 
       .section {
         padding: 85px 0;
@@ -2815,9 +3051,6 @@
       }
 
 
-      /* -------------------------
-         INTRO
-      ------------------------- */
 
       .intro-grid {
         grid-template-columns: 1fr;
@@ -2834,9 +3067,6 @@
       }
 
 
-      /* -------------------------
-         STATS
-      ------------------------- */
 
       .stats {
         padding: 0 0 85px;
@@ -2850,9 +3080,6 @@
       }
 
 
-      /* -------------------------
-         EXPERIENCES
-      ------------------------- */
 
       .experience-grid {
         grid-template-columns:
@@ -2870,10 +3097,6 @@
       }
 
 
-      /* -------------------------
-         BIRDS
-      ------------------------- */
-
       .birds-grid {
         grid-template-columns:
           repeat(2, 1fr);
@@ -2886,9 +3109,6 @@
       }
 
 
-      /* -------------------------
-         MISSION
-      ------------------------- */
 
       .mission {
         padding: 80px 0;
@@ -2905,9 +3125,6 @@
       }
 
 
-      /* -------------------------
-         FOOTER
-      ------------------------- */
 
       .footer-grid {
         grid-template-columns:
@@ -2937,10 +3154,6 @@
     }
 
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
-
     @media (max-width:600px) {
 
       .container {
@@ -2948,9 +3161,6 @@
       }
 
 
-      /* -------------------------
-         HEADER
-      ------------------------- */
 
       .header-inner {
         min-height: 68px;
@@ -3000,9 +3210,6 @@
       }
 
 
-      /* -------------------------
-         MOBILE NAV
-      ------------------------- */
 
       .main-nav {
         position: fixed;
@@ -3079,9 +3286,6 @@
       }
 
 
-      /* -------------------------
-         HERO
-      ------------------------- */
 
       .hero {
         min-height: 590px;
@@ -3225,9 +3429,6 @@
       }
 
 
-      /* -------------------------
-         GENERAL SECTIONS
-      ------------------------- */
 
       .section {
         padding: 70px 0;
@@ -3252,9 +3453,6 @@
       }
 
 
-      /* -------------------------
-         INTRO
-      ------------------------- */
 
       .intro-grid {
         grid-template-columns: 1fr;
@@ -3310,9 +3508,6 @@
       }
 
 
-      /* -------------------------
-         STATS
-      ------------------------- */
 
       .stats {
         padding: 0 0 70px;
@@ -3349,9 +3544,6 @@
       }
 
 
-      /* -------------------------
-         EXPERIENCES
-      ------------------------- */
 
       .experience-grid {
         grid-template-columns: 1fr;
@@ -3393,11 +3585,9 @@
       .experience-content p {
         font-size: 11px;
       }
+      
 
 
-      /* -------------------------
-         FEATURED BIRDS
-      ------------------------- */
 
       .birds-grid {
         grid-template-columns: 1fr;
@@ -3430,9 +3620,6 @@
       }
 
 
-      /* -------------------------
-         MISSION CTA
-      ------------------------- */
 
       .mission {
         padding: 70px 0;
@@ -3459,9 +3646,6 @@
       }
 
 
-      /* -------------------------
-         BUTTONS
-      ------------------------- */
 
       .btn {
         min-height: 50px;
@@ -3471,10 +3655,6 @@
         font-size: 13px;
       }
 
-
-      /* -------------------------
-         FOOTER
-      ------------------------- */
 
       .site-footer {
         padding:
@@ -3568,9 +3748,6 @@
       }
 
 
-      /* -------------------------
-         MODAL
-      ------------------------- */
 
       .modal-backdrop {
         padding: 16px;
@@ -3600,10 +3777,6 @@
       }
 
 
-      /* -------------------------
-         TOAST
-      ------------------------- */
-
       .toast {
         left: 16px;
         right: 16px;
@@ -3618,9 +3791,6 @@
       }
 
 
-      /* -------------------------
-         REVEAL
-      ------------------------- */
 
       .reveal {
         transform: translateY(18px);
@@ -3629,9 +3799,6 @@
     }
 
 
-    /* =====================================================
-       SMALL MOBILE
-    ===================================================== */
 
     @media (max-width:380px) {
 
@@ -3677,7 +3844,7 @@
       }
 
 
-      /* HERO */
+  
 
       .hero {
         min-height: 550px;
@@ -3716,7 +3883,7 @@
       }
 
 
-      /* SECTIONS */
+
 
       .section {
         padding: 60px 0;
@@ -3727,7 +3894,6 @@
       }
 
 
-      /* INTRO */
 
       .intro-image {
         min-height: 320px;
@@ -3747,7 +3913,7 @@
       }
 
 
-      /* EXPERIENCES */
+  
 
       .experience-card,
       .experience-card img {
@@ -3755,7 +3921,7 @@
       }
 
 
-      /* BIRDS */
+  
 
       .bird-image {
         height: 220px;
@@ -3766,7 +3932,7 @@
       }
 
 
-      /* MISSION */
+   
 
       .mission {
         padding: 60px 0;
@@ -3777,14 +3943,13 @@
       }
 
 
-      /* FOOTER */
+  
 
       .site-footer {
         padding-top: 50px;
       }
 
 
-      /* MODAL */
 
       .modal {
         padding: 22px 16px;
@@ -3793,9 +3958,6 @@
     }
 
 
-    /* =====================================================
-       MOBILE LANDSCAPE
-    ===================================================== */
 
     @media (max-width:600px)
     and (orientation:landscape) {
@@ -3847,9 +4009,6 @@
 
 }
     
-/* =========================================
-   REMOVE LOGIN / BOOK A VISIT ON MOBILE
-========================================= */
 
 @media (max-width: 900px) {
   .login-btn {
@@ -3860,9 +4019,6 @@
 
     
 
-/* =====================================
-   HOME2 - CONSISTENT SECTION HEADINGS
-===================================== */
 
 .section-title {
     font-family: "Playfair Display", serif;
@@ -3887,18 +4043,248 @@
     color: var(--text-soft);
 }
 
-/* Preserve headings on dark backgrounds */
 .experience .section-title {
     color: #ffffff;
 }
 
-/* Mobile */
+
 @media (max-width: 767px) {
     .section-title {
         font-size: clamp(1.9rem, 6vw, 2.5rem);
         line-height: 1.25;
     }
 }
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 0 28px;
+    background: #ffffff;
+    border: 1px solid #e6e9df;
+    border-radius: 16px;
+    color: #25372d;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(18, 61, 44, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(18, 61, 44, 0.15);
+}
+
+.service-image {
+    width: 100%;
+    height: 230px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.service-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.06);
+}
+
+
+.service-card h3 {
+    margin: 0 20px 12px;
+    color: #123d2c;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+.service-card p {
+    flex-grow: 1;
+    margin: 0 24px 20px;
+    color: #6b786f;
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+.service-link {
+    margin-top: auto;
+    color: #b68b43;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-link {
+    color: #123d2c;
+}
+
+
+.service-card:focus-visible {
+    outline: 3px solid #d9b56d;
+    outline-offset: 4px;
+}
+
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+}
+
+
+@media (max-width: 560px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 15px;
+    }
+
+    .service-image {
+        height: 240px;
+    }
+
+    .service-card h3 {
+        font-size: 22px;
+    }
+
+    .service-card p {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+
+
+
+html:not([data-theme="dark"]) .experience .section-title {
+    color: #17231f;
+}
+
+
+html[data-theme="dark"] .experience .section-title {
+    color: #f2f5f2;
+}
+
+
+.experience .section-title {
+    transition: color var(--transition);
+}
+
+
+
+html:not([data-theme="dark"]) .experience .section-description {
+    color: #65706b;
+}
+
+
+html[data-theme="dark"] .experience .section-description {
+    color: #aab8b1;
+}
+
+
+.experience .section-description {
+    line-height: 1.8;
+    transition: color var(--transition);
+}
+
+
+
+
+
+html:not([data-theme="dark"]) .section-eyebrow {
+    color: #b98a2f;
+}
+
+
+html[data-theme="dark"] .section-eyebrow {
+    color: #f1d995;
+}
+
+
+.section-eyebrow {
+    font-weight: 700;
+    transition: color var(--transition);
+}
+
+
+
+
+
+html:not([data-theme="dark"]) .section-heading .section-title {
+    color: #17231f;
+}
+
+html[data-theme="dark"] .section-heading .section-title {
+    color: #f2f5f2;
+}
+
+
+.section-heading .section-title {
+    transition: color var(--transition);
+}
+
+
+
+
+
+html:not([data-theme="dark"]) .section-heading .section-description {
+    color: #65706b;
+}
+
+
+html[data-theme="dark"] .section-heading .section-description {
+    color: #aab8b1;
+}
+
+
+.section-heading .section-description {
+    line-height: 1.8;
+    transition: color var(--transition);
+}
+
+
+
+
+
+
 
   </style>
 </head>
@@ -3914,17 +4300,13 @@
 
 <body>
 
-
-  <!-- =====================================================
-       HEADER
-  ===================================================== -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
 
-      <!-- LOGO -->
+
 
       <a
         href="index.html"
@@ -3955,7 +4337,7 @@
       </a>
 
 
-      <!-- NAVIGATION -->
+  
 
        <nav class="main-nav" id="mainNav">
 
@@ -3989,7 +4371,7 @@
 
       <div class="header-actions">
 
-        <!-- RTL BUTTON -->
+   
         <button
           class="icon-btn"
           id="directionToggle"
@@ -4001,7 +4383,7 @@
         </button>
 
 
-        <!-- DARK / LIGHT BUTTON -->
+        
         <button
           class="icon-btn"
           id="themeToggle"
@@ -4012,7 +4394,7 @@
           <i class="fa-solid fa-moon"></i>
         </button>
 
-       <!-- LOGIN -->
+    
         <a href="cta.html"
                class="login-btn">
  
@@ -4023,7 +4405,6 @@
  
             </a>
 
-        <!-- MOBILE MENU -->
         <button
           class="icon-btn mobile-menu-btn"
           id="mobileMenuBtn"
@@ -4040,16 +4421,8 @@
   </header>
   </header>
 
-  <!-- =========================================================
-       MAIN
-  ========================================================== -->
-
   <main>
 
-
-    <!-- =======================================================
-         HOMEPAGE 2 HERO
-    ======================================================== -->
 
     <section class="hero" id="home">
 
@@ -4057,9 +4430,11 @@
 
         <div class="hero-content">
 
-          <div class="">
-            A quieter way to discover nature
-          </div>
+          <div class="section-eyebrow">
+
+                   quiter way to discover nature
+
+                </div>
 
           <h1>
             Where Birds
@@ -4108,7 +4483,7 @@
       </div>
 
 
-      <!-- FLOATING HERO CARD -->
+    
 
       <div class="hero-card">
 
@@ -4153,7 +4528,7 @@
       </div>
 
 
-      <!-- HERO FACTS -->
+  
 
       <div class="hero-facts">
 
@@ -4218,10 +4593,6 @@
     </section>
 
 
-    <!-- =======================================================
-         ABOUT / INTRO
-    ======================================================== -->
-
     <section class="intro" id="about">
 
       <div class="container">
@@ -4231,7 +4602,7 @@
           <div class="intro-image">
 
             <img
-              src="https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=85"
+              src="./imagess/Ein Falkner mit Vogel.jpg"
               alt="Colorful bird sitting on a branch"
             >
 
@@ -4252,9 +4623,11 @@
 
           <div class="intro-content">
 
-            <div class="eyebrow">
-              About Aviora
-            </div>
+            <div class="section-eyebrow">
+
+                   About Us
+
+                </div>
 
             <h2 class="section-title">
               A sanctuary built around curiosity, care and conservation.
@@ -4335,9 +4708,6 @@
     </section>
 
 
-    <!-- =======================================================
-         STATS
-    ======================================================== -->
 
     <section class="stats">
 
@@ -4403,9 +4773,6 @@
     </section>
 
 
-    <!-- =======================================================
-         RESIDENT BIRDS
-    ======================================================== -->
 
     <section class="birds" id="birds">
 
@@ -4415,9 +4782,11 @@
 
           <div>
 
-            <div class="eyebrow">
-              Resident Birds
-            </div>
+            <div class="section-eyebrow">
+
+                  Resident Birds
+
+                </div>
 
             <h2 class="section-title">
               Meet the residents of our sanctuary.
@@ -4433,24 +4802,14 @@
           </div>
 
 
-          <a
-            href="#"
-            class="view-all"
-          >
-
-            View all birds
-
-            <i class="fa-solid fa-arrow-right"></i>
-
-          </a>
-
+          
         </div>
 
 
         <div class="birds-grid">
 
 
-          <!-- BIRD 1 -->
+         
 
           <article class="bird-card">
 
@@ -4491,7 +4850,7 @@
           </article>
 
 
-          <!-- BIRD 2 -->
+   
 
           <article class="bird-card">
 
@@ -4532,7 +4891,7 @@
           </article>
 
 
-          <!-- BIRD 3 -->
+  
 
           <article class="bird-card">
 
@@ -4579,9 +4938,6 @@
     </section>
 
 
-    <!-- =======================================================
-         SERVICES
-    ======================================================== -->
 
     <section class="services" id="services">
 
@@ -4591,10 +4947,11 @@
 
           <div>
 
-            <div class="eyebrow">
-              What We Offer
-            </div>
+            <div class="section-eyebrow">
 
+                  What we Offer
+
+                </div>
             <h2 class="section-title">
               Experiences designed to inspire.
             </h2>
@@ -4611,138 +4968,107 @@
         </div>
 
 
-        <div class="services-grid">
+        
+<div class="services-grid">
 
+  <a href="bird-watching.html" class="service-card">
+    <div class="service-image">
+      <img
+        src="./imagess/watch.jpg"
+        alt="Bird watching in nature"
+        loading="lazy"
+      >
+    </div>
+    <h3>Bird Watching</h3>
+    <p>
+      Explore quiet observation trails and discover resident and
+      seasonal species with our expert guides.
+    </p>
+    
+  </a>
 
-          <article class="service-card">
+  <a href="nature-education.html" class="service-card">
+    <div class="service-image">
+      <img
+        src="./imagess/City Parrots -.jpg"
+        alt="Wildlife and nature education"
+        loading="lazy"
+      >
+    </div>
+    <h3>Nature Education</h3>
+    <p>
+      Interactive programs help students and families understand
+      ecosystems, biodiversity and conservation.
+    </p>
+    
+  </a>
 
-            <div class="service-icon">
-              <i class="fa-solid fa-binoculars"></i>
-            </div>
+  <a href="photography-tours.html" class="service-card">
+    <div class="service-image">
+      <img
+        src="./imagess/Albatross _ Largest Seabird, Migration & Conservation _ Britannica.jpg"
+        alt="Camera for nature photography"
+        loading="lazy"
+      >
+    </div>
+    <h3>Photography Tours</h3>
+    <p>
+      Capture beautiful moments with dedicated photography walks,
+      observation points and expert guidance.
+    </p>
+   
+  </a>
 
-            <h3>
-              Bird Watching
-            </h3>
+  <a href="conservation.html" class="service-card">
+    <div class="service-image">
+      <img
+        src="./imagess/How (and Why) to Host a Bird Sit.jpg"
+        alt="Green forest habitat"
+        loading="lazy"
+      >
+    </div>
+    <h3>Conservation</h3>
+    <p>
+      Learn about habitat restoration, species protection and the
+      projects supported by Aviora.
+    </p>
+   
+  </a>
 
-            <p>
+  <a href="family-programs.html" class="service-card">
+    <div class="service-image">
+      <img
+        src="./imagess/family.jpg"
+        alt="Family enjoying the outdoors"
+        loading="lazy"
+      >
+    </div>
+    <h3>Family Programs</h3>
+    <p>
+      Fun and educational experiences created to make young visitors
+      curious about the natural world.
+    </p>
+   
+  </a>
 
-              Explore quiet observation trails and discover resident and
-              seasonal species with our expert guides.
+  <a href="guided-expeditions.html" class="service-card">
+    <div class="service-image">
+      <img
+        src="./imagess/guide.jpg"
+        alt="A peaceful forest trail"
+        loading="lazy"
+      >
+    </div>
+    <h3>Guided Expeditions</h3>
+    <p>
+      Venture deeper into the sanctuary with naturalists who reveal
+      the hidden stories behind every trail.
+    </p>
+    
+  </a>
 
-            </p>
+</div>
 
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-
-            <h3>
-              Nature Education
-            </h3>
-
-            <p>
-
-              Interactive programs help students and families understand
-              ecosystems, biodiversity and conservation.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-camera"></i>
-            </div>
-
-            <h3>
-              Photography Tours
-            </h3>
-
-            <p>
-
-              Capture beautiful moments with dedicated photography walks,
-              observation points and expert guidance.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-seedling"></i>
-            </div>
-
-            <h3>
-              Conservation
-            </h3>
-
-            <p>
-
-              Learn about habitat restoration, species protection and the projects
-              supported by Aviora.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-children"></i>
-            </div>
-
-            <h3>
-              Family Programs
-            </h3>
-
-            <p>
-
-              Fun and educational experiences created to make young visitors
-              curious about the natural world.
-
-            </p>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-compass"></i>
-            </div>
-
-            <h3>
-              Guided Expeditions
-            </h3>
-
-            <p>
-
-              Venture deeper into the sanctuary with naturalists who reveal
-              the hidden stories behind every trail.
-
-            </p>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =======================================================
-         EXPERIENCE
-    ======================================================== -->
 
     <section class="experience" id="experience">
 
@@ -4753,10 +5079,10 @@
 
           <div>
 
-            <div class="eyebrow">
-              The Aviora Experience
-            </div>
+            <div class="section-eyebrow">
+                 The Aviora Experience
 
+                </div>
             <h2 class="section-title">
               Leave the ordinary behind.
             </h2>
@@ -4867,9 +5193,6 @@
     </section>
 
 
-    <!-- =======================================================
-         EDUCATIONAL HIGHLIGHTS
-    ======================================================== -->
 
     <section class="education">
 
@@ -4879,9 +5202,11 @@
 
           <div>
 
-            <div class="eyebrow">
-              Learn With Us
-            </div>
+            <div class="section-eyebrow">
+
+                   Learn With us
+
+                </div>
 
             <h2 class="section-title">
               Every visit can become a lesson.
@@ -4960,10 +5285,6 @@
     </section>
 
 
-    <!-- =======================================================
-         CTA
-    ======================================================== -->
-
     <section class="cta">
 
       <div class="container">
@@ -5006,9 +5327,7 @@
 
   </main>
 
-  <!-- =====================================================
-       FOOTER
-  ===================================================== -->
+
 
   <footer class="site-footer">
 
@@ -5018,7 +5337,7 @@
       <div class="footer-grid">
 
 
-        <!-- BRAND -->
+    
 
         <div class="footer-brand">
 
@@ -5091,7 +5410,7 @@
         </div>
 
 
-        <!-- EXPLORE -->
+     
 
         <div class="footer-column">
 
@@ -5137,7 +5456,7 @@
         </div>
 
 
-        <!-- SERVICES -->
+   
 
         <div class="footer-column">
 
@@ -5183,7 +5502,7 @@
         </div>
 
 
-        <!-- CONTACT -->
+   
 
         <div class="footer-column">
 
@@ -5304,9 +5623,6 @@
   </footer>
 
 
-  <!-- =====================================================
-       LOGIN MODAL
-  ===================================================== -->
 
   <div
     class="modal-backdrop"
@@ -5434,9 +5750,6 @@
   </div>
 
 
-  <!-- =====================================================
-       TOAST
-  ===================================================== -->
 
   <div
     class="toast"
@@ -5456,9 +5769,6 @@
   </div>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ===================================================== -->
 
   <script>
 
@@ -5520,9 +5830,6 @@
           $("currentYear");
 
 
-        /* =================================================
-           YEAR
-        ================================================= */
 
         if (currentYear) {
 
@@ -5532,9 +5839,6 @@
         }
 
 
-        /* =================================================
-           TOAST
-        ================================================= */
 
         let toastTimer;
 
@@ -5575,9 +5879,6 @@
         }
 
 
-        /* =================================================
-           THEME
-        ================================================= */
 
         function applyTheme(theme) {
 
@@ -5662,9 +5963,6 @@
         }
 
 
-        /* =================================================
-           RTL
-        ================================================= */
 
         function applyDirection(direction) {
 
@@ -5733,9 +6031,6 @@
         }
 
 
-        /* =================================================
-           MOBILE MENU
-        ================================================= */
 
         function closeMobileMenu() {
 
@@ -5842,9 +6137,6 @@
         }
 
 
-        /* =================================================
-           MOBILE DROPDOWN
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -5887,9 +6179,6 @@
           );
 
 
-        /* =================================================
-           CLOSE MENU AFTER LINK
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -5917,9 +6206,6 @@
           );
 
 
-        /* =================================================
-           LOGIN MODAL
-        ================================================= */
 
         function openLogin() {
 
@@ -6014,9 +6300,6 @@
         }
 
 
-        /* =================================================
-           LOGIN FORM
-        ================================================= */
 
         if (loginForm) {
 
@@ -6100,9 +6383,6 @@
         }
 
 
-        /* =================================================
-           ESCAPE
-        ================================================= */
 
         document.addEventListener(
           "keydown",
@@ -6122,9 +6402,6 @@
         );
 
 
-        /* =================================================
-           RESIZE
-        ================================================= */
 
         window.addEventListener(
           "resize",
@@ -6142,9 +6419,6 @@
         );
 
 
-        /* =================================================
-           SMOOTH SCROLL
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -6198,9 +6472,6 @@
           );
 
 
-        /* =================================================
-           SCROLL REVEAL
-        ================================================= */
 
         const revealElements =
           document.querySelectorAll(

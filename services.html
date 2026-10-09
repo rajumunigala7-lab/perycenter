@@ -331,6 +331,61 @@
       background: var(--bg-soft);
     }
 
+    
+
+
+/* Navigation Link */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active Link Underline */
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Hover Underline */
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Light Mode */
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Dark Mode */
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
+
 
     .dropdown {
       position: relative;
@@ -1545,24 +1600,22 @@
       gap: 12px;
     }
 
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
 
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-
-      flex: 0 0 44px;
-
-      display: grid;
-      place-items: center;
-
-      border-radius: 50%;
-
-      background: var(--primary);
-
-      color: var(--white);
-
-      font-weight: 700;
-    }
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
 
 
     .author-info strong {
@@ -5006,6 +5059,20 @@ and (orientation: landscape) {
     display: none !important;
   }
 }
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
 
 
     
@@ -5149,10 +5216,13 @@ and (orientation: landscape) {
       <div class="container">
 
         <div class="hero-content reveal">
+          <div class="section-eyebrow">
 
-          <div class="">
-            Our Services
-          </div>
+                    Experience
+
+                </div>
+
+         
 
 
           <h1 class="hero-title">
@@ -5699,9 +5769,11 @@ and (orientation: landscape) {
 
           <div class="featured-content reveal">
 
-            <div class="">
-              Featured Experience
-            </div>
+            <div class="section-eyebrow">
+
+                    Featured Experience
+
+                </div>
 
 
             <h2 class="section-title">
@@ -5807,9 +5879,11 @@ and (orientation: landscape) {
 
         <div class="section-heading-center reveal">
 
-          <div class="">
-            Your Visit
-          </div>
+          <div class="section-eyebrow">
+
+                   Your visit
+
+                </div>
 
 
           <h2 class="section-title">
@@ -5956,9 +6030,11 @@ and (orientation: landscape) {
 
           <div class="education-content reveal">
 
-            <div class="">
-              Learning Through Nature
-            </div>
+            <div class="section-eyebrow">
+
+                    Learning through Nature
+
+                </div>
 
 
             <h2 class="section-title">
@@ -6225,9 +6301,10 @@ and (orientation: landscape) {
 
             <div class="testimonial-author">
 
-              <div class="author-avatar">
-                RS
-              </div>
+             
+             <div class="author-avatar">
+            <img src="./imagess/w1.jpg" alt="Author">
+            </div>
 
 
               <div class="author-info">
@@ -6281,9 +6358,11 @@ and (orientation: landscape) {
 
             <div class="testimonial-author">
 
-              <div class="author-avatar">
-                AK
-              </div>
+              
+             <div class="author-avatar">
+            <img src="./imagess/men2.jpg" alt="Author">
+            </div>
+
 
 
               <div class="author-info">
@@ -6330,16 +6409,18 @@ and (orientation: landscape) {
               "We brought our children for an
               educational visit and they were engaged
               from beginning to end. A fantastic
-              learning experience."
+              learning experience this was an amazing moment."
 
             </p>
 
 
             <div class="testimonial-author">
 
-              <div class="author-avatar">
-                NP
-              </div>
+              
+             <div class="author-avatar">
+            <img src="./imagess/w2.jpg" alt="Author">
+            </div>
+
 
 
               <div class="author-info">

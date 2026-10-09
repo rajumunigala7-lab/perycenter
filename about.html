@@ -328,6 +328,61 @@
       color: var(--primary);
       background: var(--bg-soft);
     }
+    
+
+
+/* Navigation Link */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active Link Underline */
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Hover Underline */
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Light Mode */
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Dark Mode */
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
+
 
 
     .dropdown {
@@ -1452,26 +1507,34 @@
       align-items: center;
 
       gap: 12px;
+      border: radius 50px;
     }
 
 
-    .author-avatar {
-      width: 44px;
-      height: 44px;
+    
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-      flex: 0 0 44px;
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
 
-      display: grid;
-      place-items: center;
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
 
-      border-radius: 50%;
-
-      background: var(--primary);
-
-      color: var(--white);
-
-      font-weight: 700;
-    }
 
 
     .author-info strong {
@@ -3012,6 +3075,20 @@
     display: none !important;
   }
 }
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
     
     
 
@@ -3154,6 +3231,11 @@
       <div class="container">
 
         <div class="hero-content reveal">
+          <div class="section-eyebrow">
+
+                    About us
+
+                </div>
 
          
 
@@ -3220,9 +3302,11 @@
     <section
       class="about-story"
       id="our-story"
+      
     >
 
       <div class="container">
+        
 
         <div class="story-grid">
 
@@ -3254,9 +3338,11 @@
 
           <div class="story-content reveal">
 
-            <div class="">
-              Our Story
-            </div>
+       <div class="section-eyebrow">
+
+                   Our Story
+
+                </div>
 
 
             <h2 class="section-title">
@@ -3520,9 +3606,11 @@
 
           <div class="mission-content reveal">
 
-            <div class="">
-              Our Mission
-            </div>
+            <div class="section-eyebrow">
+
+                    our mission
+
+                </div>
 
 
             <h2 class="section-title">
@@ -3690,10 +3778,11 @@
 
         <div class="section-heading-center reveal">
 
-          <div class="">
-            Meet The Team
-          </div>
+         <div class="section-eyebrow">
 
+                    Meet the Team
+
+                </div>
 
           <h2 class="section-title">
 
@@ -3916,8 +4005,10 @@
         <div class="section-heading-center reveal">
 
           <div class="section-eyebrow">
-            Visitor Stories
-          </div>
+
+                   Vistor stories
+
+                </div>
 
 
           <h2 class="section-title">
@@ -3979,9 +4070,9 @@
 
             <div class="testimonial-author">
 
-              <div class="author-avatar">
-                RS
-              </div>
+             <div class="author-avatar">
+            <img src="./imagess/w1.jpg" alt="Author">
+            </div>
 
 
               <div class="author-info">
@@ -4035,10 +4126,11 @@
 
 
             <div class="testimonial-author">
+               <div class="author-avatar">
+            <img src="./imagess/men2.jpg" alt="Author">
+            </div>
 
-              <div class="author-avatar">
-                AK
-              </div>
+             
 
 
               <div class="author-info">
@@ -4094,9 +4186,9 @@
 
             <div class="testimonial-author">
 
-              <div class="author-avatar">
-                NP
-              </div>
+             <div class="author-avatar">
+            <img src="./imagess/w2.jpg" alt="Author">
+            </div>
 
 
               <div class="author-info">
@@ -4133,10 +4225,11 @@
           <div class="cta-content">
 
 
-            <div class="">
-              Visit Aviora
-            </div>
+           <div class="section-eyebrow">
 
+                   Visit Aviora
+
+                </div>
 
             <h2>
               Come closer to the world of birds

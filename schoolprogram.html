@@ -2886,6 +2886,61 @@
         font-size: 13px;
     }
 
+    
+
+
+/* Navigation Link */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active Link Underline */
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Hover Underline */
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Light Mode */
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Dark Mode */
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
+
 
     .dropdown-menu {
 
@@ -3644,6 +3699,25 @@
 
             gap: 22px;
         }
+
+        
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+
 
 
 
@@ -8533,11 +8607,11 @@ footer,
 
         <div class="hero-content reveal">
 
-            <div class="">
+            <div class="section-eyebrow">
 
-                Falconry Bird School
+                    Falconry Bird School
 
-            </div>
+                </div>
 
             <h1 class="hero-title">
 
@@ -8625,12 +8699,11 @@ footer,
 
             <div class="intro-content reveal">
 
-                <div class="">
+                <div class="section-eyebrow">
 
-                    The Falconry School
+                     The Falconry School
 
                 </div>
-
                 <h2 class="section-title">
 
                     Where tradition meets responsible bird care.
@@ -8763,11 +8836,11 @@ footer,
 
         <div class="section-heading center reveal">
 
-            <div class="">
+            <div class="section-eyebrow">
 
-                School Programs
+                   School program
 
-            </div>
+                </div>
 
             <h2 class="section-title">
 
@@ -9031,12 +9104,10 @@ footer,
     <div class="container">
 
         <div class="section-heading reveal">
+<div class="section-eyebrow">
 
-            <div class="">
-
-                Hands-on Activities
-
-            </div>
+                    Join Learn Educate
+                </div>
 
             <h2 class="section-title">
 
@@ -9188,11 +9259,11 @@ footer,
 
         <div class="section-heading center reveal">
 
-            <div class="">
+            <div class="section-eyebrow">
 
-                What Students Learn
+                 what students Learn
 
-            </div>
+                </div>
 
             <h2 class="section-title">
 
@@ -9344,13 +9415,11 @@ footer,
     <div class="container">
 
         <div class="section-heading center reveal">
+<div class="section-eyebrow">
 
-            <div class="">
+                    Birds of prey
 
-                Birds Of Prey
-
-            </div>
-
+                </div>
             <h2 class="section-title">
 
                 Meet the world of Birds.
@@ -9513,80 +9582,45 @@ footer,
 
 
 
+
 <section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
 
-    <div class="container">
-
-        <div class="stats-grid">
-
-            <div class="stat-item">
-
-                <div class="stat-number">
-
-                    06
-
-                </div>
-
-                <div class="stat-label">
-
-                    Learning Modules
-
-                </div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">
-
-                    04
-
-                </div>
-
-                <div class="stat-label">
-
-                    Core Skill Areas
-
-                </div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">
-
-                    100%
-
-                </div>
-
-                <div class="stat-label">
-
-                    Welfare Focus
-
-                </div>
-
-            </div>
-
-            <div class="stat-item">
-
-                <div class="stat-number">
-
-                    01
-
-                </div>
-
-                <div class="stat-label">
-
-                    Falconry Journey
-
-                </div>
-
-            </div>
-
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-book-open"></i>
         </div>
+        <div class="stat-number">06</div>
+        <div class="stat-label">Learning Modules</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="stat-number">04</div>
+        <div class="stat-label">Core Skill Areas</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Welfare Focus</div>
+      </div>
+
+      <div class="stat-item">
+        <div class="stat-icon">
+          <i class="fas fa-feather-alt"></i>
+        </div>
+        <div class="stat-number">01</div>
+        <div class="stat-label">Falconry Journey</div>
+      </div>
 
     </div>
-
+  </div>
 </section>
 
 

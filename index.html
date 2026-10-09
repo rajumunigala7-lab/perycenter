@@ -11,7 +11,6 @@
     content="Discover the story, team, values, conservation mission, and visitor experiences behind Aviora Bird Sanctuary."
   >
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -21,7 +20,7 @@
     rel="stylesheet"
   >
 
-  <!-- Font Awesome -->
+ 
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -29,9 +28,7 @@
  <link rel="stylesheet" href="nav.css">
   <style>
 
-    /* =====================================================
-       ROOT / THEME
-    ===================================================== */
+  
 
     :root {
       --primary: #1d5b49;
@@ -94,10 +91,6 @@
         0 8px 30px rgba(0,0,0,0.22);
     }
 
-
-    /* =====================================================
-       GLOBAL
-    ===================================================== */
 
     *,
     *::before,
@@ -182,10 +175,6 @@
       line-height: 1.15;
     }
 
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
 
     .site-header {
       position: fixed;
@@ -338,6 +327,57 @@
       color: var(--primary);
       background: var(--bg-soft);
     }
+
+    
+
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
 
 
     .dropdown {
@@ -576,9 +616,7 @@
 
 
 
-    /* =========================
-       HERO
-    ========================= */
+
 
     .hero {
       position: relative;
@@ -795,10 +833,9 @@
       text-transform: uppercase;
       letter-spacing: .7px;
     }
+    
 
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
+  
 
     .section {
       padding: 105px 0;
@@ -836,9 +873,7 @@
       line-height: 1.85;
     }
 
-    /* =========================
-       INTRO
-    ========================= */
+
 
     .intro-grid {
       display: grid;
@@ -937,9 +972,6 @@
       font-size: 10px;
     }
 
-    /* =========================
-       STATS
-    ========================= */
 
     .stats {
       padding: 0 0 105px;
@@ -991,9 +1023,7 @@
       font-size: 12px;
     }
 
-    /* =========================
-       EXPERIENCES
-    ========================= */
+
 
     .experience-grid {
       display: grid;
@@ -1062,107 +1092,135 @@
       line-height: 1.7;
     }
 
-    /* =========================
-       FEATURED BIRDS
-    ========================= */
+    
 
-    .birds-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
+.birds-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
 
-    .bird-card {
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--surface);
-      box-shadow: var(--shadow-small);
-      transition: var(--transition);
-    }
+.bird-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-small);
+  transition: var(--transition);
+}
 
-    .bird-card:hover {
-      transform: translateY(-7px);
-      box-shadow: var(--shadow);
-    }
+.bird-card:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+}
 
-    .bird-image {
-      position: relative;
-      height: 275px;
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    }
+.bird-image {
+  position: relative;
+  height: 275px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--primary-dark)
+  );
+}
 
-    .bird-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: transform .6s ease;
-    }
+.bird-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
 
-    .bird-card:hover .bird-image img {
-      transform: scale(1.05);
-    }
+.bird-card:hover .bird-image img {
+  transform: scale(1.05);
+}
 
-    .bird-label {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      padding: 7px 11px;
-      border-radius: 50px;
-      background: rgba(255,255,255,.92);
-      color: var(--primary-dark);
-      font-size: 10px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .6px;
-    }
+.bird-label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 7px 11px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, .92);
+  color: var(--primary-dark);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+}
 
-    .bird-info {
-      padding: 23px;
-    }
+.bird-info {
+  padding: 23px;
+  text-align: center;
+}
 
-    .bird-info h3 {
-      margin-bottom: 5px;
-      font-family: "Playfair Display", serif;
-      font-size: 25px;
-    }
+.bird-info h3 {
+  margin-bottom: 5px;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  text-align: center;
+}
 
-    .bird-scientific {
-      margin-bottom: 12px;
-      color: var(--accent-dark, #b98a2f);
-      font-size: 11px;
-      font-style: italic;
-    }
+.bird-scientific {
+  margin-bottom: 12px;
+  color: var(--accent-dark, #b98a2f);
+  font-size: 11px;
+  font-style: italic;
+  text-align: center;
+}
 
-    .bird-info p {
-      color: var(--text-soft);
-      font-size: 13px;
-      line-height: 1.7;
-    }
+.bird-info p {
+  color: var(--text-soft);
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
 
-    .bird-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-top: 17px;
-      color: var(--primary-light);
-      font-size: 12px;
-      font-weight: 800;
-    }
+.bird-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 17px;
+  color: var(--primary-light);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
 
-    .bird-link:hover {
-      color: var(--accent);
-    }
+.bird-link:hover {
+  color: var(--accent);
+}
 
-    .center-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 38px;
-    }
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 38px;
+}
 
-    /* =========================
-       MISSION CTA
-    ========================= */
+
+
+@media (max-width: 992px) {
+  .birds-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .birds-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bird-image {
+    height: 250px;
+  }
+
+  .bird-info h3 {
+    font-size: 23px;
+  }
+}
+
 
     .mission {
       position: relative;
@@ -1217,14 +1275,13 @@
       font-size: 15px;
       line-height: 1.8;
     }
-
-    .mission .btn-primary {
-      white-space: nowrap;
-    }
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
+.mission .btn-primary {
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
 
     .site-footer {
       position: relative;
@@ -1539,10 +1596,6 @@
     }
 
 
-    /* =====================================================
-       LOGIN MODAL
-    ===================================================== */
-
     .modal-backdrop {
       position: fixed;
 
@@ -1755,9 +1808,6 @@
     }
 
 
-    /* =====================================================
-       TOAST
-    ===================================================== */
 
     .toast {
       position: fixed;
@@ -1818,9 +1868,6 @@
     }
 
 
-    /* =====================================================
-       REVEAL
-    ===================================================== */
 
     .reveal {
       opacity: 0;
@@ -1842,9 +1889,6 @@
     }
 
 
-    /* =====================================================
-       RTL
-    ===================================================== */
 
     html[dir="rtl"] .dropdown-menu {
       left: auto;
@@ -1900,9 +1944,6 @@
     }
 
 
-    /* =====================================================
-       LARGE DESKTOP
-    ===================================================== */
 
     @media (min-width:1200px) {
 
@@ -1923,10 +1964,6 @@
 
     }
 
-
-    /* =====================================================
-       TABLET
-    ===================================================== */
 
     @media (min-width:601px)
     and (max-width:900px) {
@@ -2098,10 +2135,6 @@
 
     }
 
-
-    /* =====================================================
-       MOBILE
-    ===================================================== */
 
     @media (max-width:600px) {
 
@@ -2529,9 +2562,6 @@
     }
 
 
-    /* =====================================================
-       SMALL MOBILE
-    ===================================================== */
 
     @media (max-width:380px) {
 
@@ -2606,10 +2636,6 @@
     }
 
 
-    /* =====================================================
-       REDUCED MOTION
-    ===================================================== */
-
     @media (prefers-reduced-motion: reduce) {
 
       html {
@@ -2632,9 +2658,6 @@
     }
 
 
-    /* =====================================================
-       EXTRA LARGE
-    ===================================================== */
 
     @media (min-width:1600px) {
 
@@ -2647,9 +2670,6 @@
       }
 
     }
-        /* =====================================================
-       TABLET
-    ===================================================== */
 
     @media (min-width:601px) and (max-width:900px) {
 
@@ -2660,9 +2680,6 @@
         );
       }
 
-      /* -------------------------
-         HEADER
-      ------------------------- */
 
       .header-inner {
         min-height: 72px;
@@ -2754,9 +2771,7 @@
       }
 
 
-      /* -------------------------
-         HERO
-      ------------------------- */
+   
 
       .hero {
         min-height: 650px;
@@ -2806,9 +2821,7 @@
       }
 
 
-      /* -------------------------
-         GENERAL SECTIONS
-      ------------------------- */
+    
 
       .section {
         padding: 85px 0;
@@ -2827,9 +2840,6 @@
       }
 
 
-      /* -------------------------
-         INTRO
-      ------------------------- */
 
       .intro-grid {
         grid-template-columns: 1fr;
@@ -2846,9 +2856,6 @@
       }
 
 
-      /* -------------------------
-         STATS
-      ------------------------- */
 
       .stats {
         padding: 0 0 85px;
@@ -2862,9 +2869,6 @@
       }
 
 
-      /* -------------------------
-         EXPERIENCES
-      ------------------------- */
 
       .experience-grid {
         grid-template-columns:
@@ -2882,10 +2886,7 @@
       }
 
 
-      /* -------------------------
-         BIRDS
-      ------------------------- */
-
+      
       .birds-grid {
         grid-template-columns:
           repeat(2, 1fr);
@@ -2897,10 +2898,6 @@
         height: 260px;
       }
 
-
-      /* -------------------------
-         MISSION
-      ------------------------- */
 
       .mission {
         padding: 80px 0;
@@ -2917,9 +2914,6 @@
       }
 
 
-      /* -------------------------
-         FOOTER
-      ------------------------- */
 
       .footer-grid {
         grid-template-columns:
@@ -2949,10 +2943,6 @@
     }
 
 
-    /* =====================================================
-       MOBILE
-    ===================================================== */
-
     @media (max-width:600px) {
 
       .container {
@@ -2960,9 +2950,6 @@
       }
 
 
-      /* -------------------------
-         HEADER
-      ------------------------- */
 
       .header-inner {
         min-height: 68px;
@@ -3011,10 +2998,6 @@
         display: grid;
       }
 
-
-      /* -------------------------
-         MOBILE NAV
-      ------------------------- */
 
       .main-nav {
         position: fixed;
@@ -3090,10 +3073,6 @@
         display: block;
       }
 
-
-      /* -------------------------
-         HERO
-      ------------------------- */
 
       .hero {
         min-height: 590px;
@@ -3237,9 +3216,6 @@
       }
 
 
-      /* -------------------------
-         GENERAL SECTIONS
-      ------------------------- */
 
       .section {
         padding: 70px 0;
@@ -3264,9 +3240,6 @@
       }
 
 
-      /* -------------------------
-         INTRO
-      ------------------------- */
 
       .intro-grid {
         grid-template-columns: 1fr;
@@ -3322,9 +3295,6 @@
       }
 
 
-      /* -------------------------
-         STATS
-      ------------------------- */
 
       .stats {
         padding: 0 0 70px;
@@ -3361,9 +3331,6 @@
       }
 
 
-      /* -------------------------
-         EXPERIENCES
-      ------------------------- */
 
       .experience-grid {
         grid-template-columns: 1fr;
@@ -3407,9 +3374,6 @@
       }
 
 
-      /* -------------------------
-         FEATURED BIRDS
-      ------------------------- */
 
       .birds-grid {
         grid-template-columns: 1fr;
@@ -3442,9 +3406,6 @@
       }
 
 
-      /* -------------------------
-         MISSION CTA
-      ------------------------- */
 
       .mission {
         padding: 70px 0;
@@ -3471,9 +3432,6 @@
       }
 
 
-      /* -------------------------
-         BUTTONS
-      ------------------------- */
 
       .btn {
         min-height: 50px;
@@ -3484,9 +3442,6 @@
       }
 
 
-      /* -------------------------
-         FOOTER
-      ------------------------- */
 
       .site-footer {
         padding:
@@ -3579,10 +3534,8 @@
         gap: 10px 22px;
       }
 
+      
 
-      /* -------------------------
-         MODAL
-      ------------------------- */
 
       .modal-backdrop {
         padding: 16px;
@@ -3612,9 +3565,6 @@
       }
 
 
-      /* -------------------------
-         TOAST
-      ------------------------- */
 
       .toast {
         left: 16px;
@@ -3630,9 +3580,6 @@
       }
 
 
-      /* -------------------------
-         REVEAL
-      ------------------------- */
 
       .reveal {
         transform: translateY(18px);
@@ -3641,9 +3588,6 @@
     }
 
 
-    /* =====================================================
-       SMALL MOBILE
-    ===================================================== */
 
     @media (max-width:380px) {
 
@@ -3652,7 +3596,7 @@
       }
 
 
-      /* HEADER */
+   
 
       .header-inner {
         min-height: 64px;
@@ -3689,7 +3633,7 @@
       }
 
 
-      /* HERO */
+
 
       .hero {
         min-height: 550px;
@@ -3728,7 +3672,7 @@
       }
 
 
-      /* SECTIONS */
+   
 
       .section {
         padding: 60px 0;
@@ -3739,7 +3683,7 @@
       }
 
 
-      /* INTRO */
+
 
       .intro-image {
         min-height: 320px;
@@ -3759,7 +3703,7 @@
       }
 
 
-      /* EXPERIENCES */
+    
 
       .experience-card,
       .experience-card img {
@@ -3767,7 +3711,7 @@
       }
 
 
-      /* BIRDS */
+
 
       .bird-image {
         height: 220px;
@@ -3778,7 +3722,7 @@
       }
 
 
-      /* MISSION */
+
 
       .mission {
         padding: 60px 0;
@@ -3789,14 +3733,13 @@
       }
 
 
-      /* FOOTER */
+  
 
       .site-footer {
         padding-top: 50px;
       }
 
 
-      /* MODAL */
 
       .modal {
         padding: 22px 16px;
@@ -3804,10 +3747,6 @@
 
     }
 
-
-    /* =====================================================
-       MOBILE LANDSCAPE
-    ===================================================== */
 
     @media (max-width:600px)
     and (orientation:landscape) {
@@ -3859,15 +3798,67 @@
 
 }
     
-/* =========================================
-   REMOVE LOGIN / BOOK A VISIT ON MOBILE
-========================================= */
 
 @media (max-width: 900px) {
   .login-btn {
     display: none !important;
   }
 }
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+@media screen and (max-width: 380px) {
+
+
+    html:not([data-theme="dark"]) .hero h1 {
+        color: var(--text);
+        font-size: 30px;
+        line-height: 1.25;
+        letter-spacing: -0.6px;
+    }
+
+    html:not([data-theme="dark"]) .hero h1 span {
+        color: var(--primary-dark);
+    }
+
+  
+    html[data-theme="dark"] .hero h1 {
+        color: var(--black);
+        font-size: 30px;
+        line-height: 1.25;
+        letter-spacing: -0.6px;
+    }
+
+    html[data-theme="dark"] .hero h1 span {
+        color: var(--accent-light);
+    }
+
+  
+    .hero h1 {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+}
+
+
+.hero h1,
+.hero h1 span {
+    transition: color var(--transition);
+}
+
 
 
     
@@ -3879,16 +3870,13 @@
 <body>
 
 
-  <!-- =====================================================
-       HEADER
-  ===================================================== -->
 
   <header class="site-header">
 
     <div class="container header-inner">
 
 
-      <!-- LOGO -->
+    
 
       <a
         href="index.html"
@@ -3919,7 +3907,7 @@
       </a>
 
 
-      <!-- NAVIGATION -->
+  
 
        <nav class="main-nav" id="mainNav">
 
@@ -3953,7 +3941,7 @@
 
       <div class="header-actions">
 
-        <!-- RTL BUTTON -->
+       
         <button
           class="icon-btn"
           id="directionToggle"
@@ -3965,7 +3953,7 @@
         </button>
 
 
-        <!-- DARK / LIGHT BUTTON -->
+      
         <button
           class="icon-btn"
           id="themeToggle"
@@ -3976,7 +3964,7 @@
           <i class="fa-solid fa-moon"></i>
         </button>
 
-       <!-- LOGIN -->
+    
         <a href="cta.html"
                class="login-btn">
  
@@ -3987,7 +3975,7 @@
  
             </a>
 
-        <!-- MOBILE MENU -->
+      
         <button
           class="icon-btn mobile-menu-btn"
           id="mobileMenuBtn"
@@ -4005,9 +3993,6 @@
   </header>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
 
   <main>
 
@@ -4017,10 +4002,10 @@
 
         <div class="hero-content reveal">
 
-          <div class="">
-            Welcome to Aviora
-          </div>
+          <div class="section-eyebrow">
 
+                   Welcome to Aviora
+                </div>
           <h1>
             Where the
             <span>sky begins</span>
@@ -4083,9 +4068,6 @@
     </section>
 
 
-    <!-- =========================
-         INTRO
-    ========================= -->
 
     <section class="section">
 
@@ -4116,10 +4098,11 @@
 
         <div class="intro-content reveal">
 
-          <div class="">
-            About Aviora
-          </div>
+          <div class="section-eyebrow">
 
+                   About Aviora
+
+                </div>
           <h2 class="section-title">
             A sanctuary built around respect for the wild.
           </h2>
@@ -4170,9 +4153,6 @@
     </section>
 
 
-    <!-- =========================
-         STATS
-    ========================= -->
 
     <section class="stats">
 
@@ -4215,9 +4195,6 @@
     </section>
 
 
-    <!-- =========================
-         EXPERIENCES
-    ========================= -->
 
     <section class="section section-soft">
 
@@ -4225,9 +4202,11 @@
 
         <div class="section-header center reveal">
 
-          <div class="">
-            Explore Aviora
-          </div>
+          <div class="section-eyebrow">
+
+                   Explore Aviora
+
+                </div>
 
           <h2 class="section-title">
             Experiences that bring wings closer.
@@ -4328,27 +4307,26 @@
     </section>
 
 
-    <!-- =========================
-         FEATURED BIRDS
-    ========================= -->
 
     <section class="section">
 
-      <div class="container">
+       <div class="container">
 
-        <div class="section-header reveal">
+        <div class="section-header center reveal">
 
-          <div class="">
-            Meet Our Birds
-          </div>
+          <div class="section-eyebrow">
+
+                  Meets Our
+
+                </div>
 
           <h2 class="section-title">
-            Extraordinary birds. Individual personalities.
+            Extraordinary birds Individual personalities.
           </h2>
 
           <p class="section-description">
-            Every bird at Aviora has its own story, character, and role in
-            helping visitors understand the fascinating world of raptors.
+           Every bird at Aviora has its own storycharacter,and role in helping visitiors.
+           
           </p>
 
         </div>
@@ -4361,7 +4339,7 @@
             <div class="bird-image">
 
               <img
-                src="./imagess/Peregrine Falcon.jpg"
+                src="./imagess/Peregrine Falcon1.jpg"
                 alt="Falcon"
                 onerror="this.style.display='none';"
               >
@@ -4385,10 +4363,6 @@
                 nature's most impressive aerial hunters.
               </p>
 
-              <a href="birds.html" class="bird-link">
-                Meet the birds
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
 
             </div>
 
@@ -4487,23 +4461,24 @@
     </section>
 
 
-    <!-- =========================
-         MISSION CTA
-    ========================= -->
-
     <section class="mission">
 
-      <div class="container mission-inner">
+       <div class="container">
 
-        <div class="reveal">
+        <div class="section-header center reveal">
 
-          <h2>
-            Come closer to the wild. Leave inspired to protect it.
+          <div class="section-eyebrow">
+
+                  Visit Aviora
+
+                </div>
+
+          <h2 class="section-title">
+            Come closer to the wild Leave inspired to protect it.
           </h2>
 
-          <p>
-            Plan your visit to Aviora and experience the beauty, intelligence,
-            and power of birds of prey in a meaningful and respectful setting.
+          <p class="section-description">
+           Plan your visit to Aviora and Experience the beauty intelligence and power of birds 
           </p>
 
         </div>
@@ -4522,9 +4497,6 @@
   </main>
 
 
-  <!-- =====================================================
-       FOOTER
-  ===================================================== -->
 
   <footer class="site-footer">
 
@@ -4534,7 +4506,7 @@
       <div class="footer-grid">
 
 
-        <!-- BRAND -->
+     
 
         <div class="footer-brand">
 
@@ -4607,7 +4579,7 @@
         </div>
 
 
-        <!-- EXPLORE -->
+
 
         <div class="footer-column">
 
@@ -4653,7 +4625,7 @@
         </div>
 
 
-        <!-- SERVICES -->
+    
 
         <div class="footer-column">
 
@@ -4699,7 +4671,7 @@
         </div>
 
 
-        <!-- CONTACT -->
+    
 
         <div class="footer-column">
 
@@ -4819,10 +4791,6 @@
 
   </footer>
 
-
-  <!-- =====================================================
-       LOGIN MODAL
-  ===================================================== -->
 
   <div
     class="modal-backdrop"
@@ -4950,10 +4918,6 @@
   </div>
 
 
-  <!-- =====================================================
-       TOAST
-  ===================================================== -->
-
   <div
     class="toast"
     id="toast"
@@ -4972,9 +4936,6 @@
   </div>
 
 
-  <!-- =====================================================
-       JAVASCRIPT
-  ===================================================== -->
 
   <script>
 
@@ -5036,9 +4997,6 @@
           $("currentYear");
 
 
-        /* =================================================
-           YEAR
-        ================================================= */
 
         if (currentYear) {
 
@@ -5048,9 +5006,6 @@
         }
 
 
-        /* =================================================
-           TOAST
-        ================================================= */
 
         let toastTimer;
 
@@ -5091,9 +5046,6 @@
         }
 
 
-        /* =================================================
-           THEME
-        ================================================= */
 
         function applyTheme(theme) {
 
@@ -5178,10 +5130,6 @@
         }
 
 
-        /* =================================================
-           RTL
-        ================================================= */
-
         function applyDirection(direction) {
 
           const selectedDirection =
@@ -5249,9 +5197,6 @@
         }
 
 
-        /* =================================================
-           MOBILE MENU
-        ================================================= */
 
         function closeMobileMenu() {
 
@@ -5358,9 +5303,6 @@
         }
 
 
-        /* =================================================
-           MOBILE DROPDOWN
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -5403,9 +5345,6 @@
           );
 
 
-        /* =================================================
-           CLOSE MENU AFTER LINK
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -5433,9 +5372,6 @@
           );
 
 
-        /* =================================================
-           LOGIN MODAL
-        ================================================= */
 
         function openLogin() {
 
@@ -5530,9 +5466,6 @@
         }
 
 
-        /* =================================================
-           LOGIN FORM
-        ================================================= */
 
         if (loginForm) {
 
@@ -5616,9 +5549,6 @@
         }
 
 
-        /* =================================================
-           ESCAPE
-        ================================================= */
 
         document.addEventListener(
           "keydown",
@@ -5638,9 +5568,6 @@
         );
 
 
-        /* =================================================
-           RESIZE
-        ================================================= */
 
         window.addEventListener(
           "resize",
@@ -5657,10 +5584,6 @@
           }
         );
 
-
-        /* =================================================
-           SMOOTH SCROLL
-        ================================================= */
 
         document
           .querySelectorAll(
@@ -5714,9 +5637,6 @@
           );
 
 
-        /* =================================================
-           SCROLL REVEAL
-        ================================================= */
 
         const revealElements =
           document.querySelectorAll(
@@ -5811,6 +5731,7 @@ directionToggle.addEventListener("click", function () {
         );
     }
 });
+
   </script>
 <script src="nav.js" defer></script>
 </body>

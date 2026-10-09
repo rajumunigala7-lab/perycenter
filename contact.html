@@ -374,6 +374,61 @@
       transition: var(--transition);
     }
 
+    
+
+
+/* Navigation Link */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active Link Underline */
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Hover Underline */
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Light Mode */
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Dark Mode */
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
+
 
     .dropdown:hover
     .dropdown-menu {
@@ -4638,6 +4693,20 @@
   }
 
 }
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
     
 
   </style>
@@ -4795,10 +4864,10 @@
     <div class="container">
 
       <div class="contact-hero-content reveal">
+          <div class="section-eyebrow">
 
-        <div class="">
-          Get in touch
-        </div>
+                  Get in touch
+                </div>
 
 
         <h1>
@@ -4868,9 +4937,11 @@
 
         <div class="contact-info reveal">
 
-          <div class="">
-            Contact Aviora
-          </div>
+          <div class="section-eyebrow">
+
+                   contact Aviora
+
+                </div>
 
 
           <h2>
@@ -5241,10 +5312,11 @@
 
       <div class="section-header center reveal">
 
-        <div class="section-label">
-          Find Aviora
-        </div>
+        <div class="section-eyebrow">
 
+                    Find and meet
+
+                </div>
 
         <h2 class="section-title">
           Come and meet us.
@@ -5358,9 +5430,11 @@
 
         <div class="cta-content reveal">
 
-          <div class="">
-            Your Wild Journey
-          </div>
+          <div class="section-eyebrow">
+
+                  Your Wild Journey
+
+                </div>
 
 
           <h2>

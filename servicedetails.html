@@ -333,6 +333,61 @@
     }
 
 
+    
+
+
+/* Navigation Link */
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Underline */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 4px;
+    height: 2px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Active Link Underline */
+.nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Hover Underline */
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Light Mode */
+.nav-link.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Dark Mode */
+body.dark-mode .nav-link.active,
+.dark-mode .nav-link.active {
+    color: #d9b56d;
+}
+
+body.dark-mode .nav-link::after,
+.dark-mode .nav-link::after {
+    background: #d9b56d;
+}
+
+
+
+
     .dropdown {
       position: relative;
     }
@@ -1009,6 +1064,8 @@
       display:grid;
       grid-template-columns:repeat(4,1fr);
       gap:20px;
+      text-align: center;
+      justify-content: center;
     }
 
     .process-card{
@@ -1053,6 +1110,8 @@
       position:relative;
       font-size:17px;
       margin-bottom:8px;
+      text-align: center;
+      justify-content: center;
     }
 
     .process-card p{
@@ -1060,6 +1119,8 @@
       color:var(--text-soft);
       font-size:13px;
       line-height:1.7;
+      text-align: center;
+      justify-content: center;
     }
 
   
@@ -1069,6 +1130,8 @@
       grid-template-columns:1.35fr 1fr 1fr;
       grid-template-rows:250px 250px;
       gap:14px;
+      text-align: center;
+      justify-content: center;
     }
 
     .gallery-item{
@@ -4070,6 +4133,21 @@ and (orientation: landscape) {
   }
 }
 
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: var(--bg-soft);
+  color: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
 
 
   </style>
@@ -4275,10 +4353,11 @@ and (orientation: landscape) {
 
         <div class="service-copy reveal">
 
-          <div class="section-kicker">
-            Featured Experience
-          </div>
+          <div class="section-eyebrow">
 
+                    The Falconry 
+
+                </div>
           <h2>
             Falconry
             <span>Experience</span>
@@ -4363,9 +4442,11 @@ and (orientation: landscape) {
 
       <div class="section-head center reveal">
 
-        <div class="">
-          What You'll Get
-        </div>
+        <div class="section-eyebrow">
+
+                  What You will get
+
+                </div>
 
         <h2 class="section-title">
           More than a visit.
@@ -4469,11 +4550,11 @@ and (orientation: landscape) {
       <div class="experience-section">
 
         <div class="experience-copy reveal">
+<div class="section-eyebrow">
 
-          <div class="">
-            Your Experience
-          </div>
+               your Experience
 
+                </div>
           <h2 class="section-title">
             Feel the power of
             <span style="color:var(--primary-light);">
@@ -4592,13 +4673,15 @@ and (orientation: landscape) {
 
       <div class="section-head center reveal">
 
-        <div class="">
-          How It Works
-        </div>
+       <div class="section-eyebrow">
+
+                  How its work
+
+                </div>
 
         <h2 class="section-title">
-          Your visit,
-          <br>made simple.
+          Your visit made simple.
+          
         </h2>
 
         <p class="section-description">
@@ -4692,22 +4775,24 @@ and (orientation: landscape) {
 
   <section class="section info-section">
 
-    <div class="container">
+     <div class="container">
 
-      <div class="section-head reveal">
+      <div class="section-head center reveal">
 
-        <div class="">
-          Inside The Experience
-        </div>
+       <div class="section-eyebrow">
+
+                  Inside the Experience
+
+                </div>
 
         <h2 class="section-title">
-          Moments from
-          <br>Aviora.
+          A moments from Aviora.
+          
         </h2>
 
         <p class="section-description">
-          Every experience is different. These are just a few of the
-          moments you may discover during your visit.
+          Every Experience is different.These are just a feww of the moments 
+          you discover during your visit.
         </p>
 
       </div>
@@ -4810,9 +4895,11 @@ and (orientation: landscape) {
 
         <div class="faq-intro reveal">
 
-          <div class="">
-            Frequently Asked
-          </div>
+        <div class="section-eyebrow">
+
+                   Frequently Asked
+
+                </div>
 
           <h2 class="section-title">
             Have questions?
@@ -4953,9 +5040,11 @@ and (orientation: landscape) {
 
         <div class="cta-content">
 
-          <div class="eyebrow">
-            Plan Your Visit
-          </div>
+          <div class="section-eyebrow">
+
+                   Plan Your Visit
+
+                </div>
 
           <h2>
             Your next unforgettable
