@@ -2889,14 +2889,13 @@
     
 
 
-/* Navigation Link */
 .nav-link {
     position: relative;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Underline */
+
 .nav-link::after {
     content: "";
     position: absolute;
@@ -2911,23 +2910,21 @@
     border-radius: 2px;
 }
 
-/* Active Link Underline */
 .nav-link.active::after {
     transform: scaleX(1);
 }
 
-/* Hover Underline */
+
 .nav-link:hover::after {
     transform: scaleX(1);
 }
 
-/* Light Mode */
 .nav-link.active {
     color: var(--primary);
     font-weight: 700;
 }
 
-/* Dark Mode */
+
 body.dark-mode .nav-link.active,
 .dark-mode .nav-link.active {
     color: #d9b56d;
