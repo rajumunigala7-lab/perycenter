@@ -3158,7 +3158,7 @@ body.dark-mode .nav-link::after,
 
         </div>
 
-        <a href="about.html" class="nav-link">About</a>
+        <a href="about.html" class="nav-link active">About</a>
         <a href="services.html" class="nav-link">Services</a>
        
         <a href="schoolprogram.html" class="nav-link">School Program</a>
@@ -5529,6 +5529,14 @@ directionToggle.addEventListener("click", function () {
             "Switch to left-to-right direction"
         );
     }
+});
+document.querySelectorAll(".nav-link").forEach(link => {
+  if (
+    link.pathname.replace(/\/$/, "") ===
+    window.location.pathname.replace(/\/$/, "")
+  ) {
+    link.classList.add("active");
+  }
 });
   </script>
 

@@ -8504,7 +8504,7 @@ footer,
 
         <a href="services.html" class="nav-link">Services</a>
 
-        <a href="schoolprogram.html" class="nav-link">School Program</a>
+        <a href="schoolprogram.html" class="nav-link active">School Program</a>
 
         <a href="blog.html" class="nav-link">Blog</a>
 
@@ -11513,6 +11513,14 @@ footer,
       }
 
     );
+    document.querySelectorAll(".nav-link").forEach(link => {
+  if (
+    link.pathname.replace(/\/$/, "") ===
+    window.location.pathname.replace(/\/$/, "")
+  ) {
+    link.classList.add("active");
+  }
+});
 
 
   </script>

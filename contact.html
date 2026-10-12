@@ -4779,7 +4779,7 @@ body.dark-mode .nav-link::after,
         
         <a href="schoolprogram.html" class="nav-link">School Program</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="contact.html " class="nav-link active">Contact</a>
 
       </nav>
 
@@ -6719,6 +6719,22 @@ directionToggle.addEventListener("click", function () {
             "Switch to left-to-right direction"
         );
     }
+});
+document.querySelectorAll(".nav-link").forEach(link => {
+  if (
+    link.pathname.replace(/\/$/, "") ===
+    window.location.pathname.replace(/\/$/, "")
+  ) {
+    link.classList.add("active");
+  }
+});
+document.querySelectorAll(".nav-link").forEach(link => {
+  if (
+    link.pathname.replace(/\/$/, "") ===
+    window.location.pathname.replace(/\/$/, "")
+  ) {
+    link.classList.add("active");
+  }
 });
   </script>
 

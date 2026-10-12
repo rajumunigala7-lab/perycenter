@@ -4355,7 +4355,7 @@ html[data-theme="dark"] .section-heading .section-description {
 
           <div class="dropdown-menu">
             <a href="index.html">Home 1</a>
-             <a href="home2.html" class="nav-link">Home2</a>
+             <a href="home2.html" class="nav-link active">Home2</a>
           </div>
 
         </div>
@@ -6565,6 +6565,14 @@ directionToggle.addEventListener("click", function () {
             "Switch to left-to-right direction"
         );
     }
+});
+document.querySelectorAll(".nav-link").forEach(link => {
+  if (
+    link.pathname.replace(/\/$/, "") ===
+    window.location.pathname.replace(/\/$/, "")
+  ) {
+    link.classList.add("active");
+  }
 });
   </script>
 <script src="nav.js" defer></script>
